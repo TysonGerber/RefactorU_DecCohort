@@ -54,3 +54,40 @@ if (birthDate.charAt(2) === '/' && birthDate.charAt(5) === '/' && birthDate.leng
     }
 }
 
+
+// State Abbreviated 2 words
+////// WHAT I HAD THAT WASN'T WORKING///////////////////////
+var state = prompt('Enter your state abreviated ex: CO');
+    if(state.length === 2){
+        console.log('length correct')
+        for(var i = 0; i < state.length; i++){
+            var stateUpper = state[i].toUpperCase();
+
+    }
+    console.log('uppercase: ' +stateUpper)
+ }
+state('CO')
+
+////////////////CORRECT WAYS//////////////////////////////
+
+var state = prompt('Enter your state abreviated ex: CO');
+
+    if(state.length === 2){
+        var stateUpper = ''
+        for(var i = 0; i < state.length; i++){
+            stateUpper  += state[i].toUpperCase();
+            
+    }
+  console.log('uppercase: ' +stateUpper)
+ }
+
+
+
+
+ state = prompt('Enter your state abreviated ex: CO');
+
+    if(state.length === 2){
+        var stateUpper = state.toUpperCase()
+       console.log('uppercase: ' +stateUpper)
+          
+    }
