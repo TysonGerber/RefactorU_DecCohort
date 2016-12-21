@@ -119,12 +119,14 @@ console.log('count variable equals: ' + count())
 
 var evenNumbers = function(){
     var array = [];
-    for(var i = 0; i < 5; i++){
-        array.push(i)
-        //  if (i % 2 == 0){       
-        //  }         
-        }
-      return array;
+    for(var j = 0; j < 5; j++){
+        for(var i = 0; i < 5; i++){
+        
+        if (i % 2 == 0){ 
+                array.push(i)      
+        }         
+            }
+        return array;
+    }
 }
-
 console.log(evenNumbers())
