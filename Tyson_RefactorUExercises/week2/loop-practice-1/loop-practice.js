@@ -121,12 +121,17 @@ var evenNumbers = function(){
     var array = [];
     for(var j = 0; j < 5; j++){
         for(var i = 0; i < 5; i++){
-        
         if (i % 2 == 0){ 
-                array.push(i)      
+                array.push(i,i) 
+    var arrayReverse = array.slice().sort(function(a,b){
+        if(a < b) {return 1}
+        else if (b < a) {return -1}
+        else if (b === a) {return 0}
+    })
         }         
             }
-        return array;
+            console.log(array)
+        return arrayReverse;
     }
 }
 console.log(evenNumbers())
