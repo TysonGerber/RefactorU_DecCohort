@@ -84,7 +84,7 @@ document.addEventListener('keydown', function (event) {
 })
 
 
-
+/////////////////If you type in one of the swear words, then it matches and changes that certain swear word into a clean word.
 
 noSwearingInput.addEventListener('keyup', function (event) {
     console.log(event.target.value)
@@ -92,13 +92,88 @@ noSwearingInput.addEventListener('keyup', function (event) {
 
     //event.preventDefault()
     var wordArray = event.target.value
+        
+var funnyWords = function () {
+   
     for (var i = 0; i < wordArray.length; i++) {
-        if (bannedWords.indexOf(wordArray) != -1) {
-            event.target.value = ''
-        }
+       
+        if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'fuck') {
+            return 'Fork'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'shit') {
+            return 'Sheep'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'damn') {
+            return 'Dooooooooom!!!'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'bitch') {
+            return 'Bajazzafrical'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'pussy') {
+            return 'Pedestroid'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'asshole') {
+            return 'Aye-yup'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'cock') {
+            return 'Cankles'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'dick') {
+            return 'Discombobafryer'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'slut') {
+            return 'Shaboosh'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'piss') {
+            return 'Pipshe'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'fag') {
+            return 'Floop'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'cunt') {
+            return 'Cambria'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'ass') {
+            return 'acoria'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'arsehole') {
+            return 'agouti'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'bloody') {
+            return 'Blunderbuss'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'motherfucker') {
+            return 'Mugwump'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'penis') {
+            return 'Pettifogger (you have to try harder :)'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'cocksucker') {
+            return 'Collywobbles'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'boobs') {
+           console.log('Batrachomyomachy')
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'boobies') {
+            return 'belliferous'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'breasts') {
+            return 'Bumbershoot'
+        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'nipples') {
+            return 'Namby-pamby'
+        } else
+            console.log('unknown bad word')
     }
 
+}
+funnyWords();
 })
+
+
+
+
+
+
+
+
+
+
+// noSwearingInput.addEventListener('keyup', function (event) {
+//     console.log(event.target.value)
+//     console.log('event')
+
+//     //event.preventDefault()
+//     var wordArray = event.target.value
+//     for (var i = 0; i < wordArray.length; i++) {
+//         if (bannedWords.indexOf(wordArray) != -1) {
+//             event.target.value = ''
+//         }
+//     }
+
+// })
+
+
+
 
       
 var funnyWords = function () {
@@ -155,6 +230,23 @@ var funnyWords = function () {
 
 }
 funnyWords();
+
+
+// need to write a string that goes 
+// var wordArray = prompt('write a string')
+// console.log(wordArray)
+// function titleCase() {
+//      replaceWords = wordArray.toLowerCase().split(' ');
+// console.log(wordArray)
+//      for(var i = 0; i < replaceWords.length; i++) {
+//           var letters = replaceWords.split('');
+//           letters = letters.toUpperCase();
+//           replaceWords = letters.join('');
+//      }
+//      console.log(wordArray)
+//      console.log(replaceWords.join(' '));
+// }
+
 
 
 // var wordArray = prompt('type in hello')
