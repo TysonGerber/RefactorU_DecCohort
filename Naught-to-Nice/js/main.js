@@ -23,18 +23,18 @@ var bannedWords = [
     'boobies',
     'breasts',
     'nipples',
-    
 
 
-] 
-noSwearingInput.addEventListener('keyup', function(event){
+
+]
+noSwearingInput.addEventListener('keyup', function (event) {
     console.log(event.target.value)
     console.log('event')
 
     //event.preventDefault()
     var wordArray = event.target.value
-    for(var i = 0; i < wordArray.length; i++){
-        if(bannedWords.indexOf(wordArray) != -1){
+    for (var i = 0; i < wordArray.length; i++) {
+        if (bannedWords.indexOf(wordArray) != -1) {
             event.target.value = ''
         }
     }
@@ -42,16 +42,16 @@ noSwearingInput.addEventListener('keyup', function(event){
 })
 
 
-document.addEventListener('keydown', function(event){
-    if(event.key === ''){
-    // event.preventDefault()
+document.addEventListener('keydown', function (event) {
+    if (event.key === '') {
+        // event.preventDefault()
     }
 })
 
 
-document.addEventListener('keydown', function(event){
-    if(event.key === 'k'){
-    // event.preventDefault()
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'k') {
+        // event.preventDefault()
     }
 })
 
@@ -60,11 +60,11 @@ document.addEventListener('keydown', function(event){
 
 
 
-noSwearingInput.addEventListener('keyup', function(event){
-    
+noSwearingInput.addEventListener('keyup', function (event) {
+
     var wordArray = event.target.value
-    for(var i = 0; i < wordArray.length; i++){
-        if(bannedWords.indexOf(wordArray) != -1){
+    for (var i = 0; i < wordArray.length; i++) {
+        if (bannedWords.indexOf(wordArray) != -1) {
             event.target.value = ''
         }
     }
@@ -72,29 +72,105 @@ noSwearingInput.addEventListener('keyup', function(event){
 })
 
 
-document.addEventListener('keydown', function(event){
-    if(event.key === ''){
-    // event.preventDefault()
+document.addEventListener('keydown', function (event) {
+    if (event.key === '') {
+        // event.preventDefault()
     }
 })
 
 
-document.addEventListener('keydown', function(event){
-    if(event.key === 'k'){
-    // event.preventDefault()
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'k') {
+        // event.preventDefault()
     }
 })
 
 
-var test = function(){
-    
-    for(var i = 0; i < wordArray.length; i++){
-        if(wordArray === 'hello') {
-            return  'hi'
-        }else {
+
+
+noSwearingInput.addEventListener('keyup', function (event) {
+    console.log(event.target.value)
+    console.log('event')
+
+    //event.preventDefault()
+    var wordArray = event.target.value
+    for (var i = 0; i < wordArray.length; i++) {
+        if (bannedWords.indexOf(wordArray) != -1) {
+            event.target.value = ''
+        }
+    }
+
+})
+
+
+var wordArray = prompt('type in hello')
+
+var test = function () {
+
+    for (var i = 0; i < wordArray.length; i++) {
+        if (wordArray === 'hello') {
+            return 'hi'
+        } else {
             return 'this didn\'t work'
         }
     }
 }
 
 test('hello')
+
+
+var bannedWords = prompt('type in hello')
+    var 
+var funnyWords = function () {
+    for (var i = 0; i < bannedWords.length; i++) {
+       
+        if (bannedWords === 'fuck') {
+            return 'Fork'
+        } else if (bannedWords === 'shit') {
+            return 'Sheep'
+        } else if (bannedWords === 'damn') {
+            return 'Dooooooooom!!!'
+        } else if (bannedWords === 'bitch') {
+            return 'Bajazzafrical'
+        } else if (bannedWords === 'pussy') {
+            return 'Pedestroid'
+        } else if (bannedWords === 'asshole') {
+            return 'Aye-yup'
+        } else if (bannedWords === 'cock') {
+            return 'Cankles'
+        } else if (bannedWords === 'dick') {
+            return 'Discombobafryer'
+        } else if (bannedWords === 'slut') {
+            return 'Shaboosh'
+        } else if (bannedWords === 'piss') {
+            return 'Pipshe'
+        } else if (bannedWords === 'fag') {
+            return 'Floop'
+        } else if (bannedWords === 'cunt') {
+            return 'Cambria'
+        } else if (bannedWords === 'ass') {
+            return 'acoria'
+        } else if (bannedWords === 'arsehole') {
+            return 'agouti'
+        } else if (bannedWords === 'bloody') {
+            return 'Blunderbuss'
+        } else if (bannedWords === 'motherfucker') {
+            return 'Mugwump'
+        } else if (bannedWords === 'penis') {
+            return 'Pettifogger (you have to try harder :)'
+        } else if (bannedWords === 'cocksucker') {
+            return 'Collywobbles'
+        } else if (bannedWords === 'boobs') {
+            console.log('Batrachomyomachy')
+        } else if (bannedWords === 'boobies') {
+            return 'belliferous'
+        } else if (bannedWords === 'breasts') {
+            return 'Bumbershoot'
+        } else if (bannedWords === 'nipples') {
+            return 'Namby-pamby'
+        } else
+            console.log('unknown bad word')
+    }
+
+}
+funnyWords();
