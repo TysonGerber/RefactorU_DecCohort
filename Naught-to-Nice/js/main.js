@@ -23,10 +23,8 @@ var bannedWords = [
     'boobies',
     'breasts',
     'nipples',
-
-
-
 ]
+
 noSwearingInput.addEventListener('keyup', function (event) {
     console.log(event.target.value)
     console.log('event')
@@ -102,27 +100,10 @@ noSwearingInput.addEventListener('keyup', function (event) {
 
 })
 
-
-var wordArray = prompt('type in hello')
-
-var test = function () {
-
-    for (var i = 0; i < wordArray.length; i++) {
-        if (wordArray === 'hello') {
-            return 'hi'
-        } else {
-            return 'this didn\'t work'
-        }
-    }
-}
-
-test('hello')
-
-
-var bannedWords = prompt('type in hello')
-    var 
+      
 var funnyWords = function () {
-    for (var i = 0; i < bannedWords.length; i++) {
+   
+    for (var i = 0; i < bannedWords[i].length; i++) {
        
         if (bannedWords === 'fuck') {
             return 'Fork'
@@ -161,7 +142,7 @@ var funnyWords = function () {
         } else if (bannedWords === 'cocksucker') {
             return 'Collywobbles'
         } else if (bannedWords === 'boobs') {
-            console.log('Batrachomyomachy')
+           console.log('Batrachomyomachy')
         } else if (bannedWords === 'boobies') {
             return 'belliferous'
         } else if (bannedWords === 'breasts') {
@@ -174,3 +155,20 @@ var funnyWords = function () {
 
 }
 funnyWords();
+
+
+// var wordArray = prompt('type in hello')
+
+// var test = function () {
+
+//     for (var i = 0; i < wordArray.length; i++) {
+//         if (wordArray === 'hello') {
+//             return 'hi'
+//         } else {
+//             return 'this didn\'t work'
+//         }
+//     }
+// }
+
+// test('hello')
+
