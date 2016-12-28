@@ -91,18 +91,69 @@ var bannedWords = [
 
 var wordArray = bannedWords.toString() //string
 
+function loopLetters() {
 // loop through each letter and see if it matches any swear word in the list
-var convert = wordArray.split('').slice('') //turn string into an array
-console.log(convert)
+var loopLetters = wordArray.toLowerCase().split('').slice('') //turn string into an array
+// console.log(loopLetters)
 
 var array = [];
-for(var i = 0; i < convert.length; i++){ //loop through each letter 
-    console.log(convert[i]) 
-    if (convert[i] === 'hell'){
-        array.push('heck')
-        
-    }else{
-      
+for(var i = 0; i < loopLetters.length; i++){ //loop through each letter 
+    // console.log(loopLetters[i]) 
+        if (bannedWords === 'fuck') {
+            return 'Fork'
+        } else if (bannedWords === 'shit') {
+            return 'Sheep'
+        } else if (bannedWords === 'damn') {
+            return 'Dooooooooom!!!'
+        } else if (bannedWords === 'bitch') {
+            return 'Bajazzafrical'
+        } else if (bannedWords === 'pussy') {
+            return 'Pedestroid'
+        } else if (bannedWords === 'asshole') {
+            return 'Aye-yup'
+        } else if (bannedWords === 'cock') {
+            return 'Cankles'
+        } else if (bannedWords === 'dick') {
+            return 'Discombobafryer'
+        } else if (bannedWords === 'slut') {
+            return 'Shaboosh'
+        } else if (bannedWords === 'piss') {
+            return 'Pipshe'
+        } else if (bannedWords === 'fag') {
+            return 'Floop'
+        } else if (bannedWords === 'cunt') {
+            return 'Cambria'
+        } else if (bannedWords === 'ass') {
+            return 'acoria'
+        } else if (bannedWords === 'arsehole') {
+            return 'agouti'
+        } else if (bannedWords === 'bloody') {
+            return 'Blunderbuss'
+        } else if (bannedWords === 'motherfucker') {
+            return 'Mugwump'
+        } else if (bannedWords === 'penis') {
+            return 'Pettifogger (you have to try harder :)'
+        } else if (bannedWords === 'cocksucker') {
+            return 'Collywobbles'
+        } else if (bannedWords === 'boobs') {
+           console.log('Batrachomyomachy')
+        } else if (bannedWords === 'boobies') {
+            return 'belliferous'
+        } else if (bannedWords === 'breasts') {
+            return 'Bumbershoot'
+        } else if (bannedWords === 'nipples') {
+            return 'Namby-pamby'
+        } else
+            console.log('unknown bad word')
     }
 
 }
+funnyWords();
+    var convert = loopLetters
+   array.push(convert)
+      
+    }
+
+   console.log(array)
+}
+loopLetters();
