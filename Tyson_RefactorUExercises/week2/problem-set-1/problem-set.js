@@ -1,3 +1,10 @@
+/*******************************************************
+ * 
+ * EXERCISE 1
+ * 
+ ******************************************************/
+ 
+
 /* Write a function called letterCapitalize which takes a single string parameter and capitalizes the first letter of each word in the string. 
 You can assume that words in the input string will be separated by only one space.
 */
@@ -25,6 +32,63 @@ for (var i = 0; i < capFirst.length; i++){
 letterCapitalize('thIs iS My seNTence')
 
 
+/*******************************************************
+ * 
+ * EXERCISE 2
+ * 
+ ******************************************************/
+ 
+
+
+
+/* Write a function called wordCount which takes a single string parameter and 
+returns the number of words the string contains (ie. "Never eat shredded wheat"
+ would return 4). You can assume that words in the input string will be separated 
+ by only one space.
+*/
+
+function wordCount(string) {
+  var stringCopy = string.slice()
+  var stringArray = stringCopy.split(' ')
+  console.log(stringArray.length)
+
+}
+wordCount('Never eat shredded wheat')
+
+
+/*******************************************************
+ * 
+ * BONUS EXERCISE
+ * 
+ ******************************************************/
+ 
+
+
+
+/* Bonus: Write a function called primeTime that takes a single number parameter and returns true if the parameter is
+ a prime number, otherwise false. The range will be between 1 and 216.
+*/
+
+
+function primeTime(number){
+if(number <= 216 && number >= 1){ 
+  console.log(number) 
+  console.log(true);
+}else{
+  console.log(false);
+}
+
+}
+primeTime(2)
+primeTime('hello')
+
+/*******************************************************
+ * 
+ * MY BONUS EXERCISE
+ * 
+ ******************************************************/
+ 
+//Loop throught the string and when you find the word bad replace it with the word good
 function changeWord(string){
   var copyString = string.toLowerCase().slice()
   var arrayString = copyString.split(' ')
