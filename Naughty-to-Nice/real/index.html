@@ -10,22 +10,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
     <link rel="stylesheet" href='./css/main.css'>
     <script src='./controller/controller.js'></script>
+    <script src='/santa.jpg'></script>
 
    
 </head>
 
 <body ng-controller='niceController as nCtrl'>
-        <h1>Naughty to Nice </h1>
+        <h1 class='relative'>Naughty to Nice</h1>
 
-        {{nCtrl.greeting}}
     <div class="container">
         <div class="row">
             <form>
-            <div><input class='no-swearing'></div>
-            </div>
+                <div class='border'>
+                    <div><img src='/santa.jpg' class='bgImg relative' alt='A Santa with tattos that say Naught on one arm and Nice on the other'></div>
+                    <div><input class='no-swearing input absolute'></div>
+                </div>
             </form>
         </div>
     </div>
+
+    <!--<div class="box1 relative">Relative
+        </div>
+         <div class="box2 relative">Absolute
+        </div>-->
     <script src='./js/main.js'></script>
 </body>
 

@@ -2,11 +2,65 @@
 You can assume that words in the input string will be separated by only one space.
 */
 
+// var str = prompt('write a sentence')
+
+function letterCapitalize(string){
+  var letterCap = string.toLowerCase().slice()
+    // console.log(letterCap)
+  var capFirst = letterCap.split(' ')
+    // console.log(capFirst)
+var array = [];
+for (var i = 0; i < capFirst.length; i++){
+    // console.log(capFirst[i][0].toUpperCase())
+    var firstCap = capFirst[i][0].toUpperCase() + capFirst[i].substring(1)
+     
+      array.push(firstCap)
+}
+    // for(var i = 0; i < capFirst.length; i++){
+    //   capFirst.join(' ')
+    //   console.log(capFirst)
+    // }
+     console.log(array.join(' '))
+}
+letterCapitalize('thIs iS My seNTence')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 function titleCase(str) {
-     words = str.toLowerCase().split(' ');
+     words = str.toLowerCase().split(' '); //split on empty string will split on each letter and then on the for loop will loop through each letter. // split with space will split it between the spacea then runs throught the for loop.
 
      for(var i = 0; i < words.length; i++) {
           var letters = words[i][0].split('');
