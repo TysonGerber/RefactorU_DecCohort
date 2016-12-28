@@ -3,12 +3,29 @@ h1 {
      color: white;
      font-family: 'Irish Grover', cursive;
   text-align: center;
-       top : 30%;
-  transform: translateY(-50%) translateX(-10%);
-  left : 50%;
+
+  font-size: 50px;
      
 }
 
+.naughtyText{
+  top : 30%;
+  transform: translateY(-50%) translateX(-48%);
+  left : 50%;
+}
+
+.toText{
+  position: relative;
+ -ms-transform: rotate(-15deg); /* IE 9 */
+    -webkit-transform: rotate(-15deg); /* Chrome, Safari, Opera */
+    transform: rotate(-15deg);
+  color: rgba(0,0,0,0.6);
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  margin-top: 569px;
+  font-size: 60px;
+}
 
 body{
   background: url('/santa.jpg') no-repeat center center fixed; 
@@ -16,6 +33,7 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  max-width: 1363px;
 }
 .relative{
   position: relative;
@@ -33,6 +51,7 @@ body{
   top : 30%;
   transform: translateY(-50%) translateX(-55%);
   left : 50%;
+  margin-top: 40px;
   
 }
 .input:focus {
@@ -62,6 +81,8 @@ position: relative;
   transform: translateY(-50%) translateX(-50%);
   left : 50%;
 }*/
+
+/*
 @media screen and (max-width: 480px) {
     html {
 
@@ -69,4 +90,4 @@ position: relative;
   background-size: 800px;
 
     }
-}
+}*/
