@@ -1,0 +1,1 @@
+if you don't want an event to do anything when clicked on you can do an event.stopPropagation();

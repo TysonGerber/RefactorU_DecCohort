@@ -1,0 +1,10 @@
+Bootstrap: A CSS framework/stylesheet built by twitter
+
+Bootstrap Grid System:
+
+    Device sizes: xs, sm, md, lg
+
+    You have 12 different columns.
+
+
+Check out: Modals, Navbar, Accordion, Carousel, and especially Grid System.

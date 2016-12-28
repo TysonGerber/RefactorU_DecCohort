@@ -1,0 +1,48 @@
+
+.outer{
+    height: 500px;
+    width: 500px;
+    display: inline-block;
+    background-color: green;
+    position: relative;
+}
+
+.inner {
+     height: 3300px;
+    width: 300px;
+    display: inline-block;
+    background-color: blue;
+    margin: 100px
+}
+
+.absolute{
+    position: absolute;
+    height: 50px;
+    width: 100px;
+    top: 10px;
+    right: -60px;
+    background-color: ghostwhite
+}
+
+.box{
+    background-color: dodgerblue;
+    height: 200px;
+    width: 300px;
+    border: 3px solid firebrick;
+    padding: 20px;
+    margin: 10px;  
+}
+
+
+.floaty-box {
+    float: right;
+}
+
+.box2{
+    background-color: purple;
+    height: 200px;
+    width: 300px;
+    border: 3px solid lightseagreen;
+    padding: 20px;
+    margin: 10px;  
+}

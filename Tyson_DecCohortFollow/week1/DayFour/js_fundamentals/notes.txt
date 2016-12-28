@@ -1,0 +1,161 @@
+Syntax: syntax of a computer language is the set of rules that defines the combinations of symbols that are considered to be a correctly structured document or fragment in that language.
+
+Comments:
+
+    <!-- html comment -->
+    /* css comment */
+    // jaascript single line comment.
+    /* javascript 
+    multi-line comment*/
+
+Variables
+
+    var x = 2 // x is the variable and 2 is the value of that variable x.
+    var foo; // declare variable named foovar numberOfStaff = 5; // defining a variable by giving it a value.
+    var name = "Joe";  //variables can be of different types.
+    var otherName = name; //you can set variable to another variable.
+    $scope = myScope;
+
+
+Rules:
+    CAN:
+        variables must start with a letter, underscore or $. You can also use underscores, numbers.
+        variables can use upper or lower case letters.
+        variable names should not have special character
+
+    CANNOT:
+        me&you
+        me+you
+        student#1
+        snake-case-names-are-not-ok
+
+Variable Primitive Types:
+    String- the value of string can be expressed with single quotes ' or double quotes "
+    Number 
+    Boolean- True or False
+    Null
+    Undefined
+
+Number-
+    - a number can be an integer, float, exponent, long, double, etc.
+
+Literals-
+    var x = 2; //2 is a Literal 
+    2 // simple integer3.1459 // decimal (float, long, double)
+    1e6 // scientific notation, exponentials, etc.
+
+String Literals
+    'hello'
+    'quotation for famous sayings'
+    'we don't care about special characters!'
+    'he said, "we don\'t care!"' // use a backslash to 'literal' or 'escape' a character
+    how do we litera. a backslash? \my value\ like this add extra backslash \\my value\\
+    
+    There are also special characters like EOL (end of line)/return/cariage return/newline that is represented as \n
+    'line 1\nline2'
+    looks like:
+    line 1
+    line 2
+    when you print it out
+
+    There are other special characters like \t (tab) that you can Google if needed.
+
+
+Numberica Operators-
+    + -addition
+    - -subtraction
+    / -division
+    x -multiplication
+    % -modulus
+
+String Operators-
+    + // concatenation, combine two strings together.
+    Example:
+    fname = 'joe';
+    lname = 'smith';
+    fullname = fname + lname //joesmith
+
+Binary operators operate using two variables/values.
+
+Unary operators operate on a single variable:
+    ++ incrementor
+    -- decrementor
+    ** exponent
+
+Example
+index++ // this is the same as saying index = index +1
+
+Strings are Objects (like most everything else in Javascript)
+
+    var str = "string"
+    str.length // 6
+    str[0] // 's'
+    str[5] // 'g'
+    str[6] // Undefined
+
+Boolean
+    Boolean/Comparison Operators
+        > greater than
+        >= greater than or equal to
+        < less than 
+        <= less than or equal to
+        == is equal
+        === is literally equal, is the same
+
+DON'T USE '=' alone. That is an assignment operator.
+    (joe=3) this is true because you are assigning joe to 3 joe = 3.
+    (joe == 3) this would be false because your asking does joe have the same value as 3?
+    (joe === 3) this would be false because your asking is joe EXACTLY or STRICTLY equal to 3?
+
+Logical Operators
+
+    ! not or bang
+    != not equal to
+    && and
+    || or
+
+
+Statements
+    Whitespace is ignored in statements. Statements can optionally end with a semicolon.
+
+
+
+Complied language: turns into machine language
+    A compiled language is a programming language whose implementations are typically compilers (translators that generate machine code from source code), and not interpreters (step-by-step executors of source code, where no pre-runtime translation takes place).
+
+
+Interpreted language: you give the file to a program and it intreprets the program for you.
+
+Conditional Statements:
+    "If I have 3 cupes of hot chocolate, I'm warm and happy!"
+    if (cups = 3) {
+        console.log('I'm warm and happy')
+    }
+
+    Generically:
+     if(condition) {
+            //then do this stuff.
+     }else if {
+            // do this stuff instead
+     } else {
+     // if none of the above lastly do this.
+     }
+
+    
+Truthy && Falsey
+    Falsey:
+        There are some 'falsey' conditions in javascript that will resolve to false, but may not be obvious
+        NaN - not a number
+        0 - is falsey. Any non-zero number is Truthy
+        null and undefined are falsey
+        all other values are truthy.
+
+    Truthy:
+        if it has a value it is true. 
+        joe is true,
+        joe + 6 is true
+
+A few handy quick javascript commands
+
+console.log(STRING)
+alert(STRING)

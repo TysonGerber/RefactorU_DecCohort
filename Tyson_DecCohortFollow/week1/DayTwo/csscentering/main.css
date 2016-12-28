@@ -1,0 +1,55 @@
+.outer{
+    height: 500px;
+    width: 500px;
+    background-color: cyan;
+}
+
+.inner{
+    height: 250px;
+    width: 250px;
+    background-color: dodgerblue;
+    margin: auto;
+}
+
+.outer2{
+    height: 500px;
+    width: 500px;
+    background-color: cyan;
+    display: inline-block;
+    text-align: center; 
+}
+
+.inner2{
+    height: 250px;
+    width: 250px;
+    background-color: dodgerblue;
+    margin: auto;  /*margin: auto; this won't work on inline-block elements!*/
+    display: inline-block;
+    text-align: initial; /* saying whatever the text align was. Put it back to the way it was naturally.*/
+   
+}
+
+.outer3{
+    height: 500px;
+    width: 500px;
+    background-color: cyan;
+    display: inline-block;
+    position: relative;
+}
+
+.inner3{
+    height: 150px;
+    width: 150px;
+    background-color: dodgerblue;
+    margin: auto;  /*margin: auto; this won't work on inline-block elements!*/
+    display: inline-block;
+    position: absolute;
+    top: 50%; /* 50% of the OUTER div or box*/
+    transform: translateY(-50%) translateX(-50%); /*50% of the INNER div or this box*/ 
+    left: 50%;
+
+    /* THIS WILL NOT WORK LIKE YOU THINK IT WILL. TRANSLATE X WILL OVER WRITE Y AND NOT TURN OUT THE WAY YOU WANT IT TO.*/
+    /*transform: translateY(-50%); 
+    transform: translateX(-50%);*/
+
+}

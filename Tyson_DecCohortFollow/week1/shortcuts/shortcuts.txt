@@ -1,0 +1,10 @@
+Cmd-Opt-i 
+Cmd-c
+Cmd-v
+Cmd-x
+Cmd-x
+
+Editors
+cmd-d
+cmd-shift-f -beautify your code.
+Cmd-o -open

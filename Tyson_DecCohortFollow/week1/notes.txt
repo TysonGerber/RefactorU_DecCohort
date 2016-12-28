@@ -1,0 +1,43 @@
+> this is a specificity 
+
+
+There are 3 different ways to create style sheets:
+
+    External Style Sheet: 
+        <head>
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        </head>
+
+    Internal Style Sheet:
+        <head>
+            <style>
+                body {
+                    background-color: linen;
+                }
+
+                h1 {
+                    color: maroon;
+                    margin-left: 40px;
+                } 
+            </style>
+        </head>
+
+    Inline Style:
+        <h1 style="color:blue;margin-left:30px;">This is a heading.</h1>
+
+    Multiple Style Sheets
+    If some properties have been defined for the same selector (element) in different style sheets, the value from the last read style sheet will be used. 
+
+    Inline style (inside an HTML element)
+        External and internal style sheets (in the head section)
+        Browser default
+        So, an inline style (inside a specific HTML element) has the highest priority, which means that it will override a style defined inside the <head> tag, or in an external style sheet, or a browser default value.
+
+
+User Agent Stylesheet is how the webpage is styling the page by default
+
+
+Margin horizontally is like the sword analogy. If someone has a knofe that is 10 inches long and someone else has a sword that is 3 feet long and they just start walking towards each other. They won't stop with the 2 swords touch. But when the sword touches the other person. So the box will be 3 feet apart. NOT 3ft 10 inches.
+
+Page Gravity analogy will fall to the top left corner of the page. elements that are position static are considered unpositioned elements.
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app='app'>  
+
+<head>
+
+    <title>Intro to Angular</title>
+    <link rel='stylesheet' href='main.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src='main.js'></script>
+
+</head>
+
+<body >
+ <!--mustaches are angular variables-->
+ <div ng-controller='mainController'>
+   <h1 style='color:{{color}}'> Our first greeting: {{greeting}}  {{visitorName}}</h1> 
+   <input type="text" ng-model='visitorName' placeholder='type Hello then button'>
+   <button ng-click="changeGreeting()"> Change it up</button>
+ </div>
+ <div>
+    <h3>this is outside the scope of the controller<h3>
+    <h3> Our greeting outside scope doesn't work: {{greeting}} {{visitorName}}
+    </div>
+     <div ng-controller='secondController'>
+         <input type="text" ng-model="visitorName" placeholder="secondary input">
+    <h3>Secondary Controller<h3>
+    <h3> Our Secondary : {{secondaryGreeting}} {{visitorName}}
+    </div>
+    
+</body>
+
+</html>

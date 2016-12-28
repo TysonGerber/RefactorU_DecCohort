@@ -1,0 +1,70 @@
+body{
+    background-color: dodgerblue;
+}
+
+.inline-block{
+    display: inline-block;
+    font-size: 30px;
+}
+nav {
+    border-bottom: 2px solid black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.outer {
+
+    height: 500px;
+    max-width: 500px;
+    background-color: green;
+}
+
+.inner {
+    height: 300px;
+    width: 50vw;
+    background-color: purple;
+}
+nav ul li a {
+    color: darkslategrey;
+}
+
+
+
+
+
+
+@media only screen and (min-width: 992px) {
+	/****Ipad Landscape 1024 Container 970 ****/
+     body{
+        background-color: lightblue;
+    }
+    h1{
+        
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	/****Ipad Portrait 768 Container 750 ****/
+	
+	/*.portfolioContainer{ width:750px; margin:0px auto !important; }
+	.Portfolio-box{ height:250px;}*/
+     body{
+        background-color: purple;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+	/****Mobile Landscape 480 Container 100% ****/
+     body{
+        background-color: deeppink;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+            /****Mobile Portrait 320 ****/
+    body{
+        background-color: burlywood;
+    }   
+}
+	

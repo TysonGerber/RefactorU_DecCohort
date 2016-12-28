@@ -1,0 +1,29 @@
+	Setting Up Your Mac
+
+
+	- Chrome
+		○ Install Chrome
+		
+	- Editor (Atom, Visual Studio Code, Sublime, etc..)
+		○ Install preferred editor
+		
+	- Brew
+		○ Open chrome and look for Brew.sh
+		○ Copy what is on the home page:  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+		○ Cut and paste  this in to your terminal so you can download it.
+		
+	- NODE/NPM
+		○ To install Node then type in the terminal:  brew install node
+			§ Type into the terminal: which node
+				□ This will show you where your node is installed.
+
+	- npm - node package manager - will allow you to run a server on your machine
+		○ To install npm then type in the terminal: npm install -g http-server
+			§ Type into the terminal: which npm 
+				□ This will show you where your npm is installed.
+			
+		
+	- GIT
+		○ To install GIT then type in the terminal:  brew install GIT
+			§ Type into the terminal: which git 
+				□ This will show you where your npm or node is installed.
