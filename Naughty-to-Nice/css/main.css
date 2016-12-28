@@ -12,6 +12,8 @@ h1 {
   top : 30%;
   transform: translateY(-50%) translateX(-48%);
   left : 50%;
+  font-size: 4vw;
+  text-align: center;
 }
 
 .toText{
@@ -83,11 +85,17 @@ position: relative;
 }*/
 
 /*
-@media screen and (max-width: 480px) {
-    html {
+@media screen and (min-width: 1336px) {
+ .naughtyText {
+    margin-left: 150px;
 
-      background: no-repeat center center fixed; 
-  background-size: 800px;
+    }
+}
+
+
+@media screen and (min-width: 1442px) {
+ .naughtyText {
+    margin-left: 150px;
 
     }
 }*/

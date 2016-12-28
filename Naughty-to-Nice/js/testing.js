@@ -35,246 +35,85 @@ var bannedWords = [
 //adding an event listener that when a key is lifted it records what letter was entered and shown in the console
 
 noSwearingInput.addEventListener('keyup', function (event) {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     console.log('event')
 
     var wordArray = event.target.value     // the wordArray is assigned or gets the event letters that are entered
-    for (var i = 0; i < wordArray.length; i++) { // we then want to loop through each word in that array
-        if (bannedWords.indexOf(wordArray) != -1) { // search through the banned words and it looks for the 1st time it sees one if it does then it returns an empty string if not then the value is returned -1.
-            event.target.value = ''
-        }
+
+    var copyString = wordArray.toLowerCase().slice()
+    var arrayString = copyString.split(' ')
+    for (var i = 0; i < arrayString.length; i++) {// we then want to loop through each word in that array
+
+        arrayString[i] = Change(arrayString[i]) 
+
+        
+
     }
+    event.target.value = arrayString.join(' ')
+    console.log(event.target.value)
 
 })
-
-
-// document.addEventListener('keydown', function (event) {
-//     if (event.key === '') {
-//         // event.preventDefault()
-//     }
-// })
-
-
-// document.addEventListener('keydown', function (event) {
-//     if (event.key === 'k') {
-//         // event.preventDefault()
-//     }
-// })
-
-//whatever the value in the input and the key code is going to complete it then stop it
-
-
-
-
-
 
 /////////////////If you type in one of the swear words, then it matches and changes that certain swear word into a clean word.
 
-noSwearingInput.addEventListener('keyup', function (event) {
-    console.log(event.target.value)
-    console.log('event')
 
-    //event.preventDefault()
-    var wordArray = event.target.value
-        
-var funnyWords = function () {
-   
-    for (var i = 0; i < wordArray.length; i++) {
-       
-        if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'fuck') {
-            return 'Fork'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'shit') {
-            return 'Sheep'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'damn') {
-            return 'Dooooooooom!!!'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'bitch') {
-            return 'Bajazzafrical'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'pussy') {
-            return 'Pedestroid'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'asshole') {
-            return 'Aye-yup'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'cock') {
-            return 'Cankles'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'dick') {
-            return 'Discombobafryer'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'slut') {
-            return 'Shaboosh'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'piss') {
-            return 'Pipshe'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'fag') {
-            return 'Floop'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'cunt') {
-            return 'Cambria'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'ass') {
+var Change = function (word) {
+
+        if (word == 'fuck') {
+            return 'fork'
+        } else if (word == 'shit') {
+            return 'sheep'
+        } else if (word == 'damn') {
+            return 'dooooooooom!!!'
+        } else if (word == 'bitch') {
+            return 'bajazzafrical'
+        } else if (word == 'pussy') {
+            return 'pedestroid'
+        } else if (word == 'asshole') {
+            return 'aye-yup'
+        } else if (word == 'cock') {
+            return 'cankles'
+        } else if (word == 'dick') {
+            return 'discombobafryer'
+        } else if (word == 'slut') {
+            return 'shaboosh'
+        } else if (word == 'piss') {
+            return 'pipshe'
+        } else if (word == 'fag') {
+            return 'floop'
+        } else if (word == 'cunt') {
+            return 'cambria'
+        } else if (word == 'ass') {
             return 'acoria'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'arsehole') {
+        } else if (word == 'arsehole') {
             return 'agouti'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'bloody') {
-            return 'Blunderbuss'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'motherfucker') {
-            return 'Mugwump'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'penis') {
-            return 'Pettifogger (you have to try harder :)'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'cocksucker') {
-            return 'Collywobbles'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'boobs') {
-           console.log('Batrachomyomachy')
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'boobies') {
+        } else if (word == 'bloody') {
+            return 'blunderbuss'
+        } else if (word == 'motherfucker') {
+            return 'mugwump'
+        } else if (word == 'penis') {
+            return 'pettifogger (you have to try harder :)'
+        } else if (word == 'cocksucker') {
+            return 'collywobbles'
+        } else if (word == 'boobs') {
+            return (word == 'batrachomyomachy')
+        } else if (word == 'boobies') {
             return 'belliferous'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'breasts') {
-            return 'Bumbershoot'
-        } else if (bannedWords.indexOf(wordArray) != -1 && wordArray === 'nipples') {
-            return 'Namby-pamby'
-        } else
-            console.log('unknown bad word')
-    }
-
+        } else if (word == 'breasts') {
+            return 'bumbershoot'
+        } else if (word == 'nipples') {
+            return 'namby-pamby'
+        } else if (word == 'hell') {
+            return 'help'
+        } else if (word == 'twat') {
+            return 'twitter'
+        }else if (word == 'boococky') {
+            return 'YOU ARE A SICK BASTARD!'
+        }else if (bannedWords === 'tit') {
+            return 'ticks'
+        }else if (bannedWords === 'suck') {
+            return 'super'
+        }else
+            return word 
 }
-funnyWords();
-})
-
-
-
-
-
-
-
-
-
-
-// noSwearingInput.addEventListener('keyup', function (event) {
-//     console.log(event.target.value)
-//     console.log('event')
-
-//     //event.preventDefault()
-//     var wordArray = event.target.value
-//     for (var i = 0; i < wordArray.length; i++) {
-//         if (bannedWords.indexOf(wordArray) != -1) {
-//             event.target.value = ''
-//         }
-//     }
-
-// })
-
-
-
-
-      
-
-var bannedWords = [
-    'fuck',
-    'shit',
-    'damn',
-    'bitch',
-    'pussy',
-    'asshole',
-    'cock',
-    'dick',
-    'slut',
-    'piss',
-    'fag',
-    'cunt',
-    'ass',
-    'arsehole',
-    'bloody',
-    'motherfucker',
-    'penis',
-    'cocksucker',
-    'boobs',
-    'boobies',
-    'breasts',
-    'nipples',
-]
-console.log(bannedWords)
-
-var funnyWords = function () {
-   
-    for (var i = 0; i < bannedWords[0].length; i++) {
-       console.log(bannedWords[i])
-        if (bannedWords === 'fuck') {
-            return 'Fork'
-        } else if (bannedWords === 'shit') {
-            return 'Sheep'
-        } else if (bannedWords === 'damn') {
-            return 'Dooooooooom!!!'
-        } else if (bannedWords === 'bitch') {
-            return 'Bajazzafrical'
-        } else if (bannedWords === 'pussy') {
-            return 'Pedestroid'
-        } else if (bannedWords === 'asshole') {
-            return 'Aye-yup'
-        } else if (bannedWords === 'cock') {
-            return 'Cankles'
-        } else if (bannedWords === 'dick') {
-            return 'Discombobafryer'
-        } else if (bannedWords === 'slut') {
-            return 'Shaboosh'
-        } else if (bannedWords === 'piss') {
-            return 'Pipshe'
-        } else if (bannedWords === 'fag') {
-            return 'Floop'
-        } else if (bannedWords === 'cunt') {
-            return 'Cambria'
-        } else if (bannedWords === 'ass') {
-            return 'acoria'
-        } else if (bannedWords === 'arsehole') {
-            return 'agouti'
-        } else if (bannedWords === 'bloody') {
-            return 'Blunderbuss'
-        } else if (bannedWords === 'motherfucker') {
-            return 'Mugwump'
-        } else if (bannedWords === 'penis') {
-            return 'Pettifogger (you have to try harder :)'
-        } else if (bannedWords === 'cocksucker') {
-            return 'Collywobbles'
-        } else if (bannedWords === 'boobs') {
-           console.log('Batrachomyomachy')
-        } else if (bannedWords === 'boobies') {
-            return 'belliferous'
-        } else if (bannedWords === 'breasts') {
-            return 'Bumbershoot'
-        } else if (bannedWords === 'nipples') {
-            return 'Namby-pamby'
-        } else
-            console.log('unknown bad word')
-    }
-
-}
-funnyWords();
-
-
-// need to write a string that goes 
-// var wordArray = prompt('write a string')
-// console.log(wordArray)
-// function titleCase() {
-//      replaceWords = wordArray.toLowerCase().split(' ');
-// console.log(wordArray)
-//      for(var i = 0; i < replaceWords.length; i++) {
-//           var letters = replaceWords.split('');
-//           letters = letters.toUpperCase();
-//           replaceWords = letters.join('');
-//      }
-//      console.log(wordArray)
-//      console.log(replaceWords.join(' '));
-// }
-
-
-
-// var wordArray = prompt('type in hello')
-
-// var test = function () {
-
-//     for (var i = 0; i < wordArray.length; i++) {
-//         if (wordArray === 'hello') {
-//             return 'hi'
-//         } else {
-//             return 'this didn\'t work'
-//         }
-//     }
-// }
-
-// test('hello')
-
-
-
 // loop through each letter and see if it matches any swear word in the list

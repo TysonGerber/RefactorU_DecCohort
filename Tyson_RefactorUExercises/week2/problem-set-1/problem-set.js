@@ -25,6 +25,21 @@ for (var i = 0; i < capFirst.length; i++){
 letterCapitalize('thIs iS My seNTence')
 
 
+function changeWord(string){
+  var copyString = string.toLowerCase().slice()
+  var arrayString = copyString.split(' ')
+  for (var i = 0; i < arrayString.length; i++){
+    if(arrayString[i] == 'bad'){
+      arrayString[i] = 'good' 
+    }
+    
+    console.log(arrayString)
+  }
+}
+changeWord('this is bad')
+
+
+
 
 
 
