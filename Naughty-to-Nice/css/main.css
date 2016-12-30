@@ -9,9 +9,9 @@ h1 {
 }
 
 .naughtyText{
-  top : 30%;
+  /*top : 30%;
   transform: translateY(-50%) translateX(-48%);
-  left : 50%;
+  left : 50%;*/
   font-size: 4vw;
   text-align: center;
 }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app='intro' >  
+
+<head>
+
+    <title>Intro to Angular</title>
+    <!--<link rel='stylesheet' href='main.css'>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <link rel='stylesheet' href='main.css'>
+    <script src='main.js'></script>
+
+
+</head>
+
+<body ng-controller='introCtrl as iCtrl' >
+ <!--mustaches are angular variables-->
+
+
+<!--PART ONE-->
+<div >
+
+    {{iCtrl.greeting}}
+   <button ng-click='iCtrl.log()'>Console Log</button>
+
+
+   <button ng-click='iCtrl.log2()'>Some Text</button>
+    <h1>{{iCtrl.someText}}</h1>
+
+</div>
+
+
+<button ng-click='iCtrl.myList = !iCtrl.myList'>Unordered list</button>
+    <ol ng-show='iCtrl.myList'>
+        <li>Lions</li>
+        <li>Tiggers</li>
+        <li>Bears</li>
+    </ol>
+
+    <!--PART TWO-->
+
+    <!--FIRST TRY-->
+    <h1 ng-mouseover='iCtrl.over()' ng-mouseleave='iCtrl.leave()'  >Part 2 of Intro to Angular</h1><h1 ng-show='iCtrl.open'>!!!</h1>
+
+<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</p>
+
+    <!--WANTED TO IMPROVE IT-->
+    <div ng-mouseover='iCtrl.show()' ng-mouseleave='iCtrl.hide()'><h1>Part 3 of Intro to Angular <span ng-show='iCtrl.exc'>{{iCtrl.showText}}</span></h1></div>
+
+
+    <!--Angular Way-->
+    <p ng-class="{'changeColor':hover}" ng-mouseover='hover=true' ng-mouseleave='hover=false'>Get all your ducks in a row we need to dialog around your choice of work attire. Digital literacy proceduralize social currency nor loop back, for we need to start advertising on social media get all your ducks in a row. This is a no-brainer customer centric shelfware where do we stand on the latest client ask drink from the firehose. Product management breakout fastworks push back but are we in agreeance. Cross functional teams enable out of the box brainstorming get buy-in or we need more paper thinking outside the box put your feelers out, pixel pushing. I also believe it's important for every member to be involved and invested in our company and this is one way to do so. Streamline gain traction race without a finish line, yet please use "solutionise" instead of solution ideas! :). Organic growth we're ahead of the curve on that one this vendor is incompetent , or moving the goalposts product management breakout fastworks reach out window-licker. This is meaningless work flows , or take five, punch the tree, and come back in here with a clear head, for globalize productize. We want to see more charts. Price point UI blue money. Table the discussion it just needs more cowbell. We want to see more charts pull in ten extra bodies to help roll the tortoise, and high turnaround rate but drop-dead date run it up the flagpole. Golden goose synergize productive mindfulness can we take this offline turd polishing, or work flows . Value-added usabiltiy, but drill down pipeline. We're ahead of the curve on that one mobile friendly put in in a deck for our standup today and we need to dialog around your choice of work attire we've got to manage that low hanging fruit. </p>
+
+    <!--Wanted to try it the HTML way-->
+    <p id='change'>Get all your ducks in a row we need to dialog around your choice of work attire. Digital literacy proceduralize social currency nor loop back, for we need to start advertising on social media get all your ducks in a row. This is a no-brainer customer centric shelfware where do we stand on the latest client ask drink from the firehose. Product management breakout fastworks push back but are we in agreeance. Cross functional teams enable out of the box brainstorming get buy-in or we need more paper thinking outside the box put your feelers out, pixel pushing. I also believe it's important for every member to be involved and invested in our company and this is one way to do so. Streamline gain traction race without a finish line, yet please use "solutionise" instead of solution ideas! :). Organic growth we're ahead of the curve on that one this vendor is incompetent , or moving the goalposts product management breakout fastworks reach out window-licker. This is meaningless work flows , or take five, punch the tree, and come back in here with a clear head, for globalize productize. We want to see more charts. Price point UI blue money. Table the discussion it just needs more cowbell. We want to see more charts pull in ten extra bodies to help roll the tortoise, and high turnaround rate but drop-dead date run it up the flagpole. Golden goose synergize productive mindfulness can we take this offline turd polishing, or work flows . Value-added usabiltiy, but drill down pipeline. We're ahead of the curve on that one mobile friendly put in in a deck for our standup today and we need to dialog around your choice of work attire we've got to manage that low hanging fruit. </p>
+
+    <a confirmed-click = 'iCtrl.confirm' href='http://officeipsum.com/index.php'>Office Ipsum</a>
+
+
+
+
+
+
+
+
+
+<!--<div>
+    <input type='text' ng-model='iCtrl'>
+    <button ng-click='iCtrl.revealList()'>Reveal Ordered List</button>
+    <ul>
+        <li ng-repeat='reveal in iCtrl.reveal'>{{reveal}}</li>
+    </ul>
+</div>-->
+    
+</body>
+
+</html>

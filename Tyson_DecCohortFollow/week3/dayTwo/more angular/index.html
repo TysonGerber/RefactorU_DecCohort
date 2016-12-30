@@ -16,7 +16,7 @@
 
      <h1>{{mCtrl.title}}</h1>
      <input type'text' placeholder'Avenger Name' ng-model='mCtrlHero'>
-     <button ng-click='mCtrl.addHero()'ng-class'btn btn-danger'>Add Hero</button>
+     <button ng-click='mCtrl.addHero()'>Add Hero</button>
      <ol ng-class='mCtrl.listClass'>
          <li ng-repeat='hero in mCtrl.heroes'>{{hero}} is hero</li>
          <!--takes the array of heros = ['Hulk', 'Thor', 'Ironman']-->

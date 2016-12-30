@@ -1,0 +1,10 @@
+.city {
+    width: 95vw;
+    height: 95vh;
+}
+
+.spiderman {
+    width: 15vw;
+    height: 15vh;
+    position: absolute;
+}

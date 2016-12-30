@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html ng-app='schoolApp'>
+<head>  
+    <title>School Day</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src='/app.js'></script>
+    <script src='/factory.js'></script>
+    <script src='/studentController.js'></script>
+     <!--<script src='./controller/teacherController'></script>-->
+</head>
+
+<body ng-controller='StudentController as sCtrl'>
+    <!--I am going to take this angular variable and interpulate it-->
+    <h3>{{sCtrl.greeting}}</h3> 
+
+    <ol>
+
+        <li ng-repeat='student in sCtrl.data'>{{student.name}} </li>
+    </ol>
+    
+</body>
+</html>

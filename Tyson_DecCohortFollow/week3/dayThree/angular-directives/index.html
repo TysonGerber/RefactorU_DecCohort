@@ -1,0 +1,68 @@
+<!DOCTYPE>
+
+<html ng-app='worldMap'>  
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src='/main.js'></script>
+</head>
+
+<body ng-controller='worldPlaces as mapCtrl'>
+    <h1>{{mapCtrl.title}}</h1>
+  
+
+    <h3>A list that is sorted</h3>
+
+<ul>
+    <li ng-repeat="object in mapCtrl.sortedCountries"> {{object}}</li>
+   
+</ul>
+
+
+    <h3>Doing an event in ng-repeat</h3>
+
+<ul>
+    <li ng-repeat='country in mapCtrl.countryObjects' ng-click='mapCtrl.logMotto($index,country)'> 
+        <span style='background-color: blue'ng-show='mapCtrl.style'>{{country.name}} {{country.population}} and a motto of " {{country.motto}}</span>
+        <span style='background-color: red'ng-show='mapCtrl.style== false'>{{country.name}} {{country.population}} and a motto of " {{country.motto}}</span>
+    </li>
+   
+</ul>
+
+    <h3>A list of objects</h3>
+
+<ul>
+    <li ng-repeat='country in mapCtrl.countryObjects'> Country name is {{country.name}} and has a population of {{country.population}} and a motto of " {{country.motto}}</li>
+   
+</ul>
+
+
+  <h3>First ,  middle, and last</h3>
+    
+<ul>
+    <!--foreach object in counrtyObjects-->
+    <li ng-repeat='country in mapCtrl.countries'>
+        <!--ng-show takes a boolean value and only returns it if it's true-->
+        <span ng-show='$first'>The first country is {{country}}</span>
+        <span ng-show='$middle'>Then comes {{country}}</span>
+        <span ng-show='$last'>and the last is {{country}}</span>
+    </li>
+</ul>
+
+
+<h3>A list with a built-in index</h3>
+
+<ul>
+    <li ng-repeat='country in mapCtrl.countries'> {{$index}}{{country}}</li>
+    <li ng-repeat='(countryIndex,country) in mapCtrl.countries'> {{countryIndex}}{{country}}</li>
+
+
+</ul>
+
+</body>
+
+</html>
+
+<!--data binding // referring to when you type it takes the data 
+templating
+event handling-->

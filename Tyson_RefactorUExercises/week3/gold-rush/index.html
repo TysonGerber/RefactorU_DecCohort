@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app='spidermanApp'>
+<head>
+
+<title>Spiderman Sightings</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+<link rel='stylesheet' href='./main.css'>
+<script src='./main.js'></script>
+
+
+</head>
+
+
+<body ng-controller='spidermanController as sCtrl'>
+    <img class='spiderman' ng-repeat='display in sCtrl.displayArr' src='spiderman.gif'
+    ng-click='sCtrl.hideDisplay($index)'
+      style="left:{{display.x-100}}px; top:{{display.y-100}}px;" 
+        ng-if="!display.hide">
+    
+    <img class='city' src='dubai.jpg' ng-click='sCtrl.addDisplay($event)'>
+    {{sCtrl.greeting}}
+
+    
+        <button type="button" ng-click="sCtrl.showDisplay()">Unhide all markers</button>
+</body>
+
+</html>
