@@ -47,7 +47,15 @@ angular.module('intro', [])
      iCtrl.exc= false;
      iCtrl.showText = '!!!'
 
+     iCtrl.confirm = function($event){
+      if (!confirm('click ok to contine')){
+          event.preventDefault();
+      }
+      console.log($event)
 
+
+
+    }
    
 
 
@@ -71,7 +79,7 @@ angular.module('intro', [])
 
 
 
-    }
+    };
       
     
     
