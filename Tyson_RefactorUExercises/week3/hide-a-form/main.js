@@ -8,9 +8,9 @@ angular.module('hideForm',[])
         fCtrl.greeting = 'the form is working'
 
         fCtrl.formClick = function() {
-            console.log(formClick)
+        fCtrl.name
         }
-console.log(formClick)
+
 
 
 
