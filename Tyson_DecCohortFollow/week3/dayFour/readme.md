@@ -1,0 +1,1 @@
+controller controls part of a html document, controls specific chucks of html , divs,etc

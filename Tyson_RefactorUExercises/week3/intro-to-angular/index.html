@@ -5,7 +5,16 @@
 
     <title>Intro to Angular</title>
     <!--<link rel='stylesheet' href='main.css'>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
     <link rel='stylesheet' href='main.css'>
     <script src='main.js'></script>
 
@@ -17,9 +26,10 @@
 
 
 <!--PART ONE-->
+<h1>=-=-=-=-=-Part One-=-=-=-=-=-=</h1>
 <div >
 
-    {{iCtrl.greeting}}
+    <!--{{iCtrl.greeting}}-->
    <button ng-click='iCtrl.log()'>Console Log</button>
 
 
@@ -28,6 +38,7 @@
 
 </div>
 
+<p class='space'>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</p>
 
 <button ng-click='iCtrl.myList = !iCtrl.myList'>Unordered list</button>
     <ol ng-show='iCtrl.myList'>
@@ -36,29 +47,123 @@
         <li>Bears</li>
     </ol>
 
+<!--=-=-=-=-=-=-=-=-=-=-=-=-=FOOTBALL SHOW-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+
+<h1 class='space'>=-=-=-Football Show/Hide=-=-=-=</h1>
+<button ng-click='iCtrl.toggle()'>Unordered list</button>
+    <ol ng-show='iCtrl.football'>
+        <li>Utah State</li>
+        <li>Utah</li>
+        <li>Broncos</li>
+    </ol>
+
+
+<!--Show and Hide Buttons all html-->
+
+<h1 class='space'>Show and Hide Buttons</h1>
+
+  <p class="description">Click on the "show"-link to see the content.</p>
+  <a href="" ng-click="showme=true">Show</a>
+  <button ng-click="showme=false">Hide</button> 
+  
+  <div class="wrapper">
+    <p ng-hide="showme">You clicked on Hide</p>
+    <h2 ng-show="showme">You clicked on Show button!</h2>
+  </div>
+  
+</div>    
+
     <!--PART TWO-->
 
+<h1 class='space'>=-=-=-=-=-Part Two-=-=-=-=-=-=</h1>
+<p class='space'>=-=-=-=-=-First Try -=-=-=-=-=-=</p>
     <!--FIRST TRY-->
-    <h1 ng-mouseover='iCtrl.over()' ng-mouseleave='iCtrl.leave()'  >Part 2 of Intro to Angular</h1><h1 ng-show='iCtrl.open'>!!!</h1>
+    <h1 ng-mouseover='iCtrl.over()' ng-mouseleave='iCtrl.leave()'  >Example 1 of Intro to Angular</h1><h1 ng-show='iCtrl.open'>!!!</h1>
 
-<p>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</p>
+<p class='space'>=-=-=-=-=-Second Try -=-=-=-=-=-=</p>
 
-    <!--WANTED TO IMPROVE IT-->
-    <div ng-mouseover='iCtrl.show()' ng-mouseleave='iCtrl.hide()'><h1>Part 3 of Intro to Angular <span ng-show='iCtrl.exc'>{{iCtrl.showText}}</span></h1></div>
+    <!--WANTED TO IMPROVE FIRST TRY IT-->
+    <div ng-mouseover='iCtrl.show()' ng-mouseleave='iCtrl.hide()'><h1>Example 2 of Intro to Angular <span ng-show='iCtrl.exc'>{{iCtrl.showText}}</span></h1></div>
 
+<h1 class='space'>=-=Mouse Over=-=</h1>
 
     <!--Angular Way-->
     <p ng-class="{'changeColor':hover}" ng-mouseover='hover=true' ng-mouseleave='hover=false'>Get all your ducks in a row we need to dialog around your choice of work attire. Digital literacy proceduralize social currency nor loop back, for we need to start advertising on social media get all your ducks in a row. This is a no-brainer customer centric shelfware where do we stand on the latest client ask drink from the firehose. Product management breakout fastworks push back but are we in agreeance. Cross functional teams enable out of the box brainstorming get buy-in or we need more paper thinking outside the box put your feelers out, pixel pushing. I also believe it's important for every member to be involved and invested in our company and this is one way to do so. Streamline gain traction race without a finish line, yet please use "solutionise" instead of solution ideas! :). Organic growth we're ahead of the curve on that one this vendor is incompetent , or moving the goalposts product management breakout fastworks reach out window-licker. This is meaningless work flows , or take five, punch the tree, and come back in here with a clear head, for globalize productize. We want to see more charts. Price point UI blue money. Table the discussion it just needs more cowbell. We want to see more charts pull in ten extra bodies to help roll the tortoise, and high turnaround rate but drop-dead date run it up the flagpole. Golden goose synergize productive mindfulness can we take this offline turd polishing, or work flows . Value-added usabiltiy, but drill down pipeline. We're ahead of the curve on that one mobile friendly put in in a deck for our standup today and we need to dialog around your choice of work attire we've got to manage that low hanging fruit. </p>
 
+
+<p class='space'>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-<p>
+
     <!--Wanted to try it the HTML way-->
     <p id='change'>Get all your ducks in a row we need to dialog around your choice of work attire. Digital literacy proceduralize social currency nor loop back, for we need to start advertising on social media get all your ducks in a row. This is a no-brainer customer centric shelfware where do we stand on the latest client ask drink from the firehose. Product management breakout fastworks push back but are we in agreeance. Cross functional teams enable out of the box brainstorming get buy-in or we need more paper thinking outside the box put your feelers out, pixel pushing. I also believe it's important for every member to be involved and invested in our company and this is one way to do so. Streamline gain traction race without a finish line, yet please use "solutionise" instead of solution ideas! :). Organic growth we're ahead of the curve on that one this vendor is incompetent , or moving the goalposts product management breakout fastworks reach out window-licker. This is meaningless work flows , or take five, punch the tree, and come back in here with a clear head, for globalize productize. We want to see more charts. Price point UI blue money. Table the discussion it just needs more cowbell. We want to see more charts pull in ten extra bodies to help roll the tortoise, and high turnaround rate but drop-dead date run it up the flagpole. Golden goose synergize productive mindfulness can we take this offline turd polishing, or work flows . Value-added usabiltiy, but drill down pipeline. We're ahead of the curve on that one mobile friendly put in in a deck for our standup today and we need to dialog around your choice of work attire we've got to manage that low hanging fruit. </p>
 
-    <a ng-click = 'iCtrl.confirm()' ng-confirm-click= 'click ok to continue' href='http://officeipsum.com/index.php'>Office Ipsum</a>
+
+
+<p class='space'>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-<p>
+
+
+<h1 ng-click = 'iCtrl.confirm()' ng-show='iCtrl.showLink' class='space'><a  href='http://officeipsum.com/index.php'>=-=-=-=-This is a Link-=-=-=-=</a></h1>
+
+    <!--PART THREE-->
+
+<h1 class='space'>=-=-=-=-=-Part Three-=-=-=-=-=-=</h1>
+
+<!--Bootstrap Button-->
+{{iCtrl.show}}
+<a href="" ng-click="toggleModal2()">test</a>
+<button id='btn-attributes' ng-click='iCtrl.toggleModal2()'> This is my BIG button</button>
+<div ng-show="iCtrl.show" class="popUp"> This is my Pop up.
+<button ng-click='iCtrl.close()'> close</button></div>
+
+<br>
+<br>
+<br>
+<br>
+
+  
+
+<!--My Button-->
+
+<!--<button  class='btn-attributes' ng-click='iCtrl.popUp = !iCtrl.popUp' id="myBtn">Click Here to see Pop-Up</button>
+
+
+<div ng-show='iCtrl.popUp' id="myModal" class="modal">
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>-->
 
 
 
 
+ <!--Button trigger modal 
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Click Here For Pop-Up
+</button>
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">This is my pop up Modal</h4>
+      </div>
+      <div class="modal-body">
+       This is the 
+       body 
+       of 
+       my 
+       Modal Pop-Up
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>-->
 
 
 
