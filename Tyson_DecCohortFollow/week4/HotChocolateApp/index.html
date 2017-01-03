@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html ng-app='App'>  
+<head>
+    <title>Hot Chocolate App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+    <script src='./controller.js'></script>
+    
+</head>
+
+
+<body ng-controller='hotController as hCtrl'>
+      <h1>Hot Chocolate Factory</h1>
+
+<ul>
+    <li><a href='#/'>Home</li> <!--'#/' this is our root route-->
+    <li><a href='#/menu'>Menu</li>
+</ul>
+
+    <ng-view>   
+
+    </ng-view>
+
+
+</body>
+
+<footer>Copyright 2017</footer>
+</html>
