@@ -53,6 +53,10 @@ iCtrl.toggle = function() {
 
 // -=-=-=-=-=-=-=-=-=-=-SECOND TRY MOUSE OVER PINK-=-=-=-=-=-=-=-=-=-=-=-=
 
+
+    iCtrl.exc = false;
+    iCtrl.showText = '!!!'
+
     iCtrl.show = function () {
         //  console.log(iCtrl.show)
         iCtrl.exc = true;
@@ -65,8 +69,6 @@ iCtrl.toggle = function() {
         iCtrl.exc = false;
     }
 
-    iCtrl.exc = false;
-    iCtrl.showText = '!!!'
 
 
     iCtrl.confirm = function ($event) {
@@ -84,16 +86,16 @@ iCtrl.toggle = function() {
 
 //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Part Three-=-=-=-=-=-=-=-=-=-==-==-==-=
 
-iCtrl.show = false;
+iCtrl.show2 = false;
 iCtrl.toggleModal2 = function() {
-    iCtrl.show = true;
-    console.log(iCtrl.show)
+    iCtrl.show2 = true;
+    console.log(iCtrl.show2)
 }
 
 
 
 iCtrl.close = function() {
-    iCtrl.show= false;
+    iCtrl.show2= false;
     
 }
 
