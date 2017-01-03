@@ -9,6 +9,9 @@ angular.module('hideForm',[])
 
         fCtrl.formClick = function() {
         fCtrl.name
+        fCtrl.bio
+        fCtrl.favoriteBooks
+        fCtrl.libraries
         }
 
 

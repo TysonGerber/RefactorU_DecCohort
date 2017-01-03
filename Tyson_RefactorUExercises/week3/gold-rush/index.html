@@ -12,7 +12,7 @@
 
 
 <body ng-controller='spidermanController as sCtrl'>
-    <img class='spiderman' ng-repeat='display in sCtrl.displayArr' src='spiderman.gif'
+    <img class='spiderman' ng-repeat='display in sCtrl.displayArr' src='minions.gif'
     ng-click='sCtrl.hideDisplay($index)'
       style="left:{{display.x-100}}px; top:{{display.y-100}}px;" 
         ng-if="!display.hide">

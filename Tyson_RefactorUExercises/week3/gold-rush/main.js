@@ -43,7 +43,7 @@ angular.module('spidermanApp',[])
             display.hide = false;
         });
     }
-}
+};
 
     
 
