@@ -3,25 +3,31 @@
     <head>  
         <title>Hide a Form</title> 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
-        <link rel='stylesheet' href='./main.css'>
-        <script src='./js/controller.js'></script>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel='stylesheet' href='./css/main.css'>
+       <script src='./controllers/control.js'></script>
+        
 
     </head>
     <body ng-controller='formController as fCtrl'>
         {{fCtrl.greeting}}
-        <form action="">
-            <input type="text" placeholder='name' ng-model='fCtrl.name'>
-            <input type='text' placeholder='bio' ng-model='fCtrl.bio'>
-            <input type='text' placeholder='favorite books' ng-model='fCtrl.favoriteBooks'>
-            <input type='text' placeholder='favorite Javascript libraries' ng-model='fCtrl.libraries'>
-            <button ng-submit='fCtrl.formClick()'> </button> 
-        </form>
+        
+        <div class="form-style-8">
+            <form ng-submit='fCtrl.createUser()'>
+                <input type="text" name-'field1' placeholder='first name' ng-model='fCtrl.user.fname'>
+                <input type="text" name-'field2' placeholder='last name' ng-model='fCtrl.user.lname'>
+                <input type='text' name-'field3' placeholder='bio' ng-model='fCtrl.user.bio'>
+                <input type='text' name-'field4' placeholder='favorite books' ng-model='fCtrl.user.favoriteBooks'>
+                <input type='text' name-'field5' placeholder='favorite Javascript libraries' ng-model='fCtrl.user.libraries'>
+                <input type='submit' value='Submit'/> 
+            </form>
+       </div> 
 
-<div ng-show='fCtrl.name'>   
-    <div><h1>Name: {{fCtrl.name}}</div>
-    <div><h1>Bio: {{fCtrl.bio}}</div>
-    <div><h1>Favorite book:{{fCtrl.favoriteBooks}}</div>
-    <div><h1>Libraries: {{fCtrl.libraries}}</div>
+<div ng-show='fCtrl.user.name'>
+    <div><h1>Name: {{fCtrl.user.name}}</div>
+    <div><h1>Bio: {{fCtrl.user.bio}}</div>
+    <div><h1>Favorite book:{{fCtrl.user.favoriteBooks}}</div>
+    <div><h1>Libraries: {{fCtrl.user.libraries}}</div>
  </div>
 
     </body>

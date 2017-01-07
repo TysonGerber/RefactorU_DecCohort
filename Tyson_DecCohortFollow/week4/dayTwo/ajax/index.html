@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app='pokemonApp'>  
+<head>  
+    <title>AJAX</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <link rel='stylesheet' href='./main.css'>
+    <script src='./main.js'></script>
+      <script src='./controller.js'></script>
+</head>
+<body ng-controller='pokemonController as pCtrl'>
+    <h1>Pokemon</h1>
+
+    {{pCtrl.greeting}}
+    <div>
+        <form>
+        <input type='text' name='pokemon' ng-model='pCtrl.pokename'></input>
+            <button ng-click='pCtrl.searchPoke()'>Submit</button>
+        </form>
+    </div>
+    <div>
+        <!--display some detail information about the pokemon that we searched for-->
+        <h2>{{pCtrl.pokename}}</h2>
+        <h5>Abilities</h5>
+        <div ng-repeat='abilityItem in pCtrl.pokemon.abilities'></div>
+        {{abilitiyItem.ability.name}}
+        <h5>Move</h5>
+        <div ng-repeat='moveItem in pCtrl.pokemon.moves'></div>
+        {{moveItem.move.name}}
+    </div>
+
+    <!--display a list of all the pokemon that we got from our first api call-->
+    <div>
+        <ol>
+            <li ng-repeat='pokemon in pCtrl.pokedex'>
+                {{pokemon.pokemon_species.name}}
+               
+            </li>
+        </ol>
+    </div>
+
+</body>
+</html>
