@@ -5,6 +5,6 @@ angular.module('portfolio', [])
         var pCtrl = this;
         pCtrl.title = 'Welcome to my portfolio page'
 
-
+        pCtrl.fName(){}
 
     };

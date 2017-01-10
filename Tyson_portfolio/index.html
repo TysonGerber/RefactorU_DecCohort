@@ -3,30 +3,28 @@
 
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 
 
 
+
+
   <link rel='stylesheet' href='./public/main.css'>
-  <script src='./public/main.js'></script>
-  <script src='./controllers/controller.js'></script>
-  <script type="text/javascript" src="./public/js/scrolltofixed.js"></script>
+  <script src='/public/main.js'></script>
+  <script src='/controllers/controller.js'></script>
+  <script type="text/javascript" src="/public/js/scrolltofixed.js"></script>
 
 </head>
 
 <header class="header" id="header">
   <!--header-start-->
   <div class="container">
-    <figure class="logo animated fadeInDown delay-07s">
-      <a href="#"><img src="img/logo.png" alt=""></a>
-    </figure>
-    <h1 class="animated fadeInDown delay-07s">Welcome To Knight Studios</h1>
-    <ul class="we-create animated fadeInUp delay-1s">
-      <li>We are a digital agency that loves crafting beautiful websites.</li>
+    <h1 class="name">Tyson Gerber</h1>
+    <ul class="developer">
+      <li>Full Stack Web Developer</li>
     </ul>
-    <a class="link animated fadeInUp delay-1s" href="#">Get Started</a>
   </div>
 </header>
 <!--header-end-->
@@ -42,10 +40,12 @@
   <div>
     <!--Nav Buttons-->
     <nav class='main-nav-outer navbar' id='test'>
+
       <div class='container navbar'>
-        <div class='main-nav'>
-          <!--Home Nav Button-->
-          <button class="outline-button">
+        <div class='main-nav row'>
+          <div class='col-xs-12'>
+            <!--Home Nav Button-->
+            <button class="outline-button">
             Home
             <span class="outline-button__lines">
               <span class="outline-button__line outline-button__line--horizontal outline-button__line--top"></span>
@@ -55,8 +55,8 @@
             </span>
           </button>
 
-          <!--About Nav Button-->
-          <button class="outline-button">
+            <!--About Nav Button-->
+            <button class="outline-button">
             About
             <span class="outline-button__lines">
               <span class="outline-button__line outline-button__line--horizontal outline-button__line--top"></span>
@@ -66,11 +66,11 @@
             </span>
           </button>
 
-          <!--LOGO-->
-          <span id='logo' class='inline'><img src='./public/img/tysonWaxLogoBigger.png'></span>
+            <!--LOGO-->
+            <span id='logo' class='inline'><img class='logo' src='./public/img/tysonWaxLogoBigger.png'></span>
 
-          <!--Projects Nav Button-->
-          <button class="outline-button">
+            <!--Projects Nav Button-->
+            <button class="outline-button">
             Projects
             <span class="outline-button__lines">
               <span class="outline-button__line outline-button__line--horizontal outline-button__line--top"></span>
@@ -80,8 +80,8 @@
             </span>
           </button>
 
-          <!--Contact Nav Button-->
-          <button class="outline-button">
+            <!--Contact Nav Button-->
+            <button class="outline-button">
             Contact
             <span class="outline-button__lines">
               <span class="outline-button__line outline-button__line--horizontal outline-button__line--top"></span>
@@ -90,35 +90,301 @@
               <span class="outline-button__line outline-button__line--vertical outline-button__line--left"></span>
             </span>
           </button>
+          </div>
         </div>
       </div>
-  </nav>
-  {{pCtrl.title}}
+    </nav>
+    {{pCtrl.title}}
 
 
-  <p class='padding'>sjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsd</p>
+    <!--About-->
+    <div class="container relative">
 
 
-  <p class='padding'>sjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsd</p>
+      <div class="col-md-8 col-md-offset-2">
+
+        <h1>ABOUT</h1>
+        <div class=''>
+          <div class='aboutLine'></div>
+          <h2 class='aboutMeText'><strong>TYSON GERBER</strong> creates great websites </h2>
+          <div class='aboutMeLine'></div>
+          <p class='aboutMeText'><small><em>I grew up a huge football fan as my dad was an usher at our local University. I am a huge Utah State Aggie fan. I played wide receiver in highschool and was part of a State Championship team. I got my Graphic Design/Animation degree and then got into finance with my dad. I wanted to get back into what I enjoyed which is football and graphic design. So here I am!</em></small></p>
+        </div>
+        <div>
+          <img class='selfAvatar' src="/public/img/TysonAvatar.png" alt="SelfAvatar">
+          <div class='colorLine linePadding'>
+
+          </div>
+
+        </div>
+      </div>
 
 
-  <p class='padding'>sjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsdsjfaskjfsalkdfjfjjaslkfjaslkfjsalkdfjasdlkjfklasjflksajfwoiejroiwjfwonfowndfsaljfoiajfoweifjasoijfoiasjfowejfoijaisfojweoijfoiasjdfoijwowiefjoiwajfowaijfoiwjfoijsfoijsaiofjaoiefjaosijfoewifoaisjfoiwejfnglskvnlxzkjvoiwfwoiupawojifamlksmndfoisadjgoisajgfoisajgosaidjfosiadjfoiasdjfoiasjfoaisjfojifosiajfoiajsfojasdiofjoisadjfoiasjdfoisadjfoasjdfodisajfoidsajfoiasdjfoasdjfoijsdfoijsd</p>
 
-  <script type="text/javascript">
-    $(document).ready(function (e) {
-      $('#test').scrollToFixed();
-      $('.res-nav_click').click(function () {
-        $('.main-nav').slideToggle();
-        return false
 
-      });
 
-    });
-  </script>
 
-<!--***************************************VIEW AREA (NG-VIEW)**********************************************-->
-<ng-view>
+
+      <!--Honeycomb Portfolio-->
+      <h1>PROJECTS</h1>
+      <div class='projectsLine h1Padding'></div>
+      <section>
+        <div class="hex_row_odd">
+          <div class="center">
+            <div class="hexagon">
+              <div class="hex1">
+                <div class="hex2" style="background: url('/public/img/lion.svg') center no-repeat">
+<div class="desc">
+  <h2>Welcome this is an epic title</h2>
+  <p>website</p>
+</div>
+</div>
+<!--/hex2-->
+</div>
+<!--/hex1-->
+</div>
+<!--/hexagon-->
+</div>
+<!--/center-->
+
+
+<div class="center">
+  <div class="hexagon">
+    <div class="hex1">
+      <div class="hex2" style="background: url('http://25.media.tumblr.com/tumblr_mb3lh6abw91rg4gq5o1_500.jpg') center no-repeat">
+<div class="desc">
+  <h2>Welcome this is an epic title</h2>
+  <p>website</p>
+</div>
+</div>
+<!--/hex2-->
+</div>
+<!--/hex1-->
+</div>
+<!--/hexagon-->
+</div>
+<!--/center-->
+
+<div class="center">
+  <div class="hexagon">
+    <div class="hex1">
+      <div class="hex2" style="background: url('http://www.visitmexico.com/work/models/VisitMexico30/WebPage/Ensenada_la_cuna_del_surf/photoEscudo_Ensenada_la_cuna_del_surf_surfensenadaheader.jpg') center no-repeat">
+<div class="desc">
+  <h2>Welcome this is an epic title</h2>
+  <p>website</p>
+</div>
+</div>
+<!--/hex2-->
+</div>
+<!--/hex1-->
+</div>
+<!--/hexagon-->
+</div>
+<!--/center-->
+</div>
+<!--/hex_row_even-->
+
+<div class="hex_row_even">
+  <div class="center">
+    <div class="hexagon">
+      <div class="hex1">
+        <div class="hex2" style="background: url('http://static.tumblr.com/6pl87f7/eVqmduuh2/22948aee82dd11e18cf91231380fd29b_7.jpg') center no-repeat">
+<div class="desc">
+  <h2>Welcome this is an epic title</h2>
+  <p>website</p>
+</div>
+</div>
+<!--/hex2-->
+</div>
+<!--/hex1-->
+</div>
+<!--/hexagon-->
+</div>
+<!--/center-->
+
+<div class="center">
+  <div class="hexagon">
+    <div class="hex1">
+      <div class="hex2" style="background: url('http://www.rawstory.com/wp-content/uploads/2015/05/A-man-surfing-Shutterstock-800x430.jpg') center no-repeat">
+<div class="desc">
+  <h2>Welcome this is an epic title</h2>
+  <p>website</p>
+</div>
+</div>
+<!--/hex2-->
+</div>
+<!--/hex1-->
+</div>
+<!--/hexagon-->
+</div>
+<!--/center-->
+
+<div class="center">
+  <div class="hexagon">
+    <div class="hex1">
+      <div class="hex2" style="background: url('https://img.grouponcdn.com/deal/pZW1AwwkaLpzZ16v6Sv1/kM-2048x1229/v1/c700x420.jpg') center no-repeat">
+<div class="desc">
+  <h2>Welcome this is an epic title</h2>
+  <p>website</p>
+</div>
+</div>
+<!--/hex2-->
+</div>
+<!--/hex1-->
+</div>
+<!--/hexagon-->
+</div>
+<!--/center-->
+
+<div class="center">
+  <div class="hexagon">
+    <div class="hex1">
+      <div class="hex2" style="background: url('http://www.destination360.com/europe/portugal/images/s/portugal-surf.jpg') center no-repeat">
+<div class="desc">
+  <h2>Welcome this is an epic title</h2>
+  <p>website</p>
+</div>
+</div>
+<!--/hex2-->
+</div>
+<!--/hex1-->
+</div>
+<!--/hexagon-->
+</div>
+<!--/center-->
+
+</div>
+<!--/hex_row_even-->
+
+<div class="hex_row_odd">
+  <div class="center">
+    <div class="hexagon">
+      <div class="hex1">
+        <div class="hex2" style="background: url('http://cdn1.theinertia.com/wp-content/uploads/2012/07/11.jpg') center no-repeat">
+<div class="desc">
+  <h2>Welcome this is an epic title</h2>
+  <p>website</p>
+</div>
+</div>
+<!--/hex2-->
+</div>
+<!--/hex1-->
+</div>
+<!--/hexagon-->
+</div>
+<!--/center-->
+
+<div class="center">
+  <div class="hexagon">
+    <div class="hex1">
+      <div class="hex2" style="background: url('http://www.sanclementeguide.com/img/surfing-san-clemente.jpg') center no-repeat">
+<div class="desc">
+  <h2>Welcome this is an epic title</h2>
+  <p>website</p>
+</div>
+</div>
+<!--/hex2-->
+</div>
+<!--/hex1-->
+</div>
+<!--/hexagon-->
+</div>
+<!--/center-->
+
+<div class="center">
+  <div class="hexagon">
+    <div class="hex1">
+      <div class="hex2" style="background: url('https://upload.wikimedia.org/wikipedia/commons/c/c2/1999_-_Surf_%C3%A0_Waikiki_Beach_Honolulu_Hawa%C3%AF.jpg') center no-repeat">
+<div class="desc">
+  <h2>Welcome this is an epic title</h2>
+  <p>website</p>
+</div>
+</div>
+<!--/hex2-->
+</div>
+<!--/hex1-->
+</div>
+<!--/hexagon-->
+</div>
+<!--/center-->
+</div>
+<!--/hex_row_even-->
+
+
+
+</section>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class='contact '>CONTACT</h1>
+      <div class='contactLine'></div>
+
+      <h2>FEEL FREE TO <strong>CONTACT ME</strong></h2>
+
+
+      <p class='contactThankText'><small><em>Thank you for visiting my site. If you would like to contact me please do so below.</em></small></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Contact Section
+    ==========================================-->
+<div id="tf-contact" class="text-center">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputFirstName">First Name</label>
+                <input type="text" class="form-control" id="inputFirstName" placeholder="First name" ng-model=''>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputLastName">Last Name</label>
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last name">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputEmail">Email address</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputPhone">Phone number</label>
+                <input type="phone" class="form-control" id="inputPhone" placeholder="Enter phone">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Message</label>
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn tf-btn btn-default">Submit</button>
+        </form id='padding'>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class='colorLine'>
+
+
+
+  <!--***************************************VIEW AREA (NG-VIEW)**********************************************-->
   <ng-view>
-    </body>
+    <ng-view>
+      </body>
 
-    </html>
+      </html>
