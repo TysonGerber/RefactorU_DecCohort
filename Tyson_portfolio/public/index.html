@@ -11,10 +11,10 @@
 
 
 
-  <link rel='stylesheet' href='./public/main.css'>
-  <script src='/public/main.js'></script>
+  <link rel='stylesheet' href='/main.css'>
+  <script src='/main.js'></script>
   <script src='/controllers/controller.js'></script>
-  <script type="text/javascript" src="/public/js/scrolltofixed.js"></script>
+  <script type="text/javascript" src="/js/scrolltofixed.js"></script>
 
 </head>
 
@@ -67,7 +67,7 @@
           </button>
 
             <!--LOGO-->
-            <span id='logo' class='inline'><img class='logo' src='./public/img/tysonWaxLogoBigger.png'></span>
+            <span id='logo' class='inline'><img class='logo' src='/img/tysonWaxLogoBigger.png'></span>
 
             <!--Projects Nav Button-->
             <button class="outline-button">
@@ -98,26 +98,28 @@
 
 
     <!--About-->
-    <div class="container relative">
+    <div class="container">
 
 
-      <div class="col-md-8 col-md-offset-2">
 
-        <h1>ABOUT</h1>
-        <div class=''>
-          <div class='aboutLine'></div>
-          <h2 class='aboutMeText'><strong>TYSON GERBER</strong> creates great websites </h2>
+      <h1>ABOUT</h1>
+       <div class='aboutLine'></div>
+      <div class='row'>
+        <div class='col-md-6'>
+          <h2 class='aboutMeText '><strong>TYSON GERBER</strong> creates great websites </h2>
           <div class='aboutMeLine'></div>
-          <p class='aboutMeText'><small><em>I grew up a huge football fan as my dad was an usher at our local University. I am a huge Utah State Aggie fan. I played wide receiver in highschool and was part of a State Championship team. I got my Graphic Design/Animation degree and then got into finance with my dad. I wanted to get back into what I enjoyed which is football and graphic design. So here I am!</em></small></p>
+          <p class='aboutMePara'><small><em>I grew up a huge football fan as my dad was an usher at our local University. I am a huge Utah State Aggie fan. I played wide receiver in highschool and was part of a State Championship team. I got my Graphic Design/Animation degree and then got into finance with my dad. I wanted to get back into what I enjoyed which is football and graphic design. So here I am!</em></small></p>
         </div>
-        <div>
-          <img class='selfAvatar' src="/public/img/TysonAvatar.png" alt="SelfAvatar">
+
+        <div class="col-md-offset-2 col-md-4">
+          <img class='selfAvatar' src="/img/TysonAvatar.png" alt="SelfAvatar">
           <div class='colorLine linePadding'>
 
           </div>
 
         </div>
       </div>
+
 
 
 
@@ -319,7 +321,7 @@
       <h1 class='contact '>CONTACT</h1>
       <div class='contactLine'></div>
 
-      <h2>FEEL FREE TO <strong>CONTACT ME</strong></h2>
+      <h2 class='feelCenter'>FEEL FREE TO <strong>CONTACT ME</strong></h2>
 
 
       <p class='contactThankText'><small><em>Thank you for visiting my site. If you would like to contact me please do so below.</em></small></p>
@@ -342,30 +344,30 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="inputFirstName">First Name</label>
-                <input type="text" class="form-control" id="inputFirstName" placeholder="First name" ng-model=''>
+                <input type="text" class="form-control" id="inputFirstName" placeholder="First name" ng-model='pCtrl.fname'>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="inputLastName">Last Name</label>
-                <input type="text" class="form-control" id="inputLastName" placeholder="Last name">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last name" ng-model='pCtrl.lname'>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="inputEmail">Email address</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" ng-model='pCtrl.email'>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="inputPhone">Phone number</label>
-                <input type="phone" class="form-control" id="inputPhone" placeholder="Enter phone">
+                <input type="phone" class="form-control" id="inputPhone" placeholder="Enter phone" ng-model='pCtrl.phone'>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Message</label>
+            <label for="exampleInputEmail1" ng-model='pCtrl.message'>Message</label>
             <textarea class="form-control" rows="3"></textarea>
           </div>
 

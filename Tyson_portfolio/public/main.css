@@ -155,30 +155,20 @@ text-align: center;
 
 /*ABOUT SECTION*/
 .aboutLine {
-border-bottom: 10px solid #59100b;
-    width: 198px;
+    border-bottom: 10px solid #59100b;
+    width: 201px;
     margin: auto;
-    margin-right: 304px;
-    margin-bottom: 100px;
-  }
+}
   .aboutMeLine {
 border-bottom: 5px solid #59100b;
-    width: 167px;
-    margin: -9px 0px 43px 43px;
+    width: 228px;
   }
   .aboutMeText{
-  text-align: center;
-  padding-top: 10px;
-  margin-right: 300px;
-  font-weight: 100px;
-font-size: 1.5em;
+    padding-top:80px;
   }
-
-.selfAvatar{    width: 400px;
-    height: 400px;
-    margin-left: 600px;
-    margin-top: 40px;
-}
+  .aboutMePara{
+    padding-top: 20px;
+  }
 
 .relative{
   position: relative;
@@ -189,25 +179,6 @@ font-size: 1.5em;
 .linePadding{
   padding-bottom: 600px;
 }
-
-
-
-
-.floatL{
-  float: left;
-}
-.floatR{
-  float: right;
-}
-
-.clearfix{
-  clear: both
-}
-.inline{
-  display: inline;
-
-}
-
 
 
 /*
@@ -223,7 +194,7 @@ margin-top: 40px;
 background: "center no-repeat";
 background-color: blue;
 }
-.lion{
+#lion{
   width: 400px;
     height: 400px;
     padding-right: 67px;
@@ -239,7 +210,7 @@ h1 {
   font-size: 4em;
   font-weight: 300;
   text-align: center;
-  margin: 100px 10px 0 10px;
+  /*margin: 100px 10px 0 10px;*/
 }
 
 .projectsLine {
@@ -382,9 +353,13 @@ label {
 }
 
 h2 {
-  	font-family: 'Montserrat',sans-serif;
+  font-family: 'Montserrat',sans-serif;
   font-size: 2em;
   font-weight: 300;
+  margin: 0px;
+  
+}
+.feelCenter{
   text-align: center;
 }
 .contactThankText{
