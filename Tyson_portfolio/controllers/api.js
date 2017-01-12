@@ -11,7 +11,7 @@ module.exports = {
            }
        })
     },
-     getlUser: (req, res) => {
+     getUser: (req, res) => {
        Users.findOne({email: req.params.email},(err, doc)=>{
            if(err){
                console.log("Error getting users from database", err)
