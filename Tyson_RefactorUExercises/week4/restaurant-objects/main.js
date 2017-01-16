@@ -17,14 +17,14 @@ FoodItem.prototype.stringify = function () {
 
 //FOOD Items 
 
-var cheese = new FoodItem('Cheesee', 300, 'false', 'true', 'true')
-var beans = new FoodItem('Beans', 100, 'true', 'true', 'true')
-var chicken = new FoodItem('Chicken', 200, 'false', 'true', 'true')
-var rice = new FoodItem('Rice', 50, 'true', 'true', 'true')
-var lemon = new FoodItem('Lemon', 25, 'false', 'false', 'true')
-var lime = new FoodItem('Lime', 25, 'false', 'false', 'true')
-var sugar = new FoodItem('Sugar', 150, 'false', 'false', 'false')
-var water = new FoodItem('Water', 0, 'false', 'false', 'false')
+var cheese = new FoodItem('Cheesee', 300, false, true, true)
+var beans = new FoodItem('Beans', 100, true, true, true)
+var chicken = new FoodItem('Chicken', 200, false, true, true)
+var rice = new FoodItem('Rice', 50, true, true, true)
+var lemon = new FoodItem('Lemon', 25, false, false, true)
+var lime = new FoodItem('Lime', 25, false, false, true)
+var sugar = new FoodItem('Sugar', 150, false, false, false)
+var water = new FoodItem('Water', 0, false, false, false)
 
 
 ////////////////////////////DRINKS////////////////////////////////////////////////////////
@@ -80,16 +80,33 @@ Plate.prototype.stringify = function () {
     for(var i = 0; i < arrayLength; i++) {
         stringPlateArray = stringPlateArray + this.foodIngredients[i].name + ',';
     }
-    var plateResult = 'you ordered ' + this.name + ' it has ' + this.description + 'it costs' + this.price + 'and food ' + this.foodIngredients
+    var plateResult = 'you ordered ' + this.name + ' it has ' + this.description + 'it costs' + this.price + 'and food ' + this.stringPlateArray
     return plateResult;
-}
+};
 
 Plate.prototype.isVegan = function(){
-    var arryLength = this.foodIngredients.length;
-    for(var i = 0; i < arryLength; i++){
-        console.log(this.foodIngredients[i].length)
+    var arrayLength = this.foodIngredients.length;
+    for(var i = 0; i < arrayLength; i++){
+        console.log(this.foodIngredients[i].vegan)
+        return this.foodIngredients[i].vegan;
     }
-}
+};
+
+Plate.prototype.isGlutenFree = function(){
+    var arrayLength = this.foodIngredients.length;
+    for(var i = 0; i < arrayLength; i++){
+        console.log(this.foodIngredients[i].glutenFree);
+        return this.foodIngredients[i].glutenFree;
+    }
+};
+
+Plate.prototype.isCitrusFree = function(){
+    var arrayLength = this.foodIngredients.length;
+    for(var i = 0; i < arrayLength; i++){
+        console.log(this.foodIngredients[i].citrusFree)
+        return this.foodIngredients[i].citrusFree;
+    }
+};
 
 //Plate Items
 var burrito = new Plate('Burrito', 'Will fill you up', 8, [cheese, beans, chicken, rice])
@@ -129,9 +146,24 @@ var plate = new Menu([burrito, limeTacos, lemonaid])
 var menu = new Menu([burrito, limeTacos, riceBeans, water, lemonaid, soda])
 var restaurants = new Restaurant([mexican])
 
-Restaurant.stringify();
 
+
+//Order
 function Order(plates){
     this.plates = plates;
 }
 
+//Menu
+function Menu(plates){
+    this.plates = plates;
+}
+
+
+////////////////////////////Customer//////////////////////////////////////////////////////
+
+function Customer(customerPreference){
+    this.customerPreference= customerPreference;
+}
+Customer.prototype.stringify= function(){
+    return 'Hi, I am '+ this.customerPreference
+}
