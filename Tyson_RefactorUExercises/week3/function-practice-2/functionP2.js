@@ -63,10 +63,19 @@ var cityInfo = {
     state: 'Colorado'
 }
 
+
+// console.log(Object.keys(cityInfo)[0])
+
+
+// Loop through the properties of an object
+for (var key in cityInfo) {
+    console.log(key + ' is ' + cityInfo[key])
+}
+
 function keyValue2(key, value) {
     var object = {}
     object[key] = value
-
+    return object
     //object['city']='Denver'
 }
 console.log(keyValue2('city', 'Denver'))
@@ -175,24 +184,15 @@ function removeM(word) {
 console.log(removeM('family'))
 
 
-888888888888888888888888888888888888888888888888888
 
-THIS IS WHERE I NEED TO START
-
-888888888888888888888888888888888888888888888888888
 /******************************************************/
 //SOLUTION FOR PrintObject
 
-function printObject(argument) {
-
-    console.log(argument)
-    var object = {};
-
-
-    // console.log('key:' +key + 'value:'+ value +)
+function printObject(newVarName) {
+    for (var key in newVarName) {
+        console.log(key + " is " + newVarName[key])
+    }
 }
-
-
 printObject({ a: 10, b: 20, c: 30 })
 printObject({ firstName: 'pork', lastName: 'chops' })
 
@@ -203,57 +203,115 @@ printObject({ firstName: 'pork', lastName: 'chops' })
 /******************************************************/
 //SOLUTION FOR Vowels
 
-function vowels(str) {
-    var array = str.split('')
 
-    for (var i = 0; i < array[i].length; i++) {
-        if (array[i] == 'a' || array[i] == 'e' || array[i] == 'i' || array[i] == 'o' || array[i] == 'u') {
-           return console.log(array[i]);
-        }else{
-            return false;
+////////////EXAMPLE ONE VANILLA JAVASCRIPT
+function vowels(string) {
+    var array = string.split('')
+
+    var newArray = [];
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === 'a' || array[i] === 'e' || array[i] === 'i' || array[i] === 'o' || array[i] === 'u') {
+            newArray.push(array[i])
         }
-
     }
- 
+    return newArray
 }
 
-var a = ['hi', 'bye', 'hello']
-
-function check() {
-    var b = a.split('')
-    console.log(b)
-    for(var i = 0; i < b.length; i++){
-        if(b ==='hi'){
-            return b
-        }else{
-            return 'wrong'
-        }
-}
-}
-
-function vowels(str){
-    var strSplit = str.split(' ')
-for(var i = 0; i <strSplit.length; i++){
- if(strSplit[i] == 'a'){
-     end = strSplit[i].length
- }
-return end
-}
 console.log(vowels('alabama'));
 console.log(vowels('What evil odd ducks!'))
 
 
-loop through all the letters and return any letter in the word a e i o u
+////////////EXAMPLE TWO using methods
+function vowels2(string) {
+    var array = string.split('')
+    var grabVowel = array.filter(function (element) {
+        if (element === 'a' || element === 'e' || element === 'i' || element === 'o' || element === 'u') {
+            return true
+        } else {
+            return false
+        }
+    })
+    return grabVowel
+}
+
+console.log(vowels2('alabama'))
+console.log(vowels2('What evil odd ducks!'))
 
 
+////////////SAME AS EXAMPLE 2 just simpler
+function vowels2(string) {
+    return string.split('').filter(function (element) {
+        return (element === 'a' || element === 'e' || element === 'i' || element === 'o' || element === 'u')
+    })
+}
+console.log(vowels2('alabama'))
+console.log(vowels2('What evil odd ducks!'))
 
-console.log(hi[0])
 
-var x = ['a']
+function twins(array) {
+    // var adjacentIndex = true;
+    for (var i = 0; i < array.length; i += 2) {// start here; go until there; do this between each ideration
+        if (array[i] != array[i + 1] || array.length == i + 1) {
+            return false;
+        }
+    }
+    // return adjacentIndex;
+    return true;
+}
 
-x.push('b')
 
-console.log(x)
+// function twins(array) {
+//     var array = false;
+
+//     var i = 0;
+//     while (i >= array.length) {
+//         i++;
+
+//     }
+//     return true
+// }
+
+
+console.log(twins(['a', 'a', 'b', 'b', 'c', 'c']))
+console.log(twins(['a', 'a', 'b', 'c', 'd', 'd']))
+console.log(twins(['a', 'a', 'b', 'z']))
+console.log(twins(['a', 'a', undefined]))
+
+
+//check adjacentIndex
+
+
+function twins(array) {
+    // var adjacentIndex = true;
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] != array[i + 1] || array.length == i + 1) {
+            return false;
+        }
+    }
+    // return adjacentIndex;
+    return true;
+}
+
+
+function twins(arr) {
+    if (arr.length % 2 != 0) {
+        return false
+    } else {
+
+
+        for (var i = 0; i < arr.length; i += 2) {
+            if (arr[i] != arr[i + 1]) {
+                return false;
+            }
+        }
+        return true
+    }
+}
+
+console.log(twins(['a', 'a', 'a', 'a']))
+console.log(twins(['a', 'a', 'b', 'c', 'd', 'd']))
+console.log(twins(['a', 'a', 'b', 'z']))
+console.log(twins(['a', 'a', undefined]))
 
 
 
@@ -275,3 +333,8 @@ function count(letters) {
 }
 
 count(words);
+
+
+
+
+// if someone tells you there is a rule that can't be broken then break it!

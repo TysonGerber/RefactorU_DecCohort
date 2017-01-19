@@ -27,7 +27,7 @@ example1()
 //     1   2
 
 //filter() loops an creates a subset of the 1st array. of elements that meet a certain condition  W3 schools example
-
+// filter() is good for creating a subset of an array.
 var ages = [32, 33, 16, 40]
 
 //named function
