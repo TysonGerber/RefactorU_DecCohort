@@ -169,8 +169,6 @@ function cesarCipher(str, num) {
     }
 
   
-  // sArray = []
-  // return sArray.push(newUnicode.forEach(function(data){String.fromCharCode(data)}))
   console.log(alpha)
   var alphaStr = alpha.join('')
   console.log(alphaStr)
