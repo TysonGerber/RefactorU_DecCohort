@@ -342,7 +342,8 @@
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <form>
+<!--START OF FORM-->
+        <form ng-submit='pCtrl.createUser()'>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -371,12 +372,13 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1" ng-model='pCtrl.message'>Message</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea class="form-control" placeholder='Message...'rows="3"></textarea>
           </div>
 
-          <button type="submit" class="btn tf-btn btn-default">Submit</button>
+          <button  type="submit" class="btn tf-btn btn-default">Submit</button>
         </form id='padding'>
-
+        <!--END OF FORM-->
+        {{pCtrl.userData}}
       </div>
     </div>
 
