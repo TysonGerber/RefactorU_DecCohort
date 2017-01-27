@@ -1,0 +1,16 @@
+{
+  "name": "cookies-and-sessions",
+  "version": "1.0.0",
+  "description": "Cookies are short strings of text that are stored in your browser, as instructed by a server. Cookies are specific to the website that set them. E.g. There's no way for facebook.com to access your twitter.com cookies",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parse": "^0.4.0",
+    "cookie-parser": "^1.4.3"
+  }
+}
