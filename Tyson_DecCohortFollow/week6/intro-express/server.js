@@ -41,3 +41,4 @@ app.listen(PORT, () =>{ //function() same thing as () =
 //change your port type into your terminal:  export PORT=3000
 //start server: nodemon server.js
 //every time you make a change hit rs and it will re-start the server again.
+

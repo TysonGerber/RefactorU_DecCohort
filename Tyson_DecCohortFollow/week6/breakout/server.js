@@ -5,7 +5,10 @@ var express = require('express'),
 //the express module comes in as a function, so we execute the function to create our app
 var app = express('')
 
-// this passes our app object to the routes function that we have written in controllers/routes.js
+// We want to effectively pull a large section of code (all our our route handling)
+// out of this file to keep this file simple and straightforward.
+// this passes our app object to the routes function that we have written
+// in controllers/routes.js
 routes(app);
 
 
@@ -15,7 +18,10 @@ routes(app);
 
 
 var PORT = process.env.PORT || 8080;
-//this is the core of our server, listening to a port for requests and leaving the rest to express's route handling
+
+
+// this is the core of our server, listening to a port for requests
+// and leaving the rest to express's route handling.
 app.listen(PORT, function (err) {
     // if there was an error starting the server, log it
     if (err) {

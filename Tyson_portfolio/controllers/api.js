@@ -21,7 +21,9 @@ module.exports = {
            }
        })
     },
+
        createUser: (req, res) => {
+                console.log(req.body)
            var newUser = new Users(req.body);
        newUser.save((err, doc)=>{
            if(err){
@@ -29,6 +31,7 @@ module.exports = {
            }else{
                console.log('Saved user to database:', doc);
                res.send(doc);
+          
            }
        })
     },
