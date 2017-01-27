@@ -17,8 +17,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json(), bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
-//Routes
-var Routes = Routes(app)
+
 
 //Setting my port to listen 
 app.listen(PORT, (err)=>{
