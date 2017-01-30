@@ -1,4 +1,3 @@
-//
 var Auth = require('./auth'),
     express = require('express');
 

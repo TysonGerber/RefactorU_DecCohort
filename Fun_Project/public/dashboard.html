@@ -4,9 +4,11 @@
         <title>Dashboard</title>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
         <script src="/js/module.dashboard.js"></script>
+        <script src="/css/dashboard.css"></script>
     </head>
-    <body ng-controller="DashboardController as dashboard" class="container">
+    <body class='background'ng-controller="DashboardController as dashboard" class="container">
         <h1>Welcome to your dashboard!</h1>
+        <!--<h1 ng-class="auth.register.alert">{{ auth.register.message }}</h1>-->
         <p><a href="/logout" class="btn btn-lg btn-danger">Logout</a></p>
     </body>
 </html>

@@ -1,20 +1,29 @@
-<!-- Idea
-
-be able to choose a time period. Let's say 2 years. based on the last 2 years. Is today's stock price a good time to buy?
-Takes the low of the market and the high of the market and then it tells you if it is a good time to buy or sell. 
-
-Example we have a graph that pulls up and shows 0 - 100% 50% is the average of the stock price over those 2 years. Our marker shows it is at 80% Then it will say it is a better time to sell. If at 40% it is a good time to sell.-->
-
-
-
-<!--Direct everyone to the home screen-->
-
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Auth Login</title>
+<html ng-app="module.auth">
+    <head >
+        <title>Login</title>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+        <script src="/js/module.auth.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/login.css">
+        <style>
+            fieldset {
+                margin: 10px 0;
+            }
+        </style>
     </head>
-    <body>
-        <h1><a href="/auth.html">Login!</a></h1>
+    <div>
+        <form class='backgroundDiv' ng-submit="auth.login.submit($event)">
+            <h1>Login!</h1>
+            <fieldset>
+                <label>Email</label>
+                <input required placeholder="Email" type="email" ng-model="auth.payloads.login.email"/>
+            </fieldset>
+            <fieldset>
+                <label for="password">Password</label>
+                <input required placeholder="Password" type="password" ng-model="auth.payloads.login.password"/>
+            </fieldset>
+            <button type="submit">Login</button>
+            <p>Not a member? <a href='register.html'>Sign up now</a></p>
+            <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
     </body>
 </html>
