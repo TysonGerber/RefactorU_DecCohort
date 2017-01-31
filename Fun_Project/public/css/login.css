@@ -1,22 +1,123 @@
 
-.background {
- background: #282537;
- background-image: -webkit-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
- background-image: -moz-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
- background-image: -o-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
- background-image: radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+/*Mobile First*/
+
+ @media only screen and (min-width : 320px) {
+* {
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+     color: #0CA5E8;
+}
+
+body{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Arvo', serif;*/
+    margin: 0px 40px;
+    background: #262626;
+}
+button, input, optgroup, select, textarea{
+      font-family: 'Open Sans', sans-serif;
+}
+
+fieldset {
+    padding: 0px 0px 25px 0px;
+}
+form{
+    margin-top: 200px;
+}
+
+/*i{
+  color: #0CA5E8;
+}*/
+
+input{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: white;
+    width: 85%;
+   
+}
+input:focus {
+    outline: none;
+}
+
+label{
+    display: inline-block;
+    width: 5%;
+    padding-right: 40px;
 }
 
 
+p {
+    text-align: center;
+    padding: 10px;
+}
 
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
+  
 
-/* Small devices (tablets, 768px and up) */
-/*@media (min-width: @screen-sm-min) {  }*/
+/*************************
+CLASSES
+*************************/
 
-/* Medium devices (desktops, 992px and up) */
-/*@media (min-width: @screen-md-min) { }*/
+.bx{
+    background-color: mediumpurple;
+    width: 100px;
+    height: 10px;
+    padding: 2px;
+    display: inline-block;
+}
+.bx2{
+    background-color: turquoise;
+    width: 100px;
+    height: 10px;
+    padding: 2px;
+        display: inline-block;
+}
 
-/* Large devices (large desktops, 1200px and up) */
-/*@media (min-width: @screen-lg-min) { }*/
+.loginButton{
+  width: 95%;
+  height: 40px;
+  background-color: #0CA5E8;
+  border: #0CA5E0;
+  color: white;
+  border-radius: 5px;
+
+}
+.password{
+    padding-bottom: 30px;
+}
+/*using bootstrap and the only way to get to the input textarea */
+
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+        
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+
+input{
+    width: 90%  
+}
+
+.background{
+    background-color: #262626;
+}
+
+.loginButton{
+  max-width: 95%;
+  height: 40px;
+}
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+             

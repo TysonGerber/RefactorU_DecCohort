@@ -14,8 +14,12 @@
         <form ng-submit="auth.register.submit($event)">
             <h1>Register!</h1>
              <fieldset>
-                <label>Name</label>
-                <input required placeholder="Email" type="text" ng-model="auth.payloads.register.name"/>
+                <label>First Name</label>
+                <input required placeholder="First Name" type="text" ng-model="auth.payloads.register.fname"/>
+             </fieldset>
+                <fieldset>
+                <label>Last Name</label>
+                <input required placeholder="Last Name" type="text" ng-model="auth.payloads.register.'lname"/>
             </fieldset>
             <fieldset>
                 <label>Email</label>

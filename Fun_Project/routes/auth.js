@@ -12,9 +12,13 @@ var User = require('../models/users'),
     };
 
 module.exports = {
+     root: (req, res) => {
+       res.sendFile('login.html', {root: './public' })
+    },
     logout: (req, res) => {
         req.session.reset(); // clears the users cookie session
-        res.redirect('/auth.html');
+        console.log('log out')
+        res.redirect('/login.html');
     },
     login: (req, res) => { // form post submission
         console.info('auth.login.payload:', req.body);
@@ -73,7 +77,7 @@ module.exports = {
             next();
         } else {
             console.warn('User is not logged in!'.yellow)
-            res.redirect('/auth.html');
+            res.redirect('/login.html');
         }
     }
 }

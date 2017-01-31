@@ -2,6 +2,7 @@ var Auth = require('./auth'),
     express = require('express');
 
 module.exports = (app) => {
+    app.get('/', Auth.root)
     app.get('/logout', Auth.logout);        // logout route + redirect
 
     app.post('/login', Auth.login);         // login form submission

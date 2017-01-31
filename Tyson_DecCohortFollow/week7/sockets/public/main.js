@@ -18,8 +18,15 @@ var socket = io();
 
 
 // when the server sends a number, we will append it to the body of our index.html page.
-socket.on('number', (data)=>{
-    document.body.innerText += data + '\n'
-})
+// socket.on('number', (data)=>{
+//     document.body.innerText += data + '\n'
+// })
+
+/////////////////////////////
+//Twitter Example
+// ////////////////////////////
 
 
+//  socket.on('youBeenTweeted', (data)=>{
+//      document.body.innerHTML += data.text + data.user.name + '\n'
+//  })

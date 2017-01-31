@@ -4,7 +4,8 @@ var mongoose = require('mongoose'),
     // bcrypt = require('bcrypt') // sudo apt-get install bcrypt [ run update first, thanks Juliano ;) ] USE THIS FOR PRODUCTION
     bcrypt = require('bcryptjs'),
     UserSchema = new mongoose.Schema({
-        name:  String,
+        fname:  String,
+        lname: String,
         email: {
             type: String,
             unique: true
