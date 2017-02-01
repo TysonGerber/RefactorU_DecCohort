@@ -27,6 +27,6 @@ var socket = io();
 // ////////////////////////////
 
 
-//  socket.on('youBeenTweeted', (data)=>{
-//      document.body.innerHTML += data.text + data.user.name + '\n'
-//  })
+ socket.on('youBeenTweeted', (data)=>{
+     document.body.innerText += data.text + ' - ' + data.user.name + '\n'
+ })

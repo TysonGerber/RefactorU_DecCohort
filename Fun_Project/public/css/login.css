@@ -1,10 +1,27 @@
+/*LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+ CSS FOR LOGIN.HTML
+ LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL*/
 
-/*Mobile First*/
+
+/*Mobile First Approach*/
+
+
+
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+           @MEDIA 320px
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
+
+
 
  @media only screen and (min-width : 320px) {
+
+/*************************************
+          Tag/Element Selectors 320px
+***************************************/
 * {
     box-sizing: border-box;
 }
+
 a{
     text-decoration: none;
      color: #0CA5E8;
@@ -16,30 +33,45 @@ body{
     /*font-family: 'Arvo', serif;*/
     margin: 0px 40px;
     background: #262626;
+    font-size: 20px;
 }
+
 button, input, optgroup, select, textarea{
       font-family: 'Open Sans', sans-serif;
 }
 
+
+
 fieldset {
     padding: 0px 0px 25px 0px;
 }
+
 form{
     margin-top: 200px;
+    background: rgba(63,62,62,0.5);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    display: block;
+    margin:auto;
+    margin-top: 60px;
+}
+i{
+  /*color: #0CA5E8;
+  */
 }
 
-/*i{
-  color: #0CA5E8;
-}*/
-
+a:hover{
+    text-decoration: none;
+}
 input{
     background: transparent;
     border: none;
     border-bottom: 1px solid #fff;
     color: white;
-    width: 85%;
-   
+    width: 80%; 
 }
+
 input:focus {
     outline: none;
 }
@@ -50,32 +82,23 @@ label{
     padding-right: 40px;
 }
 
-
 p {
     text-align: center;
     padding: 10px;
 }
 
+/*************************************
+ID's
+***************************************/
+
+#faSize{
+    /*font-size: 75px;*/
+}
   
 
-/*************************
-CLASSES
-*************************/
-
-.bx{
-    background-color: mediumpurple;
-    width: 100px;
-    height: 10px;
-    padding: 2px;
-    display: inline-block;
-}
-.bx2{
-    background-color: turquoise;
-    width: 100px;
-    height: 10px;
-    padding: 2px;
-        display: inline-block;
-}
+/*************************************
+CLASSES 320px
+***************************************/
 
 .loginButton{
   width: 95%;
@@ -86,38 +109,77 @@ CLASSES
   border-radius: 5px;
 
 }
+.logo{
+    margin-top: 200px;
+    text-align: center;
+}
 .password{
     padding-bottom: 30px;
 }
-/*using bootstrap and the only way to get to the input textarea */
 
 
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+           @MEDIA 480px
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
     /* Extra Small Devices, Phones */ 
     @media only screen and (min-width : 480px) {
         
 
     }
 
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+           @MEDIA 768px
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
     /* Small Devices, Tablets */
     @media only screen and (min-width : 768px) {
+
+/*EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+Tag/Element Selectors 768px
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE*/
+
+form{
+    max-width: 786px;
+        /*background:rgba(233,333,883,0.2);
+
+    filter:blur(4px);
+    -o-filter:blur(4px);
+    -ms-filter:blur(4px);
+    -moz-filter:blur(4px);
+    -webkit-filter:blur(4px);*/
+}
 
 input{
     width: 90%  
 }
 
-.background{
-    background-color: #262626;
-}
 
+/*************************************
+CLASSES 768px
+***************************************/
 .loginButton{
   max-width: 95%;
   height: 40px;
 }
+
+
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+           @MEDIA 992px
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
+
     /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) {
 
     }
 
+
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+           @MEDIA 1200px
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
     /* Large Devices, Wide Screens */
     @media only screen and (min-width : 1200px) {
              
+
+
+
+/*If your going to use text-align center then you would apply text-align: center to it's parent. Get's inherited so any child element will also get this property inherited to them*/
+/*If nothing else is sharing the space then you can display: block and use margin auto*/

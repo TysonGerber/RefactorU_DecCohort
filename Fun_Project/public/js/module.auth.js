@@ -36,8 +36,9 @@ function Auth($http) { // window.Auth
     };
 
     auth.register = {
-        submit: function () {
+        submit: function (event) { //refers to the $event on the html page.
             // happens when the user clicks submit on the register form
+            console.log(event) // checking to see if the submit button is being triggered.
             $http.post('/register', auth.payloads.register)
                 .then(auth.register.success, auth.register.error);
         },

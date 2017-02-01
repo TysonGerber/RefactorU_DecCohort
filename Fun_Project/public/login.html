@@ -1,48 +1,36 @@
 <!DOCTYPE html>
 <html ng-app="module.auth">
-    <head >
-        <title>Login</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
-        <link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans" rel="stylesheet">
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-        <script src="/js/module.auth.js"></script>
-        <link rel="stylesheet" type="text/css" href="/css/login.css">
-  
-    </head>
-    <body class='background'>
-        <div class='container'>
-            <div class='row'>
-                <div class='col-xs-12'>
-                    <form ng-submit="auth.login.submit($event)">
-                        <!--<h1>Login!</h1>-->
-                        <fieldset>
-                            <label><i class="fa fa-envelope-o fa-2x " aria-hidden="true"></i><!--Email--></label>
-                            <input required placeholder="Email" type="email" ng-model="auth.payloads.login.email"/>
-                        </fieldset>
-                        <fieldset class='password'>
-                            <label for="password"><i class="fa fa-user-o fa-2x" aria-hidden="true"><!--Password--></i></label>
-                            <input required placeholder="Password" type="password" ng-model="auth.payloads.login.password"/>
-                        </fieldset>
-                        <button class='loginButton' type="submit">Login</button>
-                        <p>Not a member? <a href='/html/register.html'>Sign up now</a></p>
-                        <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
-                        </form>
-                        <div class='bx box1'></div>
-                        <div class='bx2 box2'></div>
-                        <div class='bx box3'></div>
-                        <div class='bx box4'></div>
-                        <div class='bx box5'></div>
-                        <div class='bx box6'></div>
-                        <div class='bx box7'></div>
-                        <div class='bx box8'></div>
-                        <div class='bx box9'></div>
-                        <div class='bx box10'></div>
-                        <div class='bx box11'></div>
-                        <div class='bx box12'></div>
-                     </form>
-                </div>
-            </div>
-        </div>
-    </body>
+
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="/js/module.auth.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+
+</head>
+
+<body>
+    <div class='container'>
+          <h1 class='logo'>LOGO HERE</h1>
+        <form class='formPaddingTop' ng-submit="auth.login.submit($event)">
+            <!--<h1>Login!</h1>-->
+            <fieldset>
+                <label><i class="fa fa-envelope-o" id='faSize' aria-hidden="true"></i><!--Email--></label>
+                <input required placeholder="Email" type="email" ng-model="auth.payloads.login.email" />
+            </fieldset>
+            <fieldset class='password'>
+                <label for="password"><i class="fa fa-user-o" id='faSize' aria-hidden="true"><!--Password--></i></label>
+                <input required placeholder="Password" type="password" ng-model="auth.payloads.login.password" />
+            </fieldset>
+            <button class='loginButton' type="submit">Login</button>
+            <p>Not a member? <a href='/html/register.html'>Sign up now</a></p>
+            <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
+        </form>
+    </div>
+</body>
+
 </html>

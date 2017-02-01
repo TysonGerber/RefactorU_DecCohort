@@ -3,12 +3,8 @@
     <head>
         <title>Login</title>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-        <script src="/js/module.auth.js"></script>
-        <style>
-            fieldset {
-                margin: 10px 0;
-            }
-        </style>
+        <script src="../js/module.auth.js"></script>
+          <link rel="stylesheet" type="text/css" href="/css/register.css">
     </head>
     <body ng-controller="module.auth.controller as auth">
         <form ng-submit="auth.register.submit($event)">
@@ -19,7 +15,7 @@
              </fieldset>
                 <fieldset>
                 <label>Last Name</label>
-                <input required placeholder="Last Name" type="text" ng-model="auth.payloads.register.'lname"/>
+                <input required placeholder="Last Name" type="text" ng-model="auth.payloads.register.lname"/>
             </fieldset>
             <fieldset>
                 <label>Email</label>
@@ -34,3 +30,4 @@
         </form>
     </body>
 </html>
+

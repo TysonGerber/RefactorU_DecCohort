@@ -104,3 +104,4 @@ socket.on('specificPerson', (data)=>{
 })
 
 })
+//call apply bind, protypes, protypal inheritance, 

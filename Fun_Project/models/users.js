@@ -4,17 +4,11 @@ var mongoose = require('mongoose'),
     // bcrypt = require('bcrypt') // sudo apt-get install bcrypt [ run update first, thanks Juliano ;) ] USE THIS FOR PRODUCTION
     bcrypt = require('bcryptjs'),
     UserSchema = new mongoose.Schema({
-        fname:  String,
-        lname: String,
-        email: {
-            type: String,
-            unique: true
-        },
-        password: String,
-        created: {
-            type: Number,
-            default: () => Date.now()
-        }
+        fname: {type: String, required: true},
+        lname: {type: String, required: true},
+        email: {type: String,unique: true},
+        password: {type: String, required: true},
+        created: {type: Number, default: () => Date.now()} //this creates the date the user registered.
     });
 
 // hash passwords before saving a new user

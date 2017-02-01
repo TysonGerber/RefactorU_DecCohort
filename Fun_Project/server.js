@@ -25,8 +25,13 @@ var config = require('./package'),
         }
     }), // encrypted cookies!
     PORT = process.env.PORT || 8080,
-    Routes = require('./routes'),
+    Routes = require('./routes/index.js'), //don't need to put /index.js because computer see index.js as the go to file. We added it to be explicit and to read where the file goes
     app = express();
+
+app.use((req, res, next)=>{
+ console.log('step one')
+ next();
+})
 
 app.use(
     logger,
@@ -34,6 +39,11 @@ app.use(
     bodyParser.json(),
     bodyParser.urlencoded({ extended: true })
 );
+
+app.use((req, res, next)=>{
+ console.log('step two')
+ next();
+})
 
 app.use((req, res, next)=>{
     if(req.session.uid){
@@ -44,6 +54,11 @@ app.use((req, res, next)=>{
     console.log("Session counter: ", req.session.counter);
     next();
 });
+
+app.use((req, res, next)=>{
+ console.log('step three')
+ next();
+})
 
 Routes(app);
 
