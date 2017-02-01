@@ -27,7 +27,7 @@
                 <input required placeholder="Password" type="password" ng-model="auth.payloads.login.password" />
             </fieldset>
             <button class='loginButton' type="submit">Login</button>
-            <p>Not a member? <a href='/html/register.html'>Sign up now</a></p>
+            <p class='notMember'>Not a member? <a href='/html/register.html'>Sign up now</a></p>
             <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
         </form>
     </div>
