@@ -2,32 +2,38 @@
 <html ng-app="module.auth">
     <head>
         <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans" rel="stylesheet">
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
         <script src="../js/module.auth.js"></script>
           <link rel="stylesheet" type="text/css" href="/css/register.css">
     </head>
     <body ng-controller="module.auth.controller as auth">
+         <div class='container'>
+         <h1 class='logo'>REGISTER</h1>
         <form ng-submit="auth.register.submit($event)">
-            <h1>Register!</h1>
-             <fieldset>
-                <label>First Name</label>
-                <input required placeholder="First Name" type="text" ng-model="auth.payloads.register.fname"/>
+             <fieldset class='inline-block fieldset1'>
+                <label><i class="fa fa-user-o" id='faUser' aria-hidden="true"></i><!--First Name--></label>
+                <input id='input1'required placeholder="First Name" type="text" ng-model="auth.payloads.register.fname"/>
              </fieldset>
-                <fieldset>
-                <label>Last Name</label>
-                <input required placeholder="Last Name" type="text" ng-model="auth.payloads.register.lname"/>
+                <fieldset class='inline-block fieldset1'>
+                <label><i class="fa fa-user-o" id='faUser' aria-hidden="true"></i><!--Last Name--></label>
+                <input id='input1' required placeholder="Last Name" type="text" ng-model="auth.payloads.register.lname"/>
             </fieldset>
-            <fieldset>
-                <label>Email</label>
-                <input required placeholder="Email" type="text" ng-model="auth.payloads.register.email"/>
+            <fieldset class='fieldset2'>
+                <label><i class="fa fa-envelope-o" id='faEnvelope' aria-hidden="true"></i><!--Email--></label>
+                <input id='input2'required placeholder="Email" type="text" ng-model="auth.payloads.register.email"/>
             </fieldset>
-            <fieldset>
-                <label for="password">Password</label>
-                <input required placeholder="Create a password" type="password" ng-model="auth.payloads.register.password"/>
+            <fieldset class='fieldset2'>
+                <label for="password"><i class="fa fa-lock <!--fa-key--> " id='faLock' aria-hidden="true"></i><!--Password--></label>
+                <input id='input2' required placeholder="Create a password" type="password" ng-model="auth.payloads.register.password"/>
             </fieldset>
-            <button type="submit">Register</button>
+            <button class='registerButton'type="submit">Register</button>
             <p ng-class="auth.register.alert">{{ auth.register.message }}</p>
         </form>
+        </div>
     </body>
 </html>
 

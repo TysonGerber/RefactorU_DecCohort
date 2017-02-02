@@ -19,11 +19,11 @@
         <form class='formPaddingTop' ng-submit="auth.login.submit($event)">
             <!--<h1>Login!</h1>-->
             <fieldset>
-                <label><i class="fa fa-envelope-o" id='faSize' aria-hidden="true"></i><!--Email--></label>
+                <label><i class="fa fa-envelope-o" id='faEnvelope' aria-hidden="true"></i><!--Email--></label>
                 <input required placeholder="Email" type="email" ng-model="auth.payloads.login.email" />
             </fieldset>
             <fieldset class='password'>
-                <label for="password"><i class="fa fa-user-o" id='faSize' aria-hidden="true"><!--Password--></i></label>
+                <label for="password"><i class="fa fa-lock" id='faLock' aria-hidden="true"><!--Password--></i></label>
                 <input required placeholder="Password" type="password" ng-model="auth.payloads.login.password" />
             </fieldset>
             <button class='loginButton' type="submit">Login</button>

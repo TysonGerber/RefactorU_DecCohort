@@ -32,21 +32,18 @@ button, input, optgroup, select, textarea{
       font-family: 'Open Sans', sans-serif;
 }
 
-fieldset {
-    padding: 0px 0px 25px 0px;
-}
 
 form{
     margin-top: 200px;
     background: rgba(63,62,62,0.5);
     border-radius: 10px;
     padding: 20px;
-    text-align: center;
     display: block;
     margin:auto;
     margin-top: 60px;
 }
 i{
+ font-size: 25px;
 }
 
 a:hover{
@@ -57,7 +54,9 @@ input{
     border: none;
     border-bottom: 1px solid #fff;
     color: white;
-    width: 80%; 
+    border-radius: 0px;
+ 
+  
 }
 
 input:focus {
@@ -75,13 +74,23 @@ p {
     padding: 10px;
 }
 
-  
+ 
 
 /*************************************
 CLASSES 320px
 ***************************************/
 
-.loginButton{
+.fieldset1 {
+    padding: 0px 0px 25px 0px;
+
+    border: 0px;
+}
+.fieldset2 {
+    padding: 0px 0px 25px 0px;
+    border: 0px;
+}
+
+.registerButton{
   width: 95%;
   height: 40px;
   background-color: #0CA5E8;
@@ -91,23 +100,57 @@ CLASSES 320px
 
 }
 .logo{
-    margin-top: 200px;
+    margin-top: 100px;
     text-align: center;
 }
 .password{
     padding-bottom: 30px;
 }
+.logo{
+    text-align: center;
 
+}
+
+/*************************************
+ID's 320px
+***************************************/
+
+#faUser{
+    font-size: 29.25px;
+}
+#faLock{
+    font-size: 37px;
+}
+#faEnvelope{
+    font-size: 25px;
+}
+#input1{
+    width: 80%;
+}
+    }
+#input2{
+    width: 80%;
+}
+    
 
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
            @MEDIA 480px
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
     /* Extra Small Devices, Phones */ 
+
+/*************************************
+ID's 480px
+***************************************/
     @media only screen and (min-width : 480px) {
-        
-
-    }
-
+ #input1{
+    width: 85%;
+}
+    
+#input2{
+    width: 85%;
+}
+}
+    
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
            @MEDIA 768px
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
@@ -129,18 +172,37 @@ form{
     -webkit-filter:blur(4px);*/
 }
 
-input{
-    width: 90%  
+#input1{
+    width: 80%  
+}
+#input2{
+    width: 89%  
+}
+
+label{
+    padding-right:46px;
 }
 
 
 /*************************************
 CLASSES 768px
 ***************************************/
-.loginButton{
+.fieldset1 {
+    width:49%;
+
+}
+.inline-block{
+    display: inline-block;
+}
+
+.logo{
+    margin-top: 150px;
+}
+.registerButton{
   max-width: 95%;
   height: 40px;
 }
+
 
 
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -149,7 +211,9 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
     /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) {
-
+.logo{
+    margin-top: 200px;
+}
     }
 
 
@@ -163,4 +227,4 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
 
 /*If your going to use text-align center then you would apply text-align: center to it's parent. Get's inherited so any child element will also get this property inherited to them*/
-/*If nothing else is sharing the space then you can display: block and use margin auto*/
+/*If nothing else is sharing the space then you can display: block and use margin auto
