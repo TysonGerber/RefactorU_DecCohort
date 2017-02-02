@@ -15,12 +15,11 @@ function Auth($http) { // window.Auth
 
     auth.login = {
         // happens when the user clicks submit on the login form
-        submit: function($event) { // click-event
-            console.info('auth.login.submit', $event);
+        submit: function(event) { // click-event
+            console.info('auth.login.submit', event);
 
             $http.post('/login', auth.payloads.login)
                 .then(auth.login.success, auth.login.error);
-                // brandon reminds you, that a wiffle bat will strike you if you forget your error callback!
         },
         success: function(res) { // server response callback
             // when login is successful, redirect them into the dashboard
