@@ -1,5 +1,3 @@
-
-//THIS IS ROB'S
 require('colors');
 
 var config = require('./package'),
@@ -20,7 +18,7 @@ var config = require('./package'),
         duration: (86400 * 1000) * 7, // one week in milliseconds
         cookie: {
             ephemeral: false,     // when true, cookie expires when browser is closed
-            httpOnly: true,       // when true, the cookie is not accesbile via front-end JavaScript
+            httpOnly: true,       // when true, the cookie is not accessible via front-end JavaScript
             secure: false         // when true, cookie will only be read when sent over HTTPS
         }
     }), // encrypted cookies!

@@ -1,0 +1,47 @@
+<!DOCTYPE>
+<html ng-app='pokemonApp'>
+    <head>
+        <title>Poke</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script scr='./appModule.js'></script>
+        <script scr='./appController.js'></script>
+        
+    </head>
+    <body ng-controller='pokemonController as pCtrl'>
+        <h1>{{pCtrl.heading}}</h1>
+        <h3>Pokemon Selector</h3>
+        <form ng-submit='pCtrl.getPokemon($event)'>
+            <input type="text" placeholder='Pokemon Name' ng-model='pCtrl.pokeName'>
+            <button type="">Get Pokemon</button>
+        </form>
+        <h3>Poke Job Application</h3>
+        <form action="">
+            <h5 ng-model='pCtrl.poke.name'></h5>
+            <img src="pCtrl.pokemon.sprite" alt="">
+            <input type="text" ng-model='pCtrl.pokemon.weight'>
+            <br>
+              <input type="text" ng-model='pCtrl.pokemon.height'>
+              <br>
+                <input type="text" ng-model='pCtrl.pokemon.experience'>
+                <br>
+                  <input type="text" placeholder ='salary'ng-model='pCtrl.pokemon.salary'>
+                  <br>
+                    <input type="text" placehold='job title'ng-model='pCtrl.pokemon.jobTitle'>
+                    <button ng-click='pCtrl.apply'></button>
+
+             name: {type: String, unique: true},
+        sprite: String,
+        weight: Number,
+        height: Number,
+        experience: Number,
+        salary: Number,
+        jobTitle: String
+        </form>
+
+        <ol>
+            <li ng-repeat='poke in pCtrl.pokemonArray'>
+                {{poke.name}}
+            </li>
+        </ol>
+    </body>
+</html>

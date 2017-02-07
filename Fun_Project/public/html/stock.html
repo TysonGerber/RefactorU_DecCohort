@@ -11,7 +11,7 @@
           <link rel="stylesheet" type="text/css" href="/css/register.css">
     </head>
     <body ng-controller='stockController as stock'>
-        <form ng-submit='stock.getTicker($event)'>
+        <form ng-submit='stock.getTicker.submit($event)'>
             <fieldset>
                 <input type="text" name="ticker symbol" ng-model="stock.ticker">
             </fieldset>

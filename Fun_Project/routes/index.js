@@ -87,5 +87,16 @@ module.exports = (app) => {
             res.redirect('/login.html');
         }
     }); // protect the dashboard page - only send it, if the user has a valid session
+
+
+
+
+
+
+//This is where I am at. Not sure how to connect a backend api.
+
+//    app.get('/stock', (req, res)=> {
+       
+//    })
     app.use(express.static('public'));
 };
