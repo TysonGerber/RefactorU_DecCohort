@@ -1,6 +1,6 @@
 Web Scraping
 
-clients
+#clients
     browsers
     desktop/mobile apps
     other servers
@@ -11,13 +11,13 @@ clients
 
     We might scrape data from a website to access their data when they don't have a public API.
 
-2 ways to scrape a website:
+##2 ways to scrape a website:
 
-Simplest way: request HTML. parse HTML as a string, do whatever you want with it.
+#Simplest way: request HTML. parse HTML as a string, do whatever you want with it.
 
-Better way: browser automation traditionally done with Selenium. Selenium can drive other browsers, such as chrome or firefox.
+#Better way: browser automation traditionally done with Selenium. Selenium can drive other browsers, such as chrome or firefox.
 
-A more friendly, modern alternative is nightmare.js
+#A more friendly, modern alternative is nightmare.js
 
 You need to install nightmare both globally and locally.
 
