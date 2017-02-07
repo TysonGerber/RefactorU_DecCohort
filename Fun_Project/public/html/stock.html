@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html ng-app='stockApp'>
+    <head>
+        <title>This is where you put in your stock ticker symbol</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>-->
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans" rel="stylesheet">
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+        <script src="../js/stock.api.js"></script>
+          <link rel="stylesheet" type="text/css" href="/css/register.css">
+    </head>
+    <body ng-controller='stockController as stock'>
+        <form ng-submit='stock.getTicker($event)'>
+            <fieldset>
+                <input type="text" name="ticker symbol" ng-model="stock.ticker">
+            </fieldset>
+            <button type="submit">button</button>
+            <p>{{stock.getTicker}}</p>
+              <p>{{stock.greeting}}</p>
+        </form>
+    </body>
+</html>
