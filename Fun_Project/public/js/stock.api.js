@@ -13,20 +13,26 @@ function stock($http) {
 
     stockInfo = [];
 
-    stock.getTicker = {
+    stock.getSymbol = {
         submit: function (event) {
-            $http.get('http://dev.markitondemand.com/Api/v2/Quote/jsonp/?symbol=' + stock.ticker).then(function (res) {
-                stock.quote= res.data
-                console.log(res.data)
+            $http.get('/stock?symbol=' + stock.symbol).then(function success(res) {
+                var info = JSON.parse(res.data)
+                console.log('stock?symbol success', info)
+                stock.info = info
+                
             },
-                function (err) {
-                    console.log('Error loading Market API', err)
-                });
+                function failed(res) {
+                    console.log('stock?symbol failed', res.data)
+                }
+            )
         }
+
+        $http.get('/chart?')
     }
-}
+
+};
  // Or you can do this: 
- //     stock.getTicker = function(event) {
+//      stock.getTicker = function(event) {
 
 //         $http.get('http://dev.markitondemand.com/Api/v2/Quote/jsonp/?symbol='+ stock.ticker)
 //         .then(function(res){
@@ -39,7 +45,7 @@ function stock($http) {
 //         });
 
 //     }
-// }
+
 
 
 //Learning how to use the markitondemand api.
@@ -56,6 +62,6 @@ function stock($http) {
 // { "Normalized": false, "StartDate":"2011-03-01T00:00:00-00", "EndDate":"2011-06-01T00:00:00-00", "EndOffsetDays": 365, "NumberOfDays": 34, "DataPeriod": "Day", "DataInterval": 0, "LabelPeriod": Day, "LabelInterval": 1, "Elements": [{ "Symbol": "GE", "Type": "price", "Params": ["[c]"] }] }
 
 //my examples:
-//http://dev.markitondemand.com/MODApis/Api/v2/InteractiveChart/json?parameters={"Normalized":false,"NumberOfDays":730,"DataPeriod":"Day","Elements":[{"Symbol":"GE","Type":"price","Params":["c"]}]}
+var string = 'http://dev.markitondemand.com/MODApis/Api/v2/InteractiveChart/json?parameters={"Normalized":false,"NumberOfDays":730,"DataPeriod":"Day","Elements":[{"Symbol":"GE","Type":"price","Params":["c"]}]}'
 
 // { "Normalized": false, "StartDate":"2011-03-01T00:00:00-00", "EndDate":"2011-06-01T00:00:00-00", "DataPeriod": "Day", "Elements": [{ "Symbol": "GE", "Type": "price", "Params": ["[c]"] }] }

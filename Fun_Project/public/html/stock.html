@@ -11,12 +11,14 @@
           <link rel="stylesheet" type="text/css" href="/css/register.css">
     </head>
     <body ng-controller='stockController as stock'>
-        <form ng-submit='stock.getTicker.submit($event)'>
+        <form ng-submit='stock.getSymbol.submit($event)'>
             <fieldset>
-                <input type="text" name="ticker symbol" ng-model="stock.ticker">
+                <input type="text" name="ticker symbol" ng-model="stock.symbol">
+                <input type="text" name="ticker symbol" ng-model="stock.chart">
             </fieldset>
             <button type="submit">button</button>
-            <p>{{stock.getTicker}}</p>
+            <h1>{{stock.info.Name}}</h1>
+            <h2>{{stock.info.Symbol}}</h2>
               <p>{{stock.greeting}}</p>
         </form>
     </body>

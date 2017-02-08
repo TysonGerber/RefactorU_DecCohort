@@ -16,8 +16,10 @@
     "client-sessions": "^0.7.0",
     "colors": "^1.1.2",
     "express": "^4.14.1",
+    "highcharts": "^5.0.7",
     "mongoose": "^4.8.0",
     "morgan": "^1.7.0",
+    "request": "^2.79.0",
     "routes": "^2.1.0"
   }
 }
