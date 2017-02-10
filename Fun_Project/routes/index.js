@@ -19,13 +19,14 @@ module.exports = (app) => {
     app.get('/', (req, res) => {
         res.sendFile('login.html', { root: './public' })
     })
-
+    //LOGOUT
     app.get('/logout', (req, res) => {
         req.session.reset(); // clears the users cookie session
         console.log('log out')
         res.redirect('/login.html');
     });        // logout route + redirect
 
+    //LOGIN
     app.post('/login', (req, res) => { // form post submission
         console.info('auth.login.payload:', req.body);
 
@@ -60,7 +61,8 @@ module.exports = (app) => {
             }
         });
     });
-    // login form submission
+
+    // Registration Form / Creating New User
     app.post('/register', (req, res) => {
         console.info('Register payload:'.cyan, req.body);
 
@@ -79,6 +81,7 @@ module.exports = (app) => {
         });
     })   // register form submission
 
+//SSSSSSSSS Change this to stock.html but ask Steve your questions first. 
     app.get('/dashboard.html', (req, res, next) => {
         if (req.session.uid) {
             console.info('User is logged in, proceeding to dashboard...'.green);
@@ -105,6 +108,19 @@ module.exports = (app) => {
         }else(
         res.status(300).send('symbol not recognized')
         )
+    })
+
+    app.get('/chart', function(req,res){
+        console.log('chart inputs', req.query)
+        request('http://dev.markitondemand.com/MODApis/Api/v2/InteractiveChart/json?parameters={"Normalized":false,"NumberOfDays":'+ req.query.days+',"DataPeriod":"Day","Elements":[{"Symbol":"'+ req.query.symbol +'","Type":"price","Params":["c"]}]}', function(err,response,body){
+            if (err){
+                console.log('chart api failure', err)
+                res.status(500).send('chart api failure', err)
+            }else{
+                console.log('/chart json info', body)
+                res.json(body)
+            }
+        })
     })
 
     app.use(express.static('public'));

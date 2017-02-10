@@ -11,17 +11,20 @@ var config = require('./package'),
             console.info('Mongoose initilized!'.green.bold);
         }
     }),
-    sessions = require('client-sessions')({ // session management module developed my mozilla
-        cookieName: config.name,  // front-end cookie name, currently pulled from package.json, feel free to change
-        secret: 'DR@G0N$',        // the encryption password : keep this safe
-        requestKey: 'session',    // req.session,
-        duration: (86400 * 1000) * 7, // one week in milliseconds
+    //Log Sessions
+    sessions = require('client-sessions')({ 
+        cookieName: config.name,  
+        secret: 'DR@G0N$',        
+        requestKey: 'session',    
+        duration: (86400 * 1000) * 7, 
         cookie: {
-            ephemeral: false,     // when true, cookie expires when browser is closed
-            httpOnly: true,       // when true, the cookie is not accessible via front-end JavaScript
-            secure: false         // when true, cookie will only be read when sent over HTTPS
+            ephemeral: false,     
+            httpOnly: true,       
+            secure: false         
         }
-    }), // encrypted cookies!
+    }), 
+
+    //Port
     PORT = process.env.PORT || 8080,
     Routes = require('./routes/index.js'), //don't need to put /index.js because computer see index.js as the go to file. We added it to be explicit and to read where the file goes
     app = express();
