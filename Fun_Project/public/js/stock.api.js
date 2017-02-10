@@ -10,7 +10,7 @@ function stock($http) {
 
     stock.greeting = 'Welcome to your stock page'
 
-
+// STOCK PRICE CHART
 stock.stockChart = function() {
     var chart = new Highcharts.Chart({
         chart: {
@@ -52,6 +52,8 @@ stock.stockChart = function() {
         }]
     });
 };
+
+
 
     stockInfo = [];
 
