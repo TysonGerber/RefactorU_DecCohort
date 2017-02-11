@@ -48,7 +48,7 @@ stock.stockChart = function() {
         },
         series: [{
         name: 'ge',
-            data: stock.Yaxis      
+            data: stock.Yaxis,      
         }]
     });
 };
@@ -75,8 +75,11 @@ stock.stockChart = function() {
                 // console.log('Chart data successful', res.data)
                 // stock.chart = chart
                 var stockReturn = JSON.parse(res.data)
+
+                // Xaxis stock time periods / dates 
                 stock.Xaxis = stockReturn.Dates.map(function(date){
-                    return date.substring(0,10).replace('-01-',' Jan ')
+                    //was in format 2016-01-03T00:00:00 only need the date not time. Looping through each array and keeping first index [0-10] and then replacing the month portion of the date and changing it from number 01 to Jan.
+                    return date.substring(0,10).replace('-01-',' Jan ').replace('-02-', 'Feb')
                 })
                 stock.Yaxis = stockReturn.Elements[0].DataSeries.close.values
 

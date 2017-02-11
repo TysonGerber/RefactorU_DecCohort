@@ -27,55 +27,36 @@ function stock($http) {
 
             series: [{
                 type: 'column',
-                name: 'GE',
-                data: [10, 9],
+                name: stock.Yaxis,
+                data:  [stock.Yaxis],
                 dataGrouping: {
                     units: [[
-                        'week', // unit name
-                        [1] // allowed multiples
+                        // 'week', // unit name
+                        // [1] // allowed multiples
                     ], [
-                        'month',
-                        [1, 2, 3, 4, 6]
+                        // 'month',
+                        // [1, 2, 3, 4, 6]
                     ]]
                 }
+                
             }]
+            
         });
-
+console.log('second', stock.Yaxis)
     }
 
     stock.avgChart();
 
-
-
-    // stock.avgChart = function(){('avgChart', {
-    //         chart: {
-    //             alignTicks: false
-    //         },
-
-    //         rangeSelector: {
-    //             selected: 1
-    //         },
-
-    //         title: {
-    //             text: 'AAPL Stock Volume'
-    //         },
-
-    //         series: [{
-    //             type: 'column',
-    //             name: 'AAPL Stock Volume',
-    //             data: [10],
-    //             dataGrouping: {
-    //                 units: [[
-    //                     'week', // unit name
-    //                     [1] // allowed multiples
-    //                 ], [
-    //                     'month',
-    //                     [1, 2, 3, 4, 6]
-    //                 ]]
-    //             }
-    //         }]
-    //     });
-    // };   
+        // Function for finding the average of stock
+                function addThemAll(numbers){
+                var sum = 0
+                for(var i=0; i<numbers.length; i++){
+                    sum += numbers[i]
+                
+                }
+                var average = sum / numbers.length; 
+                return average
+                }
 
     stockInfo = [];
 
@@ -95,12 +76,20 @@ function stock($http) {
                 // var chart = JSON.parse(res.data)
                 // console.log('Chart data successful', res.data)
                 // stock.chart = chart
-                var stockReturn = JSON.parse(res.data)
-                stock.Xaxis = 'Today\'s date'
-                stock.Yaxis = stockReturn.Elements[0].DataSeries.close.values
-
+                var stockReturn = JSON.parse(res.data)    
                 console.dir(stockReturn)
-                stock.stockChart();
+                
+                // Xaxis is time period the graph is based off of.
+                stock.Xaxis = 'Today\'s date'
+                    
+                var numArray = stockReturn.Elements[0].DataSeries.close.values 
+                var average = addThemAll(numArray) 
+                console.log('average', average)
+                 stock.Yaxis = average
+                // Getting the average for stock
+
+                 stock.avgChart();
+               
 
             },
                 function failed(res) {

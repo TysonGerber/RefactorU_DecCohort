@@ -251,6 +251,7 @@ console.log(vowels2('What evil odd ducks!'))
 function twins(array) {
     // var adjacentIndex = true;
     for (var i = 0; i < array.length; i += 2) {// start here; go until there; do this between each ideration
+        console.log(array[i])
         if (array[i] != array[i + 1] || array.length == i + 1) {
             return false;
         }
