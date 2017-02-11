@@ -10,15 +10,7 @@ function stock($http) {
 
     stock.greeting = 'Welcome to your stock page'
 
-
-
-
-
-
-
-
-
-
+// CHART FROM HIGHCHARTS
     stock.avgChart = function () {
         var chart = new Highcharts.Chart({
             chart: {
@@ -26,32 +18,19 @@ function stock($http) {
                 type: 'column'
             },
             title: {
-                text: 'Monthly Average Rainfall'
+                text: 'Average Stock Price'
             },
             subtitle: {
-                text: 'Source: WorldClimate.com'
+                text: 'Source dev.markitondemand.com'
             },
             xAxis: {
-                categories: [
-                    'Jan',
-                    'Feb',
-                    'Mar',
-                    'Apr',
-                    'May',
-                    'Jun',
-                    'Jul',
-                    'Aug',
-                    'Sep',
-                    'Oct',
-                    'Nov',
-                    'Dec'
-                ],
+                categories: [stock.company],
                 crosshair: true
             },
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Rainfall (mm)'
+                    text: 'Price'
                 }
             },
             tooltip: {
@@ -69,11 +48,11 @@ function stock($http) {
                 }
             },
             series: [{
-                name: 'Tokyo',
+                name: 'Average Stock Price',
                 data: [stock.average]
 
             }, {
-                name: 'New York',
+                name: 'Current Stock Price',
                 data: [stock.YaxisLP]
 
             }]
@@ -81,6 +60,7 @@ function stock($http) {
    
     }
      stock.avgChart();
+    
     //     stock.avgChart = function () {
     //         var chart = new Highcharts.Chart({
     //             chart: {
@@ -119,6 +99,8 @@ function stock($http) {
     //     stock.avgChart();
 
     // Function for finding the average of stock
+
+    //Grabbing the array of prices and FINDING THE AVERAGE PRICE
     function addThemAll(numbers) {
         var sum = 0
         for (var i = 0; i < numbers.length; i++) {
@@ -138,6 +120,8 @@ function stock($http) {
                 console.log('stock?symbol success', info.LastPrice)
                 stock.info = info
                 console.log('stock.info',stock.info)
+                stock.company = stock.info.Name
+                console.log('stock.company', stock.company)
                 stock.YaxisLP = stock.info.LastPrice
                 console.log('stockYaxisLP', stock.YaxisLP)
                     stock.avgChart();
