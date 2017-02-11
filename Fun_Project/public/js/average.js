@@ -10,53 +10,124 @@ function stock($http) {
 
     stock.greeting = 'Welcome to your stock page'
 
+
+
+
+
+
+
+
+
+
     stock.avgChart = function () {
         var chart = new Highcharts.Chart({
             chart: {
                 renderTo: 'container',
-                alignTicks: false
+                type: 'column'
             },
-
-            rangeSelector: {
-                selected: 1
-            },
-
             title: {
-                text: 'AAPL Stock Volume'
+                text: 'Monthly Average Rainfall'
             },
-
+            subtitle: {
+                text: 'Source: WorldClimate.com'
+            },
+            xAxis: {
+                categories: [
+                    'Jan',
+                    'Feb',
+                    'Mar',
+                    'Apr',
+                    'May',
+                    'Jun',
+                    'Jul',
+                    'Aug',
+                    'Sep',
+                    'Oct',
+                    'Nov',
+                    'Dec'
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Rainfall (mm)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
             series: [{
-                type: 'column',
-                name: stock.Yaxis,
-                data:  [stock.Yaxis],
-                dataGrouping: {
-                    units: [[
-                        // 'week', // unit name
-                        // [1] // allowed multiples
-                    ], [
-                        // 'month',
-                        // [1, 2, 3, 4, 6]
-                    ]]
-                }
-                
+                name: 'Tokyo',
+                data: [stock.Yaxis]
+
+            }, {
+                name: 'New York',
+                data: [stock.Yaxis]
+
             }]
-            
-        });
-console.log('second', stock.Yaxis)
+        })
+   
     }
+     stock.avgChart();
+    //     stock.avgChart = function () {
+    //         var chart = new Highcharts.Chart({
+    //             chart: {
+    //                 renderTo: 'container',
+    //                 alignTicks: false
+    //             },
 
-    stock.avgChart();
+    //             rangeSelector: {
+    //                 selected: 1
+    //             },
 
-        // Function for finding the average of stock
-                function addThemAll(numbers){
-                var sum = 0
-                for(var i=0; i<numbers.length; i++){
-                    sum += numbers[i]
-                
-                }
-                var average = sum / numbers.length; 
-                return average
-                }
+    //             title: {
+    //                 text: 'AAPL Stock Volume'
+    //             },
+
+    //             series: [{
+    //                 type: 'column',
+    //                 name: stock.Yaxis,
+    //                 data:  [stock.Yaxis],
+    //                 dataGrouping: {
+    //                     units: [[
+    //                         // 'week', // unit name
+    //                         // [1] // allowed multiples
+    //                     ], [
+    //                         // 'month',
+    //                         // [1, 2, 3, 4, 6]
+    //                     ]]
+    //                 }
+
+    //             }]
+
+    //         });
+    // console.log('second', stock.Yaxis)
+    //     }
+
+    //     stock.avgChart();
+
+    // Function for finding the average of stock
+    function addThemAll(numbers) {
+        var sum = 0
+        for (var i = 0; i < numbers.length; i++) {
+            sum += numbers[i]
+
+        }
+        var average = sum / numbers.length;
+        return average
+    }
 
     stockInfo = [];
 
@@ -76,20 +147,20 @@ console.log('second', stock.Yaxis)
                 // var chart = JSON.parse(res.data)
                 // console.log('Chart data successful', res.data)
                 // stock.chart = chart
-                var stockReturn = JSON.parse(res.data)    
+                var stockReturn = JSON.parse(res.data)
                 console.dir(stockReturn)
-                
+
                 // Xaxis is time period the graph is based off of.
                 stock.Xaxis = 'Today\'s date'
-                    
-                var numArray = stockReturn.Elements[0].DataSeries.close.values 
-                var average = addThemAll(numArray) 
+
+                var numArray = stockReturn.Elements[0].DataSeries.close.values
+                var average = addThemAll(numArray)
                 console.log('average', average)
-                 stock.Yaxis = average
+                stock.Yaxis = average
                 // Getting the average for stock
 
-                 stock.avgChart();
-               
+                stock.avgChart();
+
 
             },
                 function failed(res) {
@@ -102,6 +173,7 @@ console.log('second', stock.Yaxis)
     }
 
 }
+
 
 
 
