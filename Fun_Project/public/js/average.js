@@ -70,11 +70,11 @@ function stock($http) {
             },
             series: [{
                 name: 'Tokyo',
-                data: [stock.Yaxis]
+                data: [stock.average]
 
             }, {
                 name: 'New York',
-                data: [stock.Yaxis]
+                data: [stock.YaxisLP]
 
             }]
         })
@@ -135,9 +135,12 @@ function stock($http) {
         submit: function (event) {
             $http.get('/stock' + '?symbol=' + stock.symbol).then(function success(res) {
                 var info = JSON.parse(res.data)
-                console.log('stock?symbol success', info)
+                console.log('stock?symbol success', info.LastPrice)
                 stock.info = info
-
+                console.log('stock.info',stock.info)
+                stock.YaxisLP = stock.info.LastPrice
+                console.log('stockYaxisLP', stock.YaxisLP)
+                    stock.avgChart();
             },
                 function failed(res) {
                     console.log('stock?symbol failed', res.data)
@@ -149,14 +152,15 @@ function stock($http) {
                 // stock.chart = chart
                 var stockReturn = JSON.parse(res.data)
                 console.dir(stockReturn)
+                console.log('stockReturn', stockReturn)
 
                 // Xaxis is time period the graph is based off of.
                 stock.Xaxis = 'Today\'s date'
-
+               
                 var numArray = stockReturn.Elements[0].DataSeries.close.values
                 var average = addThemAll(numArray)
-                console.log('average', average)
-                stock.Yaxis = average
+                stock.average = average
+                console.log('stock.average', stock.average)
                 // Getting the average for stock
 
                 stock.avgChart();
