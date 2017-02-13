@@ -11,15 +11,16 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
     <script src="../js/average.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/register.css">
 </head>
 
 <body ng-controller='stockController as stock'>
-    <form ng-submit='stock.getSymbol.submit($event)'>
+    <form ng-submit='stock.getSymbol.submit(1)'>
         <fieldset>
             <input type="text" name="ticker symbol" ng-model="stock.symbol">
-            <input type="text" name="time period for chart" ng-model="stock.days">
+            <!--<input type="text" name="time period for chart" ng-model="stock.days">-->
         </fieldset>
         <button type="submit">button</button>
         <h1>{{stock.info.Name}}</h1>
@@ -28,13 +29,12 @@
         <p>{{stock.greeting}}</p>
           <div id="container" style="height: 400px; width: 50%"></div>
     </form>
-        <button ng-click='stock.oneDay($event)'>1D</button>
-        <button ng-click='stock.oneWeek($event)'>1W</button>
-        <button ng-click='stock.oneMonth($event)'>1M</button>
-        <button ng-click='stock.sixMonths($event)'>6M</button>
-        <button ng-click='stock.oneYear($event)'>1YR</button>
-        <button ng-click='stock.fiveYears($event)'>5YR</button>
-        <button ng-click='stock.Max($event)'>MAX</button>
+        <button ng-click='stock.getSymbol.submit(1)'>1D</button>
+        <button ng-click='stock.getSymbol.submit(7)'>1W</button>
+        <button ng-click='stock.getSymbol.submit(30)'>1M</button>
+        <button ng-click='stock.getSymbol.submit(180)'>6M</button>
+        <button ng-click='stock.getSymbol.submit(365)'>1YR</button>
+        <button ng-click='stock.getSymbol.submit(1825)'>5YR</button>
     <p><a href="/logout" class="btn btn-lg btn-danger">Logout</a></p>
 </body>
 
