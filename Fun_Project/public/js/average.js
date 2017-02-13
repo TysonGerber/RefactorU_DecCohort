@@ -46,6 +46,7 @@ function stock($http, $event) {
         console.log('6 months', 180);
         return 'max';
     }
+
 // CHART FROM HIGHCHARTS
     stock.avgChart = function () {
         var chart = new Highcharts.Chart({
@@ -217,3 +218,19 @@ function stock($http, $event) {
 //         });
 
 //     }
+
+
+function convertMS(ms) {
+  var d, h, m, s;
+  s = Math.floor(ms / 1000);
+  m = Math.floor(s / 60);
+  s = s % 60;
+  h = Math.floor(m / 60);
+  m = m % 60;
+  d = Math.floor(h / 24);
+  h = h % 24;
+  console.log({ d: d, h: h, m: m, s: s })
+  return { d: d, h: h, m: m, s: s };
+};
+
+convertMS(31568783175);
