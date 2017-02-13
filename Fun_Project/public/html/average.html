@@ -28,7 +28,13 @@
         <p>{{stock.greeting}}</p>
           <div id="container" style="height: 400px; width: 50%"></div>
     </form>
-  
+        <button ng-click='stock.oneDay($event)'>1D</button>
+        <button ng-click='stock.oneWeek($event)'>1W</button>
+        <button ng-click='stock.oneMonth($event)'>1M</button>
+        <button ng-click='stock.sixMonths($event)'>6M</button>
+        <button ng-click='stock.oneYear($event)'>1YR</button>
+        <button ng-click='stock.fiveYears($event)'>5YR</button>
+        <button ng-click='stock.Max($event)'>MAX</button>
     <p><a href="/logout" class="btn btn-lg btn-danger">Logout</a></p>
 </body>
 

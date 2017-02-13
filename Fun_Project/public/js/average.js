@@ -5,11 +5,47 @@ angular.module('stockApp', [])
 stock.$inject = ['$http']
 
 
-function stock($http) {
+function stock($http, $event) {
     var stock = this;
 
     stock.greeting = 'Welcome to your stock page'
 
+//Buttons 1D, 1W, 1M, 6M, 1YR, 5Yr, Max.
+    //1D
+    stock.oneDay = function($event){
+        console.log('1', 1);
+        return 1;
+    }
+    //1 Week
+     stock.oneWeek = function($event){
+        console.log('1 week', 7);
+        return 7;
+    }
+    //1 month
+     stock.oneMonth = function($event){
+        console.log('1 month', 30);
+        return 30;
+    }
+    //6 Months
+     stock.sixMonths = function($event){
+        console.log('6 months', 180);
+        return 180;
+    }
+    //1 Year
+      stock.oneyear = function($event){
+        console.log('1 Year', 365);
+        return 365;
+    }
+    //5 Years
+     stock.fiveYears = function($event){
+        console.log('5 years', 1825);
+        return 1825;
+    }
+    //Max
+    stock.Max = function($event){
+        console.log('6 months', 180);
+        return 'max';
+    }
 // CHART FROM HIGHCHARTS
     stock.avgChart = function () {
         var chart = new Highcharts.Chart({
@@ -18,7 +54,7 @@ function stock($http) {
                 type: 'column'
             },
             title: {
-                text: 'Average Stock Price'
+                text: 'Average Stock Price',
             },
             subtitle: {
                 text: 'Source dev.markitondemand.com'
