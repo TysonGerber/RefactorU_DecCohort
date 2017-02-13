@@ -70,7 +70,7 @@ function stock($http, $event) {
     // stock.five = moment() - moment().subtract(1825,'five years')
 
 
-    // CHART FROM HIGHCHARTS
+    // AVERAGE STOCK PRICE BAR CHART (FROM HIGHCHARTS)
     stock.avgChart = function () {
         var chart = new Highcharts.Chart({
             chart: {
@@ -96,7 +96,7 @@ function stock($http, $event) {
             tooltip: {
                 headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                 pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                '<td style="padding:0"><b>{point.y:.1f} price</b></td></tr>',
                 footerFormat: '</table>',
                 shared: true,
                 useHTML: true
@@ -116,47 +116,84 @@ function stock($http, $event) {
                 data: [stock.YaxisLP]
 
             }]
-        })
+        });
 
     }
     stock.avgChart();
 
-    //     stock.avgChart = function () {
-    //         var chart = new Highcharts.Chart({
-    //             chart: {
-    //                 renderTo: 'container',
-    //                 alignTicks: false
-    //             },
+// Data gathered from http://populationpyramid.net/germany/2015/
 
-    //             rangeSelector: {
-    //                 selected: 1
-    //             },
+// Age categories
+var categories = ['0-4', '5-9', '10-14', '15-19',
+        '20-24', '25-29', '30-34', '35-39', '40-44',
+        '45-49', '50-54', '55-59', '60-64', '65-69',
+        '70-74', '75-79', '80-84', '85-89', '90-94',
+        '95-99', '100 + '];
 
-    //             title: {
-    //                 text: 'AAPL Stock Volume'
-    //             },
+  stock.buySellChart = function () {
+        Highcharts.chart("buySellContainer", {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Population pyramid for Germany, 2015'
+        },
+        subtitle: {
+            text: 'Source: <a href="http://populationpyramid.net/germany/2015/">Population Pyramids of the World from 1950 to 2100</a>'
+        },
+        xAxis: [{
+            categories: categories,
+            reversed: false,
+            labels: {
+                step: 1
+            }
+        }, { // mirror axis on right side
+            opposite: true,
+            reversed: false,
+            categories: categories,
+            linkedTo: 0,
+            labels: {
+                step: 1
+            }
+        }],
+        yAxis: {
+            title: {
+                text: null
+            },
+            labels: {
+                formatter: function () {
+                    return Math.abs(this.value) + '%';
+                }
+            }
+        },
 
-    //             series: [{
-    //                 type: 'column',
-    //                 name: stock.Yaxis,
-    //                 data:  [stock.Yaxis],
-    //                 dataGrouping: {
-    //                     units: [[
-    //                         // 'week', // unit name
-    //                         // [1] // allowed multiples
-    //                     ], [
-    //                         // 'month',
-    //                         // [1, 2, 3, 4, 6]
-    //                     ]]
-    //                 }
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
 
-    //             }]
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+                    'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
+            }
+        },
 
-    //         });
-    // console.log('second', stock.Yaxis)
-    //     }
+        series: [{
+            name: 'Buy',
+            data: [-2.2, -2.2, -2.3, -2.5, -2.7, -3.1, -3.2,
+                -3.0, -3.2, -4.3, -4.4, -3.6, -3.1, -2.4,
+                -2.5, -2.3, -1.2, -0.6, -0.2, -0.0, -0.0]
+        }, {
+            name: 'Sell',
+            data: [2.1, 2.0, 2.2, 2.4, 2.6, 3.0, 3.1, 2.9,
+                3.1, 4.1, 4.3, 3.6, 3.4, 2.6, 2.9, 2.9,
+                1.8, 1.2, 0.6, 0.1, 0.0]
+        }]
+    });
+  }
 
-    //     stock.avgChart();
 
     // Function for finding the average of stock
 
@@ -176,10 +213,14 @@ function stock($http, $event) {
     stock.getSymbol = {
         submit: function (days) {
             stock.days = days
-            if(days === 1){
-            stock.average == stock.YaxisLP
-            console.log(stock.average)
+            // if(days === 0){
+            // stock.average == stock.YaxisLP
+             //console.log(stock.average)
+            if (days === 'null' || days === [0]){
+                days === stock.YaxisLP
             }
+           
+            
             $http.get('/stock' + '?symbol=' + stock.symbol).then(function success(res) {
                 var info = JSON.parse(res.data)
                 console.log('stock?symbol success', info.LastPrice)
@@ -201,7 +242,9 @@ function stock($http, $event) {
                 // var chart = JSON.parse(res.data)
                 // console.log('Chart data successful', res.data)
                 // stock.chart = chart
-                var stockReturn = JSON.parse(res.data)
+                console.dir('this is the data we are looking for',res.data)
+                console.log(res)
+                var stockReturn = JSON.parse(res.data.replace("NaN",""))
                 console.dir(stockReturn)
                 console.log('stockReturn', stockReturn)
 
@@ -250,5 +293,42 @@ function stock($http, $event) {
 //     }
 
 
+
+    //     stock.avgChart = function () {
+    //         var chart = new Highcharts.Chart({
+    //             chart: {
+    //                 renderTo: 'container',
+    //                 alignTicks: false
+    //             },
+
+    //             rangeSelector: {
+    //                 selected: 1
+    //             },
+
+    //             title: {
+    //                 text: 'AAPL Stock Volume'
+    //             },
+
+    //             series: [{
+    //                 type: 'column',
+    //                 name: stock.Yaxis,
+    //                 data:  [stock.Yaxis],
+    //                 dataGrouping: {
+    //                     units: [[
+    //                         // 'week', // unit name
+    //                         // [1] // allowed multiples
+    //                     ], [
+    //                         // 'month',
+    //                         // [1, 2, 3, 4, 6]
+    //                     ]]
+    //                 }
+
+    //             }]
+
+    //         });
+    // console.log('second', stock.Yaxis)
+    //     }
+
+    //     stock.avgChart();
 
 

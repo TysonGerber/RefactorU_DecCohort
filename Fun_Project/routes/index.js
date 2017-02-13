@@ -112,12 +112,18 @@ module.exports = (app) => {
 
     app.get('/chart', function(req,res){
         console.log('chart inputs', req.query)
-        request('http://dev.markitondemand.com/MODApis/Api/v2/InteractiveChart/json?parameters={"Normalized":false,"NumberOfDays":'+ req.query.days+',"DataPeriod":"Day","Elements":[{"Symbol":"'+ req.query.symbol +'","Type":"price","Params":["c"]}]}', function(err,response,body){
+        var apiUrl = 'http://dev.markitondemand.com/MODApis/Api/v2/InteractiveChart/json?parameters={"Normalized":false,"NumberOfDays":'+ req.query.days+',"DataPeriod":"Day","Elements":[{"Symbol":"'+ req.query.symbol +'","Type":"price","Params":["c"]}]}'
+        console.log(apiUrl)
+        request(apiUrl, function(err,response,body){
             if (err){
                 console.log('chart api failure', err)
                 res.status(500).send('chart api failure', err)
             }else{
-                console.log('/chart json info', body)
+                // console.log('/chart json info', body)
+                // console.log(typeof(body))
+                // console.log('positions type',typeof(body.positions))
+                // console.log(body.positions)
+                // res.send('hey buddy')
                 res.json(body)
             }
         })
