@@ -119,7 +119,7 @@ function stock($http, $event) {
         });
 
     }
-    stock.avgChart();
+    // stock.avgChart();
 
     // Data gathered from http://populationpyramid.net/germany/2015/
 
@@ -131,6 +131,7 @@ function stock($http, $event) {
         '95-99', '100 + '];
 
     stock.buySellChart = function () {
+        console.log('chart stock.buy', stock.buy)
         var chart = new Highcharts.Chart({
             chart: {
                 renderTo: 'buySellContainer',
@@ -191,7 +192,7 @@ function stock($http, $event) {
             }]
         });
     }
-    stock.buySellChart();
+    // stock.buySellChart();
 
 
     // Function for finding the average of stock
@@ -263,15 +264,16 @@ function stock($http, $event) {
 
                 // Getting the percentage of stock based on the average price and today's stock price.
                 stock.buy = [];
-                stock.sell = []
+                stock.sell = [];
                 var diffInPrice = (+stock.average - +stock.YaxisLP);
                 stock.percentage = (+diffInPrice / +stock.YaxisLP * 100);
+                console.log('figure it out stock.percentage', typeof stock.percentage)
                 if(stock.percentage > 0){
-                    stock.sell.push(stock.percentage[0]) 
-                    stock.buy.push(-stock.percentage[0])
+                    stock.sell.push(+stock.percentage) 
+            
                     console.log('This is stock.sell, number should be positive', stock.percentage)                   
                 }else {
-                    stock.buy.push(stock.percentage)
+                    stock.buy.push(+stock.percentage)
                     console.log('This is stock.buy, number should be negative', stock.percentage)
                 }
                 console.log('stock.buy', stock.buy)
@@ -284,6 +286,7 @@ function stock($http, $event) {
 
 
                 stock.avgChart();
+                stock.buySellChart();
 
 
             },
