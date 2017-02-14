@@ -121,78 +121,77 @@ function stock($http, $event) {
     }
     stock.avgChart();
 
-// Data gathered from http://populationpyramid.net/germany/2015/
+    // Data gathered from http://populationpyramid.net/germany/2015/
 
-// Age categories
-var categories = ['0-4', '5-9', '10-14', '15-19',
+    // Age categories
+    var categories = ['0-4', '5-9', '10-14', '15-19',
         '20-24', '25-29', '30-34', '35-39', '40-44',
         '45-49', '50-54', '55-59', '60-64', '65-69',
         '70-74', '75-79', '80-84', '85-89', '90-94',
         '95-99', '100 + '];
 
-  stock.buySellChart = function () {
-        Highcharts.chart("buySellContainer", {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Population pyramid for Germany, 2015'
-        },
-        subtitle: {
-            text: 'Source: <a href="http://populationpyramid.net/germany/2015/">Population Pyramids of the World from 1950 to 2100</a>'
-        },
-        xAxis: [{
-            categories: categories,
-            reversed: false,
-            labels: {
-                step: 1
-            }
-        }, { // mirror axis on right side
-            opposite: true,
-            reversed: false,
-            categories: categories,
-            linkedTo: 0,
-            labels: {
-                step: 1
-            }
-        }],
-        yAxis: {
-            title: {
-                text: null
+    stock.buySellChart = function () {
+        var chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'buySellContainer',
+                renderTo: 'buySellContainer',
+                type: 'bar'
             },
-            labels: {
-                formatter: function () {
-                    return Math.abs(this.value) + '%';
+            title: {
+                text: 'Population pyramid for Germany, 2015'
+            },
+            subtitle: {
+                text: 'Source: <a href="http://populationpyramid.net/germany/2015/">Population Pyramids of the World from 1950 to 2100</a>'
+            },
+            xAxis: [{
+                categories: categories,
+                reversed: false,
+                labels: {
+                    step: 1
                 }
-            }
-        },
+            }, { // mirror axis on right side
+                opposite: true,
+                reversed: false,
+                categories: categories,
+                linkedTo: 0,
+                labels: {
+                    step: 1
+                }
+            }],
+            yAxis: {
+                title: {
+                    text: null
+                },
+                labels: {
+                    formatter: function () {
+                        return Math.abs(this.value) + '%';
+                    }
+                }
+            },
 
-        plotOptions: {
-            series: {
-                stacking: 'normal'
-            }
-        },
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
 
-        tooltip: {
-            formatter: function () {
-                return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
-                    'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
-            }
-        },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+                        'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
+                }
+            },
 
-        series: [{
-            name: 'Buy',
-            data: [-2.2, -2.2, -2.3, -2.5, -2.7, -3.1, -3.2,
-                -3.0, -3.2, -4.3, -4.4, -3.6, -3.1, -2.4,
-                -2.5, -2.3, -1.2, -0.6, -0.2, -0.0, -0.0]
-        }, {
-            name: 'Sell',
-            data: [2.1, 2.0, 2.2, 2.4, 2.6, 3.0, 3.1, 2.9,
-                3.1, 4.1, 4.3, 3.6, 3.4, 2.6, 2.9, 2.9,
-                1.8, 1.2, 0.6, 0.1, 0.0]
-        }]
-    });
-  }
+            series: [{
+                name: 'Buy',
+                data: stock.buy
+            }, {
+                name: 'Sell',
+                data: stock.sell
+            }]
+        });
+    }
+    stock.buySellChart();
 
 
     // Function for finding the average of stock
@@ -213,16 +212,27 @@ var categories = ['0-4', '5-9', '10-14', '15-19',
     stock.getSymbol = {
         submit: function (days) {
             stock.days = days
-            // if(days === 0){
-            // stock.average == stock.YaxisLP
-             //console.log(stock.average)
-            if (days === 'null' || days === [0]){
-                days === stock.YaxisLP
-            }
-           
-            
-            $http.get('/stock' + '?symbol=' + stock.symbol).then(function success(res) {
-                var info = JSON.parse(res.data)
+            // // if(days === 0){
+            // // stock.average == stock.YaxisLP
+            // //console.log(stock.average)
+            // if (days === 'null' || days === [0]) {
+            //     days === stock.YaxisLP
+            // }
+
+
+         var stockPromise =   $http.get('/stock' + '?symbol=' + stock.symbol);
+       
+            // passing in as an argument on submit button 1D, 1W, 1M etc
+
+
+          var chartPromise =  $http.get('/chart?symbol=' + stock.symbol + '&days=' + stock.days);
+          Promise.all([stockPromise, chartPromise]).then(function success(resArray)    {
+                // var chart = JSON.parse(res.data)
+                // console.log('Chart data successful', res.data)
+                // stock.chart = chart
+
+                //stock Promise data
+                var info = JSON.parse(resArray[0].data)
                 console.log('stock?symbol success', info.LastPrice)
                 stock.info = info
                 console.log('stock.info', stock.info)
@@ -230,32 +240,48 @@ var categories = ['0-4', '5-9', '10-14', '15-19',
                 console.log('stock.company', stock.company)
                 stock.YaxisLP = stock.info.LastPrice
                 console.log('stockYaxisLP', stock.YaxisLP)
-                stock.avgChart();
-            },
-                function failed(res) {
-                    console.log('stock?symbol failed', res.data)
-                })
-            // passing in as an argument on submit button 1D, 1W, 1M etc
+                // stock.avgChart();
 
 
-            $http.get('/chart?symbol=' + stock.symbol + '&days=' + stock.days).then(function success(res) {
-                // var chart = JSON.parse(res.data)
-                // console.log('Chart data successful', res.data)
-                // stock.chart = chart
-                console.dir('this is the data we are looking for',res.data)
-                console.log(res)
-                var stockReturn = JSON.parse(res.data.replace("NaN",""))
+                //chart Promise data
+                console.dir('this is the data we are looking for', resArray[1].data)
+                console.log(resArray[1])
+                var stockReturn = JSON.parse(resArray[1].data.replace("NaN", ""))
                 console.dir(stockReturn)
                 console.log('stockReturn', stockReturn)
 
                 // Xaxis is time period the graph is based off of.
                 stock.Xaxis = 'Today\'s date'
 
+                   // Getting the average for stock
                 var numArray = stockReturn.Elements[0].DataSeries.close.values
                 var average = addThemAll(numArray)
                 stock.average = average
-                console.log('stock.average', stock.average)
-                // Getting the average for stock
+                console.log('stock.average', stock.average);
+                
+             
+
+                // Getting the percentage of stock based on the average price and today's stock price.
+                stock.buy = [];
+                stock.sell = []
+                var diffInPrice = (+stock.average - +stock.YaxisLP);
+                stock.percentage = (+diffInPrice / +stock.YaxisLP * 100);
+                if(stock.percentage > 0){
+                    stock.sell.push(stock.percentage[0]) 
+                    stock.buy.push(-stock.percentage[0])
+                    console.log('This is stock.sell, number should be positive', stock.percentage)                   
+                }else {
+                    stock.buy.push(stock.percentage)
+                    console.log('This is stock.buy, number should be negative', stock.percentage)
+                }
+                console.log('stock.buy', stock.buy)
+                console.log('stock.sell', stock.sell)
+
+                console.log('stock average typeof', typeof stock.average);
+                console.log('stock.YaxisLP', stock.YaxisLP);
+                console.log('diff in price', diffInPrice);
+                console.log('percentage', stock.percentage);
+
 
                 stock.avgChart();
 
