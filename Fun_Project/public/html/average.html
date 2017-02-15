@@ -9,9 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="../js/themes/avgTheme.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+     <script src="../js/themes/dark-unica.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
     <script src="../js/average.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/average.css">
@@ -28,15 +27,17 @@
         <h2>{{stock.info.Symbol}}</h2>
         <h2>{{stock.chart}}</h2>
         <p>{{stock.greeting}}</p>
-        <div id="container" style="height: 400px; width: 100vw"></div>
-        <div id="buySellContainer" style="min-width: 310px; width: 100vw; height: 400px; margin: 0 auto"></div>
-        <button ng-click='stock.getSymbol.submit(1)'>1D</button>
-        <button ng-click='stock.getSymbol.submit(7)'>1W</button>
-        <button ng-click='stock.getSymbol.submit(30)'>1M</button>
-        <button ng-click='stock.getSymbol.submit(180)'>6M</button>
-        <button ng-click='stock.getSymbol.submit(365)'>1YR</button>
-        <button ng-click='stock.getSymbol.submit(1825)'>5YR</button>
+        <div id="container"></div>
+        <div id="buySellContainer"></div>
+        <button ng-click='stock.oneDay()'>1D</button>
+        <button ng-click='stock.oneWeek()'>1W</button>
+        <button ng-click='stock.oneMonth()'>1M</button>
+        <button ng-click='stock.sixMonths()'>6M</button>
+        <button ng-click='stock.oneYear()'>1YR</button>
+        <button ng-click='stock.fiveYears()'>5YR</button>
+        <button ng-click='stock.Max()'>Max</button>
     </form>
+
 
     <p><a href="/logout" class="btn btn-lg btn-danger">Logout</a></p>
 </body>
