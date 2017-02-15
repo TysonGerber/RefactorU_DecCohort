@@ -138,6 +138,7 @@ function stock($http, $event) {
                 renderTo: 'buySellContainer',
                 type: 'bar'
             },
+            colors: ['rgb(000, 000, 000)', 'rgb(200, 200, 255)'],
             title: {
                 text: 'Population pyramid for Germany, 2015'
             },
@@ -189,7 +190,8 @@ function stock($http, $event) {
             }, {
                 name: 'Sell',
                 data: stock.sell
-            }]
+            },
+          ]
         });
     }
     // stock.buySellChart();
@@ -234,22 +236,22 @@ function stock($http, $event) {
 
                 //stock Promise data
                 var info = JSON.parse(resArray[0].data)
-                console.log('stock?symbol success', info.LastPrice)
+                // console.log('stock?symbol success', info.LastPrice)
                 stock.info = info
-                console.log('stock.info', stock.info)
+                // console.log('stock.info', stock.info)
                 stock.company = stock.info.Name
-                console.log('stock.company', stock.company)
+                // console.log('stock.company', stock.company)
                 stock.YaxisLP = stock.info.LastPrice
-                console.log('stockYaxisLP', stock.YaxisLP)
+                // console.log('stockYaxisLP', stock.YaxisLP)
                 // stock.avgChart();
 
 
                 //chart Promise data
-                console.dir('this is the data we are looking for', resArray[1].data)
+                // console.dir('this is the data we are looking for', resArray[1].data)
                 console.log(resArray[1])
                 var stockReturn = JSON.parse(resArray[1].data.replace("NaN", ""))
-                console.dir(stockReturn)
-                console.log('stockReturn', stockReturn)
+                // console.dir(stockReturn)
+                // console.log('stockReturn', stockReturn)
 
                 // Xaxis is time period the graph is based off of.
                 stock.Xaxis = 'Today\'s date'
@@ -258,7 +260,7 @@ function stock($http, $event) {
                 var numArray = stockReturn.Elements[0].DataSeries.close.values
                 var average = addThemAll(numArray)
                 stock.average = average
-                console.log('stock.average', stock.average);
+                // console.log('stock.average', stock.average);
                 
              
 
@@ -269,20 +271,31 @@ function stock($http, $event) {
                 stock.percentage = (+diffInPrice / +stock.YaxisLP * 100);
                 console.log('figure it out stock.percentage', typeof stock.percentage)
                 if(stock.percentage > 0){
+                    //If it is a positive number then SELL // stock.sell.push.
                     stock.sell.push(+stock.percentage) 
-            
-                    console.log('This is stock.sell, number should be positive', stock.percentage)                   
-                }else {
-                    stock.buy.push(+stock.percentage)
-                    console.log('This is stock.buy, number should be negative', stock.percentage)
-                }
-                console.log('stock.buy', stock.buy)
-                console.log('stock.sell', stock.sell)
+                      console.log('This is stock.sell, number should be POSITIVE pushing THIS ONE', stock.sell)  
+                    //Created this one because I need the opposite side of the graph to appear. I then am making this one transparent.
+                    stock.sell.push(-stock.percentage) 
 
-                console.log('stock average typeof', typeof stock.average);
-                console.log('stock.YaxisLP', stock.YaxisLP);
-                console.log('diff in price', diffInPrice);
-                console.log('percentage', stock.percentage);
+                    //ASK HOW TO GRAB THE ELEMENT BY CLASS NAME AND WHY THIS ISN'T WORKING.
+                    // document.getElementsByClassName("#highcharts-r2qss7l-8 > svg > g.highcharts-series-group > g.highcharts-series.highcharts-series-1.highcharts-bar-series.highcharts-color-1.highcharts-tracker > rect.highcharts-point.highcharts-negative.highcharts-color-1").style.color='purple'
+                    console.log('PURPLE stock.buy OPPOSITE', stock.sell)  
+                                   
+                }else {
+                    //If it is a negative number then BUY // stock.buy.push.
+                    stock.buy.push(+stock.percentage)
+                    console.log('This is stock.buy, number should be NEGATIVE pushing THIS ONE', stock.buy)
+                       stock.buy.push(-stock.percentage) 
+                    console.log('stock.sell OPPOSITE', stock.buy)
+                      
+                }
+                // console.log('stock.buy', stock.buy)
+                // console.log('stock.sell', stock.sell)
+
+                // console.log('stock average typeof', typeof stock.average);
+                // console.log('stock.YaxisLP', stock.YaxisLP);
+                // console.log('diff in price', diffInPrice);
+                // console.log('percentage', stock.percentage);
 
 
                 stock.avgChart();
