@@ -23,10 +23,10 @@
             <!--<input type="text" name="time period for chart" ng-model="stock.days">-->
         </fieldset>
         <button type="submit">button</button>
-        <h1>{{stock.info.Name}}</h1>
+        <!--<h1>{{stock.info.Name}}</h1>
         <h2>{{stock.info.Symbol}}</h2>
         <h2>{{stock.chart}}</h2>
-        <p>{{stock.greeting}}</p>
+        <p>{{stock.greeting}}</p>-->
         <div id="container"></div>
         <div id="buySellContainer"></div>
         <button ng-click='stock.oneDay()'>1D</button>
@@ -35,7 +35,8 @@
         <button ng-click='stock.sixMonths()'>6M</button>
         <button ng-click='stock.oneYear()'>1YR</button>
         <button ng-click='stock.fiveYears()'>5YR</button>
-        <button ng-click='stock.Max()'>Max</button>
+        <button ng-click='stock.tenYears()'>10YR</button>
+        <button ng-click='stock.max()'>Max</button>
     </form>
 
 

@@ -13,58 +13,65 @@ function stock($http, $event) {
    
 var timePeriod = {
     
-    text: ' Today\'s date',
+    text: ' Today\'s Date',
     number: "",
     days: 1
     
 }
 
         stock.oneDay = function(){
-            timePeriod.text = " Today's date"
+            timePeriod.text = " Today's date "
             timePeriod.days= 1
             console.log('One day being CLICKED')
         }
       
         //1 Week
          stock.oneWeek = function(){
-               timePeriod.text = " past week"
+               timePeriod.text = " Past Week "
                timePeriod.days = 7;
             console.log('1 week', 7);
         }
         
         //1 month
          stock.oneMonth = function(){
-              timePeriod.text = " current month"
+              timePeriod.text = " Current Month "
                timePeriod.days = 30;
             console.log('1 month', 30);
          
         }
         //6 Months
          stock.sixMonths = function(){
-              timePeriod.text = " the last 6 months"
+              timePeriod.text = " The Last 6 Months "
                timePeriod.days = 180;
             console.log('6 months', 180);
     
         }
         //1 Year
           stock.oneYear = function(){
-               timePeriod.text = " last year"
+               timePeriod.text = " Last Year "
                timePeriod.days = 365;
             console.log('1 Year', 365);
           
         }
         //5 Years
          stock.fiveYears = function(){
-              timePeriod.text = " the last five years"
+              timePeriod.text = " The Last Five Years "
                timePeriod.days = 1825;
             console.log('5 years', 1825);
          
         }
-        //Max ?? Don't know how to get this one.
-        stock.Max = function(){
-             timePeriod.text 
-               timePeriod.days
-            console.log('6 months', 180);
+        //10 Year
+        stock.tenYears = function(){
+             timePeriod.text = " Ten Years "
+               timePeriod.days= 3650
+            console.log('6 months', 3650);
+           
+        }
+         //Max that I am able to get.
+        stock.tenYears = function(){
+             timePeriod.text = " Ten Years "
+               timePeriod.days= 9999
+            console.log('6 months', 9999);
            
         }
 
@@ -112,7 +119,7 @@ var timePeriod = {
                 data: [stock.average]
 
             }, {
-                name: 'Current Stock Price',
+                name: "" + timePeriod.text + "Stock Price",
                 data: [stock.YaxisLP]
 
             }]
@@ -124,11 +131,7 @@ var timePeriod = {
     // AVERAGE PRICE STOCK CHART(FROM HIGHCHARTS)
 
     // Age categories
-    var categories = ['0-4', '5-9', '10-14', '15-19',
-        '20-24', '25-29', '30-34', '35-39', '40-44',
-        '45-49', '50-54', '55-59', '60-64', '65-69',
-        '70-74', '75-79', '80-84', '85-89', '90-94',
-        '95-99', '100 + '];
+    var categories = [' ', ' '];
 
 
     stock.buySellChart = function () {
