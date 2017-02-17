@@ -6,8 +6,8 @@ Highcharts.theme = {
       backgroundColor: {
          linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
          stops: [
-            [0, '#2a2a2b'],
-            [1, '#3e3e40']
+            [0, '#262626'],
+            [1, '#262626']
          ]
       },
       style: {
@@ -19,7 +19,7 @@ Highcharts.theme = {
       style: {
          color: '#E0E0E3',
          textTransform: 'uppercase',
-         fontSize: '20px'
+         fontSize: '16px'
       }
    },
    subtitle: {

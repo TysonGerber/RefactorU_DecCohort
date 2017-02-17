@@ -81,7 +81,8 @@ var timePeriod = {
     stock.avgChart = function () {
         var chart = new Highcharts.Chart({
             chart: {
-                renderTo: 'container',
+                 //avgChart container on html page
+                renderTo: 'avgChart',
                 type: 'column'
             },
             title: {
@@ -115,16 +116,16 @@ var timePeriod = {
                 }
             },
             series: [{
-                name: 'Average Stock Price',
+                name: "Average Stock Price " + "$" +stock.average + "",
                 data: [stock.average]
 
             }, {
-                name: "" + timePeriod.text + "Stock Price",
+                name: "" + timePeriod.text + "Stock Price " + "$" + stock.YaxisLP + "",
                 data: [stock.YaxisLP]
 
             }]
         });
-
+        
     }
 
 
@@ -138,7 +139,8 @@ var timePeriod = {
         console.log('chart stock.buy', stock.buy)
         var chart = new Highcharts.Chart({
             chart: {
-                renderTo: 'buySellContainer',
+                //buySellChart container on html page
+                renderTo: 'buySellChart',
                 type: 'bar'
             },
             // colors: ['rgb(000, 000, 000)', 'rgb(200, 200, 255)'],
@@ -209,13 +211,19 @@ var timePeriod = {
         var average = sum / numbers.length;
         return average
     }
-
+    
 
     stockInfo = [];
     stock.getSymbol = {
         submit: function () {
             stock.days = timePeriod.days
+        //     console.log('outside',stock.days)
          
+        //  if(stock.days === 1){
+        //      stock.average === stock.YaxisLP
+        //      console.log('inside',stock.average)
+        //      return stock.average
+        //  }
             
             //1st PROMISE
             var stockPromise = $http.get('/stock' + '?symbol=' + stock.symbol);

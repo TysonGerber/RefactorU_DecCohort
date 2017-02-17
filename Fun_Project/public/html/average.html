@@ -27,16 +27,20 @@
         <h2>{{stock.info.Symbol}}</h2>
         <h2>{{stock.chart}}</h2>
         <p>{{stock.greeting}}</p>-->
-        <div id="container"></div>
-        <div id="buySellContainer"></div>
-        <button ng-click='stock.oneDay()'>1D</button>
-        <button ng-click='stock.oneWeek()'>1W</button>
-        <button ng-click='stock.oneMonth()'>1M</button>
-        <button ng-click='stock.sixMonths()'>6M</button>
-        <button ng-click='stock.oneYear()'>1YR</button>
-        <button ng-click='stock.fiveYears()'>5YR</button>
-        <button ng-click='stock.tenYears()'>10YR</button>
-        <button ng-click='stock.max()'>Max</button>
+        <div id="avgChart"></div>
+        <div id="buySellChart"></div>
+        <div class='buttonOuterDiv'>
+            <div class='buttonInnerDiv'>
+                <button id='timeButton' ng-click='stock.oneDay()'>1D</button>
+                <button id='timeButton' ng-click='stock.oneWeek()'>1W</button>
+                <button id='timeButton' ng-click='stock.oneMonth()'>1M</button>
+                <!--<button id='timeButton' ng-click='stock.sixMonths()'>6M</button>-->
+                <button id='timeButton' ng-click='stock.oneYear()'>1YR</button>
+                <button id='timeButton' ng-click='stock.fiveYears()'>5YR</button>
+                <button id='timeButton' ng-click='stock.tenYears()'>10YR</button>
+                <button id='timeButton' ng-click='stock.max()'>MAX</button>
+            </div>
+        </div>
     </form>
 
 

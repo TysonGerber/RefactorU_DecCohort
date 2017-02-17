@@ -34,13 +34,9 @@ button, input, optgroup, select, textarea{
 
 
 form{
-    margin-top: 200px;
-    background: rgba(63,62,62,0.5);
-    border-radius: 10px;
-    padding: 20px;
-    display: block;
-    margin:auto;
-    margin-top: 60px;
+   width: auto;
+   max-width: 85vw;
+   min-width: 75vw;
 }
 i{
  font-size: 25px;
@@ -74,64 +70,39 @@ p {
     padding: 10px;
 }
 
- 
+
 
 /*************************************
 CLASSES 320px
 ***************************************/
 
-/*.fieldset1 {
-    padding: 0px 0px 25px 0px;
 
-    border: 0px;
-}
-.fieldset2 {
-    padding: 0px 0px 25px 0px;
-    border: 0px;
-}
-
-.registerButton{
-  width: 95%;
-  height: 40px;
-  background-color: #0CA5E8;
-  border: #0CA5E0;
-  color: white;
-  border-radius: 5px;
+.buttonInnerDiv{
 
 }
-.logo{
-    margin-top: 100px;
-    text-align: center;
-}
-.password{
-    padding-bottom: 30px;
-}
-.logo{
-    text-align: center;
 
-}*/
+
 
 /*************************************
 ID's 320px
 ***************************************/
-
-#faUser{
-    font-size: 29.25px;
+#avgChart{
+    height: 45vh;
+   
 }
-#faLock{
-    font-size: 37px;
+#buySellChart {
+    height: 45vh
 }
-#faEnvelope{
-    font-size: 25px;
+#timeButton{
+    font-size: 16px; 
+    display: inline-block;
+    background: transparent;
+    border-right: 1px solid white;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    color: white;
 }
-#input1{
-    width: 80%;
-}
-    }
-#input2{
-    width: 80%;
-}
-    
 
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
            @MEDIA 480px
