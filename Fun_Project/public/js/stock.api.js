@@ -10,11 +10,20 @@ function stock($http) {
 
     // stock.greeting = 'Welcome to Day Stocker!'
 
+stock.search= ''
+if(window.innerWidth <= 530){
+    stock.search='Ex: GE'
+}else if(window.innerWidth >= 535 && window.innerWidth <1078){
+    stock.search='Ex: AAPL or Apple'
+}else if(window.innerWidth >= 1079 ){
+    stock.search='Ticker: "AAPL" or Company: "Apple"'
+}
+    
 // STOCK PRICE CHART
 stock.stockChart = function() {
     var chart = new Highcharts.Chart({
         chart: {
-            renderTo: 'container',
+            renderTo:'container',
             backgroundColor: {
                 linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
                 stops: [

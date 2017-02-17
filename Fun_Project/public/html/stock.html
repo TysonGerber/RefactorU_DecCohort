@@ -20,7 +20,7 @@
         <h1 class='title welcome'>Welcome to Day Stocker</h1>
         <h2 class='title stockTitle'>Choose Your Stock</h2>
         <fieldset class='fieldCenter'>
-            <input type="text" name="ticker symbol" ng-model="stock.symbol">
+            <input placeholder="{{stock.search}}" type="text" name="ticker symbol" ng-model="stock.symbol">
             <!--<input type="text" name="time period for chart" ng-model="stock.days">-->
         </fieldset>
         <button class='stockButton' type="submit">Get Stock</button>
