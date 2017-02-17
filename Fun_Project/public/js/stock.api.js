@@ -8,7 +8,7 @@ stock.$inject = ['$http']
 function stock($http) {
     var stock = this;
 
-    stock.greeting = 'Welcome to your stock page'
+    // stock.greeting = 'Welcome to Day Stocker!'
 
 // STOCK PRICE CHART
 stock.stockChart = function() {

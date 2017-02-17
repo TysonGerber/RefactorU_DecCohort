@@ -24,7 +24,7 @@ function Auth($http) { // window.Auth
         success: function(res) { // server response callback
             // when login is successful, redirect them into the dashboard
             console.info('auth.login.success', res.data);
-            location.href = '/html/dashboard.html';
+            location.href = '/html/stock.html';
         },
         error: function(err) {
             console.error('Login.error', err);
@@ -42,9 +42,9 @@ function Auth($http) { // window.Auth
                 .then(auth.register.success, auth.register.error);
         },
         success: function(res) {
-            // when register is successful, just redirect them into the dashboard (already logged in)
+            // when register is successful, just redirect them into the stock (already logged in)
             console.info('auth.register.success', res.data);
-            location.href = "/html/dashboard.html";
+            location.href = "/html/stock.html";
         },
         error: function(err) {
             console.error('auth.register.error', err);

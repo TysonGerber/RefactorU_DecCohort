@@ -28,10 +28,9 @@ body{
     background: #262626;
 }
 
-button, input, optgroup, select, textarea{
-      font-family: 'Open Sans', sans-serif;
+fieldset{
+    border: none;
 }
-
 
 form{
     margin-top: 200px;
@@ -42,9 +41,9 @@ form{
     margin:auto;
     margin-top: 60px;
 }
-i{
+/*i{
  font-size: 25px;
-}
+}*/
 
 a:hover{
     text-decoration: none;
@@ -54,19 +53,12 @@ input{
     border: none;
     border-bottom: 1px solid #fff;
     color: white;
-    border-radius: 0px;
- 
-  
+    border-radius: 0px; 
+    width: auto;
 }
 
 input:focus {
     outline: none;
-}
-
-label{
-    display: inline-block;
-    width: 5%;
-    padding-right: 40px;
 }
 
 p {
@@ -79,60 +71,47 @@ p {
 /*************************************
 CLASSES 320px
 ***************************************/
-
-.fieldset1 {
-    padding: 0px 0px 25px 0px;
-
-    border: 0px;
+.fieldCenter{
+    text-align: center;
 }
-.fieldset2 {
-    padding: 0px 0px 25px 0px;
-    border: 0px;
-}
-
-.registerButton{
+.stockButton{
   width: 95%;
   height: 40px;
   background-color: #0CA5E8;
   border: #0CA5E0;
   color: white;
   border-radius: 5px;
+  font-size: 1em;
 
 }
-.logo{
-    margin-top: 100px;
-    text-align: center;
-}
-.password{
-    padding-bottom: 30px;
-}
-.logo{
-    text-align: center;
 
+.stockTitle{
+    font-size: 1em;
 }
+
+.title{
+    text-align: center
+}
+
+.welcome{
+    font-size: 1.5em;
+}
+
 
 /*************************************
 ID's 320px
 ***************************************/
 
-#faUser{
-    font-size: 29.25px;
-}
-#faLock{
-    font-size: 37px;
-}
-#faEnvelope{
-    font-size: 25px;
-}
+
 #input1{
     width: 80%;
 }
-    }
+    
 #input2{
     width: 80%;
 }
     
-
+ }
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
            @MEDIA 480px
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
@@ -149,7 +128,25 @@ ID's 480px
 #input2{
     width: 85%;
 }
+
+
+/*************************************
+Class 480px
+***************************************/
+
+
+.stockTitle{
+    font-size: 1.25em;
 }
+
+.title{
+    text-align: center
+}
+
+.welcome{
+    font-size: 1.75em;
+}
+    }
     
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
            @MEDIA 768px
@@ -202,8 +199,18 @@ CLASSES 768px
   max-width: 95%;
   height: 40px;
 }
+.stockTitle{
+    font-size: 1.5em;
+}
 
+.title{
+    text-align: center
+}
 
+.welcome{
+    font-size: 2em;
+}
+    }
 
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
            @MEDIA 992px

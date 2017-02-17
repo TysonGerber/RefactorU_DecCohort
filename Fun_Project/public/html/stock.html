@@ -12,20 +12,22 @@
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     <script src="../js/stock.api.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/register.css">
+    <link rel="stylesheet" type="text/css" href="/css/stock.css">
 </head>
 
 <body ng-controller='stockController as stock'>
     <form ng-submit='stock.getSymbol.submit($event)'>
-        <fieldset>
+        <h1 class='title welcome'>Welcome to Day Stocker</h1>
+        <h2 class='title stockTitle'>Choose Your Stock</h2>
+        <fieldset class='fieldCenter'>
             <input type="text" name="ticker symbol" ng-model="stock.symbol">
-            <input type="text" name="time period for chart" ng-model="stock.days">
+            <!--<input type="text" name="time period for chart" ng-model="stock.days">-->
         </fieldset>
-        <button type="submit">button</button>
+        <button class='stockButton' type="submit">Get Stock</button>
         <h1>{{stock.info.Name}}</h1>
         <h2>{{stock.info.Symbol}}</h2>
         <h2>{{stock.chart}}</h2>
-        <p>{{stock.greeting}}</p>
+        <!--<p>{{stock.greeting}}</p>-->
     </form>
     <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
     <p><a href="/logout" class="btn btn-lg btn-danger">Logout</a></p>
