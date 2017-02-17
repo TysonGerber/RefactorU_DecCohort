@@ -17,7 +17,10 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
 a{
     text-decoration: none;
-     color: #0CA5E8;
+     color: white;
+}
+a:hover{
+    color: red;
 }
 
 body{
@@ -76,10 +79,83 @@ p {
 CLASSES 320px
 ***************************************/
 
-
-.buttonInnerDiv{
-
+.menuBar{
+    width: 100vw;
+    list-style: none;
+    color: white;
+     min-height: 20%;
 }
+
+/*.dash{
+    background-color: #0D76FF;
+   
+}
+.stocks{
+    background-color: #0CA5E8;
+}
+.data{
+    background-color: #00F5FF;
+}
+.another{
+    /*background-color: #0CE8B3;*/
+    background-color: #0DFF80;
+}*/
+
+
+
+
+
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  background:#ecf0f1;
+  margin:30px;
+}
+
+a{
+  text-decoration:none;
+  color:white;
+}
+
+.logo{
+  float:left;
+  color:white;
+  font-weight:600;
+  margin-right:15px;
+  margin-left:20px;
+  padding-right:30px; 
+}
+
+
+
+
+
+
+
+/* START wetasphalt NAV */
+
+.wetasphalt-nav{
+  
+  border-radius:6px;
+  width: 20vw;
+  padding-top:15px;
+  padding-bottom:15px;
+  font-size:14px;
+  margin-bottom:10px;
+  border-top: 1px solid white;
+}
+
+.wetasphalt-nav ul { margin: 0; padding: 0; list-style-type: none; list-style-image: none; }
+
+.wetasphalt-nav li { margin-right: 0px; display: inline; }
+
+.wetasphalt-nav ul li a { text-decoration:none;  margin: 0px; padding: 15px 20px 15px 20px; color:#ffffff; }
+
+.wetasphalt-nav ul li a:hover { color: #fff; background-color:#212020; text-decoration:none; }
+
+.wetasphalt-nav li.current-menu-item a{ color: #fff; text-decoration:none; background-color:#262626; }
+
+.wetasphalt-nav li.current_page_item  { color: #fff; text-decoration:none; background-color:#262626; }
 
 
 
@@ -113,13 +189,11 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 ID's 480px
 ***************************************/
     @media only screen and (min-width : 480px) {
- #input1{
-    width: 85%;
-}
-    
-#input2{
-    width: 85%;
-}
+
+
+.wetasphalt-nav{
+  width: 20vw;
+
 }
     
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM

@@ -13,6 +13,7 @@
      <script src="../js/themes/dark-unica.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
     <script src="../js/average.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/css/average.css">
 </head>
 
@@ -31,20 +32,30 @@
         <div id="buySellChart"></div>
         <div class='buttonOuterDiv'>
             <div class='buttonInnerDiv'>
-                <button id='timeButton' ng-click='stock.oneDay()'>1D</button>
-                <button id='timeButton' ng-click='stock.oneWeek()'>1W</button>
-                <button id='timeButton' ng-click='stock.oneMonth()'>1M</button>
-                <!--<button id='timeButton' ng-click='stock.sixMonths()'>6M</button>-->
-                <button id='timeButton' ng-click='stock.oneYear()'>1YR</button>
-                <button id='timeButton' ng-click='stock.fiveYears()'>5YR</button>
-                <button id='timeButton' ng-click='stock.tenYears()'>10YR</button>
-                <button id='timeButton' ng-click='stock.max()'>MAX</button>
+                <button id='timeButton btn btn-default' ng-click='stock.oneDay()'>1D</button>
+                <button id='timeButton btn btn-default' ng-click='stock.oneWeek()'>1W</button>
+                <button id='timeButton btn btn-default' ng-click='stock.oneMonth()'>1M</button>
+                <!--<button id='timeButton btn btn-default' ng-click='stock.sixMonths()'>6M</button>-->
+                <button id='timeButton btn btn-default' ng-click='stock.oneYear()'>1YR</button>
+                <button id='timeButton btn btn-default' ng-click='stock.fiveYears()'>5YR</button>
+                <button id='timeButton btn btn-default' ng-click='stock.tenYears()'>10YR</button>
+                <button id='timeButton btn btn-default' ng-click='stock.max()'>MAX</button>
             </div>
         </div>
     </form>
 
+<div class="wetasphalt-nav">
 
-    <p><a href="/logout" class="btn btn-lg btn-danger">Logout</a></p>
+  
+<ul>
+   <li><a href="#">Home</a></li>
+   <li><a href="#">Blog</a></li>
+   <li><a href="#">About</a></li>
+   <li><a href="#">Contact</a></li>
+</ul>
+</div> <!-- End Nav -->
+
+    <p><a class='navbar'href="/logout" class="btn btn-lg btn-danger">Logout</a></p>
 </body>
 
 </html>
