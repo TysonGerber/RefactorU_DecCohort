@@ -128,7 +128,33 @@ module.exports = (app) => {
             }
         })
     })
+    app.post('/active-stock', (req, res) => {
+        console.info('active stock to req.body:'.cyan, req.body);
 
+       User.update({_id: req.session.uid}, {$set:{activeStock: req.body.activeStock, days: req.body.days}}, (err, user) => {
+            if (err) {
+                console.error('#ERROR#'.red, 'Could not save activeStock and days', err);
+                res.status(500).send(errors.general);
+            } else {
+                console.log('New user symbol created in MongoDB:', user);
+                res.send({ message: 'symbol success' }); // send a success message
+            }
+        });
+    })   // register form submission
+
+    app.get('/current-stock', (req,res)=>{
+        console.log('getting current stock:' .cyan, req.body);
+            User.find({_id: req.session.uid})
+           if (err) {
+                console.error('#ERROR#'.red, 'Could not get current stock information', err);
+                res.status(500).send(errors.general);
+            } else {
+                console.log('got current stock information on DB:', user);
+                res.send({ message: 'current stock success' }); // send a success message
+            }
+
+    })
+        
     app.use(express.static('public'));
 }
 

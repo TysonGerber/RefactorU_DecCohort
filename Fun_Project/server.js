@@ -61,6 +61,8 @@ app.use((req, res, next)=>{
  next();
 })
 
+app.get('/current-stock')
+
 Routes(app);
 
 app.listen(PORT, (err) => {

@@ -1,5 +1,5 @@
 <!DOCTYPE>
-<html ng-app='stockApp'>
+<html ng-app='homeApp'>
 
 <head>
     <title>This is where you put in your stock ticker symbol</title>
@@ -11,27 +11,16 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-    <script src="../js/stock.js"></script>
+    <script src="../js/home.js"></script>
     <script src="../js/themes/homeTheme.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/stock.css">
 </head>
 
-<body ng-controller='stockController as stock'>
-    <form ng-submit='stock.getSymbol.submit($event)'>
-        <h1 class='title welcome'>Welcome to Day Stocker</h1>
-        <h2 class='title stockTitle'>Choose Your Stock</h2>
-        <fieldset class='fieldCenter'>
-            <input placeholder="{{stock.search}}" type="text" name="ticker symbol" ng-model="stock.symbol">
-            <!--<input type="text" name="time period for chart" ng-model="stock.days">-->
-        </fieldset>
-        <button ng-click=''class='stockButton' type="submit">Get Stock</button>
-        <h1>{{stock.info.Name}}</h1>
-        <h2>{{stock.info.Symbol}}</h2>
-        <h2>{{stock.chart}}</h2>
-        <!--<p>{{stock.greeting}}</p>-->
-    </form>
-    <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
-    <p><a href="/logout" class="btn btn-lg btn-danger">Logout</a></p>
+<body ng-controller='homeController as home'>
+
+        <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></di
+   <h1>WELCOME TO ALL YOUR STOCKS</h1>
+
 </body>
 
 </html>

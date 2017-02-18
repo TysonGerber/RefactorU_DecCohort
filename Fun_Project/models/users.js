@@ -8,6 +8,8 @@ var mongoose = require('mongoose'),
         lname: {type: String, required: true},
         email: {type: String,unique: true},
         password: {type: String, required: true},
+        activeStock:{type: String},
+        days: {type: Number},
         created: {type: Number, default: () => Date.now()} //this creates the date the user registered.
     });
 
