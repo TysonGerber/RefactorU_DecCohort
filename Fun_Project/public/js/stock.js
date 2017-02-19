@@ -10,6 +10,24 @@ function stock($http) {
 
     // stock.greeting = 'Welcome to Day Stocker!'
 
+    home.search= ''
+if(window.innerWidth <= 530){
+    home.search='Ex: GE'
+}else if(window.innerWidth >= 535 && window.innerWidth <1078){
+    home.search='Ex: AAPL or Apple'
+}else if(window.innerWidth >= 1079 ){
+    home.search='Ticker: "AAPL" or Company: "Apple"'
+}
+    
+    
+var timePeriod = {
+    
+    text: ' Today\'s Date',
+    number: "",
+    days: 9999
+    
+}
+
 
     stockInfo = [];
 
@@ -44,7 +62,7 @@ function stock($http) {
 
               console.dir(stockReturn)
                Highcharts.setOptions(Highcharts.theme);
-              stock.stockChart();
+      
              
             
             },

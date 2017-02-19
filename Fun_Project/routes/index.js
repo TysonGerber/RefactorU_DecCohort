@@ -96,6 +96,7 @@ module.exports = (app) => {
     app.get('/stock', function (req, res) {
         if (req.query.symbol != null) {
             //going to "our api a.k.a MARKET ON DEMAND API" 
+            // http://dev.markitondemand.com/Api/v2/Lookup/json?input=
             request('http://dev.markitondemand.com/Api/v2/Quote/json/?symbol=' + req.query.symbol, function (err, response, body) {
                 if (err){
                     console.log('marketOnDemand Api failure', err)
@@ -110,7 +111,7 @@ module.exports = (app) => {
         )
     })
 
-    app.get('/chart', function(req,res){
+    app.get('/chart', function (req,res){
         console.log('chart inputs', req.query)
         var apiUrl = 'http://dev.markitondemand.com/MODApis/Api/v2/InteractiveChart/json?parameters={"Normalized":false,"NumberOfDays":'+ req.query.days+',"DataPeriod":"Day","Elements":[{"Symbol":"'+ req.query.symbol +'","Type":"price","Params":["c"]}]}'
         console.log(apiUrl)
@@ -134,6 +135,7 @@ module.exports = (app) => {
        User.update({_id: req.session.uid}, {$set:{activeStock: req.body.activeStock, days: req.body.days}}, (err, user) => {
             if (err) {
                 console.error('#ERROR#'.red, 'Could not save activeStock and days', err);
+                console.log('Could not save activeStock and days ERR', err)
                 res.status(500).send(errors.general);
             } else {
                 console.log('New user symbol created in MongoDB:', user);

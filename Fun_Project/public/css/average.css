@@ -32,17 +32,23 @@ body{
 }
 
 button, input, optgroup, select, textarea{
-      font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 0px 10px 0px 10px;
 }
 
 
-form{
+/*form{
    width: auto;
    max-width: 85vw;
    min-width: 75vw;
-}
+}*/
 i{
  font-size: 25px;
+ padding: 0px 20px 0px 20px;
 }
 
 a:hover{
@@ -79,85 +85,73 @@ p {
 CLASSES 320px
 ***************************************/
 
+/* START of bottom NAV */
+
+.bottom-nav{
+  
+ 
+  padding-top:15px;
+  padding-bottom:15px;
+  margin-bottom:10px;
+  border-top: 1px solid white;
+}
+
+.bottom-nav ul { 
+    margin: 0; 
+    padding: 0; 
+    list-style-type: none; 
+    list-style-image: none; 
+    list-style:none;
+    display: inline-block;
+}
+
+.bottom-nav li { 
+    margin-right: 0px; 
+    display: inline; 
+}
+
+.bottom-nav ul li a {
+     text-decoration:none;  
+     margin: 0px; 
+     color:#ffffff; 
+     padding: 2px;
+     margin: auto;
+     
+}
+
+.bottom-nav ul li a:hover { color: #fff; 
+    background-color:#212020; 
+    text-decoration:none; 
+     background-image: linear-gradient(#485258, #262626);
+}
+
+.bottom-nav li.current-menu-item a{ color: #fff; 
+    text-decoration:none; 
+    background-color:#262626; 
+}
+
+.bottom-nav li.current_page_item  { color: #fff; 
+    text-decoration:none; 
+    background-color:#262626; 
+}
+
+.bottom-nav-div{
+    /*width: 100vw;*/
+    text-align: center;
+}
+
+.container{
+    width: 100vw;
+    max-width: 100%;
+    text-align: center;
+}
+
 .menuBar{
     width: 100vw;
     list-style: none;
     color: white;
      min-height: 20%;
 }
-
-/*.dash{
-    background-color: #0D76FF;
-   
-}
-.stocks{
-    background-color: #0CA5E8;
-}
-.data{
-    background-color: #00F5FF;
-}
-.another{
-    /*background-color: #0CE8B3;*/
-    background-color: #0DFF80;
-}*/
-
-
-
-
-
-
-body{
-  font-family: 'Open Sans', sans-serif;
-  background:#ecf0f1;
-  margin:30px;
-}
-
-a{
-  text-decoration:none;
-  color:white;
-}
-
-.logo{
-  float:left;
-  color:white;
-  font-weight:600;
-  margin-right:15px;
-  margin-left:20px;
-  padding-right:30px; 
-}
-
-
-
-
-
-
-
-/* START wetasphalt NAV */
-
-.wetasphalt-nav{
-  
-  border-radius:6px;
-  width: 20vw;
-  padding-top:15px;
-  padding-bottom:15px;
-  font-size:14px;
-  margin-bottom:10px;
-  border-top: 1px solid white;
-}
-
-.wetasphalt-nav ul { margin: 0; padding: 0; list-style-type: none; list-style-image: none; }
-
-.wetasphalt-nav li { margin-right: 0px; display: inline; }
-
-.wetasphalt-nav ul li a { text-decoration:none;  margin: 0px; padding: 15px 20px 15px 20px; color:#ffffff; }
-
-.wetasphalt-nav ul li a:hover { color: #fff; background-color:#212020; text-decoration:none; }
-
-.wetasphalt-nav li.current-menu-item a{ color: #fff; text-decoration:none; background-color:#262626; }
-
-.wetasphalt-nav li.current_page_item  { color: #fff; text-decoration:none; background-color:#262626; }
-
-
 
 /*************************************
 ID's 320px
@@ -169,16 +163,8 @@ ID's 320px
 #buySellChart {
     height: 45vh
 }
-#timeButton{
-    font-size: 16px; 
-    display: inline-block;
-    background: transparent;
-    border-right: 1px solid white;
-    border-bottom: none;
-    border-left: none;
-    border-top: none;
-    color: white;
-}
+
+ }
 
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
            @MEDIA 480px
@@ -190,11 +176,17 @@ ID's 480px
 ***************************************/
     @media only screen and (min-width : 480px) {
 
-
-.wetasphalt-nav{
-  width: 20vw;
-
+i{
+ padding: 0px 2px 0px 2px;
 }
+.bottom-nav ul li a {
+ padding-right: 30px;
+     
+}
+
+    }
+
+
     
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
            @MEDIA 768px
@@ -206,8 +198,11 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 Tag/Element Selectors 768px
 EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE*/
 
+.bottom-nav ul li a {
+    padding: 0px 50px 0px 50px;        
+}
 form{
-    max-width: 786px;
+    /*max-width: 786px;*/
         /*background:rgba(233,333,883,0.2);
 
     filter:blur(4px);
@@ -228,6 +223,9 @@ label{
     padding-right:46px;
 }
 
+i{
+ padding: 2px;
+}
 
 /*************************************
 CLASSES 768px
@@ -248,6 +246,7 @@ CLASSES 768px
   height: 40px;
 }
 
+    }
 
 
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -258,6 +257,9 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
     @media only screen and (min-width : 992px) {
 .logo{
     margin-top: 200px;
+}
+.bottom-nav ul li a {
+    padding: 0px 110px 0px 110px;        
 }
     }
 

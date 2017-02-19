@@ -10,7 +10,34 @@ function stock($http, $event) {
 
     stock.greeting = 'Welcome to your stock page'
 
-   
+// Bottom Navbar
+var bnbLetters = function(){
+stock.homeBNB ='Home'
+stock.stocksBNB ='Stocks'
+stock.averageBNB='Average'
+stock.otherBNB='Other'
+}
+
+if(window.innerWidth <= 320){
+    
+}else if(window.innerWidth >= 456) {
+ bnbLetters();
+}
+// End of Bottom Navbar
+
+
+//Time Period Buttons
+//     if(window.innerWidth <= 320){
+        
+// document.getElementById('tenYear').style.visibility='hidden';
+// document.getElementById('MAX').style.display='none';
+
+// }else if(window.innerWidth >= 456) {
+//  bnbLetters();
+// }
+//End of Time Period Buttons
+    
+
 var timePeriod = {
     
     text: ' Today\'s Date',

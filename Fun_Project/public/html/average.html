@@ -4,58 +4,63 @@
 <head>
     <title>This is where you put in your stock ticker symbol</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    />
     <link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
-     <script src="../js/themes/averageTheme.js"></script>
+    <script src="../js/themes/averageTheme.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
     <script src="../js/average.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+
     <link rel="stylesheet" type="text/css" href="/css/average.css">
 </head>
 
 <body ng-controller='stockController as stock'>
-    <form ng-submit='stock.getSymbol.submit(1)'>
-        <fieldset>
-            <input type="text" name="ticker symbol" ng-model="stock.symbol">
-            <!--<input type="text" name="time period for chart" ng-model="stock.days">-->
-        </fieldset>
-        <button type="submit">button</button>
-        <!--<h1>{{stock.info.Name}}</h1>
-        <h2>{{stock.info.Symbol}}</h2>
-        <h2>{{stock.chart}}</h2>
-        <p>{{stock.greeting}}</p>-->
-        <div id="avgChart"></div>
-        <div id="buySellChart"></div>
-        <div class='buttonOuterDiv'>
-            <div class='buttonInnerDiv'>
-                <button id='timeButton btn btn-default' ng-click='stock.oneDay()'>1D</button>
-                <button id='timeButton btn btn-default' ng-click='stock.oneWeek()'>1W</button>
-                <button id='timeButton btn btn-default' ng-click='stock.oneMonth()'>1M</button>
-                <!--<button id='timeButton btn btn-default' ng-click='stock.sixMonths()'>6M</button>-->
-                <button id='timeButton btn btn-default' ng-click='stock.oneYear()'>1YR</button>
-                <button id='timeButton btn btn-default' ng-click='stock.fiveYears()'>5YR</button>
-                <button id='timeButton btn btn-default' ng-click='stock.tenYears()'>10YR</button>
-                <button id='timeButton btn btn-default' ng-click='stock.max()'>MAX</button>
+    <div class='container'>
+        <p><a class='navbar' href="/logout" class="btn btn-lg btn-danger">Logout</a></p>
+        <form ng-submit='stock.getSymbol.submit(1)'>
+            <fieldset>
+                <input type="text" name="ticker symbol" ng-model="stock.symbol">
+                <!--<input type="text" name="time period for chart" ng-model="stock.days">-->
+            </fieldset>
+            <button type="submit">button</button>
+            <!--<h1>{{stock.info.Name}}</h1>
+            <h2>{{stock.info.Symbol}}</h2>
+            <h2>{{stock.chart}}</h2>
+            <p>{{stock.greeting}}</p>-->
+            <div id="avgChart"></div>
+            <div id="buySellChart"></div>
+            <div class='buttonOuterDiv'>
+                <div class='buttonInnerDiv'>
+                    <button ng-click='stock.oneDay()'>1D</button>
+                    <button ng-click='stock.oneWeek()'>1W</button>
+                    <button ng-click='stock.oneMonth()'>1M</button>
+                    <!--<button ng-click='stock.sixMonths()'>6M</button>-->
+                    <button ng-click='stock.oneYear()'>1YR</button>
+                    <button ng-click='stock.fiveYears()'>5YR</button>
+                    <button id="tenYear" ng-click='stock.tenYears()'>10YR</button>
+                    <butt id="MAX" ng-click='stock.max()'>MAX</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="bottom-nav">
+            <div class='bottom-nav-div'>
+                <ul>
+                    <li><a href="#"><i class="fa fa-home" id='faEnvelope' aria-hidden="true"></i>{{stock.homeBNB}}</a></li>
+                    <li><a href="#"><i class="fa fa-area-chart" id='faEnvelope' aria-hidden="true"></i>{{stock.stocksBNB}}</a></li>
+                    <li><a href="#"><i class="fa fa-bar-chart-o" id='faEnvelope' aria-hidden="true"></i>{{stock.averageBNB}}</a></li>
+                    <!--<li><i class="fa fa-sign-out" id='faEnvelope' aria-hidden="true"></i><a href="#">{{stock.otherBNB}}}</a></li>-->
+                </ul>
             </div>
         </div>
-    </form>
+        <!-- End Nav -->
 
-<div class="wetasphalt-nav">
+    </div>
 
-  
-<ul>
-   <li><a href="#">Home</a></li>
-   <li><a href="#">Blog</a></li>
-   <li><a href="#">About</a></li>
-   <li><a href="#">Contact</a></li>
-</ul>
-</div> <!-- End Nav -->
-
-    <p><a class='navbar'href="/logout" class="btn btn-lg btn-danger">Logout</a></p>
 </body>
 
 </html>
