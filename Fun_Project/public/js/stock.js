@@ -10,13 +10,13 @@ function stock($http) {
 
     // stock.greeting = 'Welcome to Day Stocker!'
 
-    home.search= ''
+    stock.search= ''
 if(window.innerWidth <= 530){
-    home.search='Ex: GE'
+    stock.search='Ex: GE'
 }else if(window.innerWidth >= 535 && window.innerWidth <1078){
-    home.search='Ex: AAPL or Apple'
+    stock.search='Ex: AAPL or Apple'
 }else if(window.innerWidth >= 1079 ){
-    home.search='Ticker: "AAPL" or Company: "Apple"'
+    stock.search='Ticker: "AAPL" or Company: "Apple"'
 }
     
     
@@ -72,8 +72,9 @@ var timePeriod = {
 
                 //how to access the x axisDates: res.data.Dates
                 //how to access the y axisPrices: res.data.Elements[0].DataSeries.close.values
-                $http.post('/active-stock', {activeStock :stock.symbol, days: timePeriod}).then(function(symbol){
+                $http.post('/active-stock', {activeStock :stock.symbol, days: timePeriod.days}).then(function(symbol){
                     console.log('success adding stock symbol, to db: ', symbol.data);
+                    redirect('/home.html')
                 })
         }
     }

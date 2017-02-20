@@ -12,10 +12,10 @@ function stock($http, $event) {
 
 // Bottom Navbar
 var bnbLetters = function(){
-stock.homeBNB ='Home'
-stock.stocksBNB ='Stocks'
-stock.averageBNB='Average'
-stock.otherBNB='Other'
+    stock.homeBNB ='Home'
+    stock.stocksBNB ='Stocks'
+    stock.averageBNB='Average'
+    stock.otherBNB='Other'
 }
 
 if(window.innerWidth <= 320){
@@ -25,6 +25,20 @@ if(window.innerWidth <= 320){
 }
 // End of Bottom Navbar
 
+
+
+
+// if(window.innerWidth <= 500){
+//     stock.oneDay
+//     stock.oneWeek
+//     stock.oneMonth
+//     stock.oneYear
+//     stock.fiveYears
+//     document.getElementById("tenYear").style.display = "hidden";
+//     stock.max
+// }else if(window.innerWidth >= 900) {
+//  bnbLetters();
+// }
 
 //Time Period Buttons
 //     if(window.innerWidth <= 320){
