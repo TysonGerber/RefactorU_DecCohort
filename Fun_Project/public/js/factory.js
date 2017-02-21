@@ -41,7 +41,7 @@ console.log('loading factory')
 
 var timePeriod = {
     
-    text: ' Today\'s Date',
+    text: ' Max ',
     number: "",
     days: 9999
     

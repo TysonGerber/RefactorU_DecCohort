@@ -265,7 +265,7 @@ function stock($http, facFactory) {
     stock.tenYears = function () {
         stock.factory.timePeriod.text = " Max "
         stock.factory.timePeriod.days = 9999
-        console.log('Max', 9999);
+        console.log('Inception Date', 9999);
         stock.getSymbol.submit();
     }
 

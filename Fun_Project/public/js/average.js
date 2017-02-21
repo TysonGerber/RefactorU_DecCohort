@@ -97,14 +97,14 @@ function average($http, facFactory, $event) {
     average.tenYears = function () {
         average.factory.timePeriod.text = " Ten Years "
         average.factory.timePeriod.days = 3650
-        console.log('6 months', 3650);
+        console.log('10 Years', 3650);
 
     }
     //Max that I am able to get.
     average.tenYears = function () {
-        average.factory.timePeriod.text = " Ten Years "
+        average.factory.timePeriod.text = " Max "
         average.factory.timePeriod.days = 9999
-        console.log('6 months', 9999);
+        console.log('Inception date', 9999);
 
     }
 
@@ -181,15 +181,18 @@ function average($http, facFactory, $event) {
                         // alert ('Chart loaded with series :'+ this.series[0].name);
                         console.log('average direction', average.direction)
                         if(average.direction == 'sell'){
-                        //NEGATIVE
-                        var selector = document.querySelectorAll('#buySellChart rect.highcharts-point:not(.highcharts-negative)')[0];
-                        selector.style.display = 'none'
-                           console.log('this is SELL selector ', selector);
-                        }else{
-                        //POSITIVE
+                            
+                 //POSITIVE
                             var selector = document.querySelectorAll('#buySellChart rect.highcharts-point.highcharts-negative')[0];
                         selector.style.display = 'none'
                         console.log('this is BUY selector ', selector);
+                        }else{
+                       
+
+                                //NEGATIVE
+                        var selector = document.querySelectorAll('#buySellChart rect.highcharts-point:not(.highcharts-negative)')[0];
+                        selector.style.display = 'none'
+                           console.log('this is SELL selector ', selector);
                         }
                     }
                 },
@@ -320,12 +323,30 @@ function average($http, facFactory, $event) {
                 average.sell = [];
                 var diffInPrice = (+average.average - +average.YaxisLP);
                 average.percentage = (+diffInPrice / +average.YaxisLP * 100);
-                console.log('average.percent', average.percent'')
-                console.log('average.average',average.average)
-                console.log('average.YaxisLP',average.YaxisLP)
+                console.log('average.percent HI', average.percent)
+                console.log('average.average HI2',average.average)
+                console.log('average.YaxisLP HI3',average.YaxisLP)
                 // console.log('figure it out average.percentage', typeof average.percentage)
 
                 if (+average.percentage > 0) {
+
+                     //If it is a negative number then BUY // average.buy.push.
+                        average.buy.push(+average.percentage)
+                    console.log('This is average.buy, number should be NEGATIVE pushing THIS ONE', average.buy)
+                    average.buy.push(-average.percentage)
+                  
+                    average.direction = 'buy'
+                    console.log('average.buy OPPOSITE', average.buy)
+
+                   
+
+                }
+                //else if (Math.floor(Math.abs(average.percentage)) == 0) {
+                //     console.log('average.percentage is 0', average.percentage)
+                // } 
+                else {
+                   
+                 
                     //If it is a positive number then SELL // average.sell.push.
                     average.sell.push(+average.percentage)
                     console.log('This is average.sell, number should be POSITIVE pushing THIS ONE', average.sell)
@@ -333,20 +354,7 @@ function average($http, facFactory, $event) {
                     //Created this one because I need the opposite side of the graph to appear. I then am making this one transparent.
                     average.sell.push(-average.percentage)
                     average.direction = 'sell'
-                    console.log('PURPLE average.buy OPPOSITE', average.sell)
-
-                }
-                //else if (Math.floor(Math.abs(average.percentage)) == 0) {
-                //     console.log('average.percentage is 0', average.percentage)
-                // } 
-                else {
-                    //If it is a negative number then BUY // average.buy.push.
-                    average.buy.push(+average.percentage)
-                    console.log('This is average.buy, number should be NEGATIVE pushing THIS ONE', average.buy)
-                    average.buy.push(-average.percentage)
-                  
-                    average.direction = 'buy'
-                    console.log('average.sell OPPOSITE', average.buy)
+                    console.log('PURPLE average.sell OPPOSITE', average.sell)
 
                 }
 
@@ -375,12 +383,5 @@ function average($http, facFactory, $event) {
 
 
 };
-
-
-
-
-
-
-
 
 
