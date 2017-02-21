@@ -1,33 +1,56 @@
-angular.module('facApp')
+angular.module('stockApp')
     .factory('facFactory', facFunction);
 
-facFunction.$inject = ['$http']
-function facFunction($http) {
+// facFunction.$inject = []
+function facFunction() {
    
-    // Get the list of all of our aliens
-    function getAllAliens() {
-        // return aliens;
-        // http.get returns the Promise for the asynchronous http request
-        // we want to use the data from the successful promise in our controller,
-        // but we can't return it from inside the promise, so we return the whole promise to the controller.
-        return $http.get('/aliens');
+  
+
+
+    // function getStockSymbol(symbol) {
+    
+    //     return $http.get('/stock');
         
-    }
-
-    // Add a new alien to our list of aliens
-    function createAliens(alien) {
-
-        // aliens.push(alien
-        console.log('createAlien:', alien)
-        // in this case, since we don't really care about what was returned in the response,
-        // we can process the promise here.  To be consistent, we probably should return the 
-        // promise here and have the controller handle it as well, but 
-        return $http.post('/alien', alien)
-    }
+    // }
 
 
+    // function createSymbolAndDays(symbol, days) {
+
+    
+    //     return $http.post('/chart', )
+    // }
+
+       
+
+
+    // function createSymbolAndDays(symbol, days) {
+
+    //     activeStock
+    //     days
+    //     return $http.post('/active-stock', )
+    // }
+   
+
+var symbol;
+var info = {};
+var Yaxis= [];
+var Xaxis= [];
+
+console.log('loading factory')
+
+var timePeriod = {
+    
+    text: ' Today\'s Date',
+    number: "",
+    days: 9999
+    
+}
     return {
-        getAliens: getAllAliens,
-        addAlien: createAliens
+       symbol: symbol,
+       timePeriod: timePeriod,
+        info: info,
+        Yaxis: Yaxis,
+        Xaxis: Xaxis,
+
     }
 }

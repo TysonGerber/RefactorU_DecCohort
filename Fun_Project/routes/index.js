@@ -81,16 +81,16 @@ module.exports = (app) => {
         });
     })   // register form submission
 
-//SSSSSSSSS Change this to stock.html but ask Steve your questions first. 
-    app.get('/dashboard.html', (req, res, next) => {
-        if (req.session.uid) {
-            console.info('User is logged in, proceeding to dashboard...'.green);
-            next();
-        } else {
-            console.warn('User is not logged in!'.yellow)
-            res.redirect('/login.html');
-        }
-    }); // protect the dashboard page - only send it, if the user has a valid session
+//This used to be the dashboard
+    // app.get('/home.html', (req, res, next) => {
+    //     if (req.session.uid) {
+    //         console.info('User is logged in, proceeding to home...'.green);
+    //         next();
+    //     } else {
+    //         console.warn('User is not logged in!'.yellow)
+    //         res.redirect('/login.html');
+    //     }
+    // }); // protect the dashboard page - only send it, if the user has a valid session
 
 
     app.get('/stock', function (req, res) {
@@ -156,6 +156,7 @@ module.exports = (app) => {
             }
 
     })
+        
         
     app.use(express.static('public'));
 }

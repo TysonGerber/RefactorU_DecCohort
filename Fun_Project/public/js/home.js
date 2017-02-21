@@ -1,13 +1,14 @@
 // Market On Demand API (now IHSMarket)
-angular.module('homeApp', [])
+angular.module('stockApp')
     .controller('homeController', home)
 
-home.$inject = ['$http']
+home.$inject = ['$http', 'facFactory']
 
 
-function home($http) {
+function home($http, facFactory) {
     var home = this;
 
+home.factory = facFactory;
 
 home.search= ''
 if(window.innerWidth <= 530){
@@ -19,125 +20,67 @@ if(window.innerWidth <= 530){
 }
     
       
-var timePeriod = {
+    // stock.greeting = 'Welcome to Day Stocker!'
+
+    //renaming the facFactory.
+// home.factory = facFactory
     
-    text: ' Today\'s Date',
-    number: "",
-    days: 9999
-    
-}
-
-        home.oneDay = function(){
-            timePeriod.text = " Today's date "
-            timePeriod.days= 1
-            console.log('One day being CLICKED')
-        }
-      
-        //1 Week
-         home.oneWeek = function(){
-               timePeriod.text = " Past Week "
-               timePeriod.days = 7;
-            console.log('1 week', 7);
-        }
-        
-        //1 month
-         home.oneMonth = function(){
-              timePeriod.text = " Current Month "
-               timePeriod.days = 30;
-            console.log('1 month', 30);
-         
-        }
-        //6 Months
-         home.sixMonths = function(){
-              timePeriod.text = " The Last 6 Months "
-               timePeriod.days = 180;
-            console.log('6 months', 180);
-    
-        }
-        //1 Year
-          home.oneYear = function(){
-               timePeriod.text = " Last Year "
-               timePeriod.days = 365;
-            console.log('1 Year', 365);
-          
-        }
-        //5 Years
-         home.fiveYears = function(){
-              timePeriod.text = " The Last Five Years "
-               timePeriod.days = 1825;
-            console.log('5 years', 1825);
-         
-        }
-        //10 Year
-        home.tenYears = function(){
-             timePeriod.text = " Ten Years "
-               timePeriod.days= 3650
-            console.log('6 months', 3650);
-           
-        }
-         //Max that I am able to get.
-        home.tenYears = function(){
-             timePeriod.text = " Ten Years "
-               timePeriod.days= 9999
-            console.log('6 months', 9999);
-           
-        }
-
-// STOCK PRICE CHART
-home.stockChart = function() {
-    var chart = new Highcharts.Chart({
-        chart: {
-            renderTo:'container',
-            backgroundColor: {
-                linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
-                stops: [
-                    [0, 'rgb(300, 300, 300)'],
-                    [1, 'rgb(200, 200, 255)']
-                ]
-            },
-            type: 'line'
-        },
-        xAxis: {
-            categories: stock.Xaxis
-        },
-        yAxis: {   
-        },
-        legend: {
-            layout: 'vertical',
-            backgroundColor: '#000000',
-            floating: true,
-            align: 'left',
-            x: 100,
-            verticalAlign: 'top',
-            y: 70
-        },
-        tooltip: {
-            formatter: function() {
-                return '<b>'+ this.series.name +'</b><br/>'+
-                    this.x +': '+ this.y;
-            }
-        },
-        plotOptions: {
-        },
-        series: [{
-        name: 'ge',
-            data: stock.Yaxis,      
-        }]
-    });
-};
 
 
+    homeInfo = [];
 
-    home.greeting = 'Welcome to Day Stocker!'
+    home.getSymbol = {
+        submit: function (event) {
 
-
-    $http.get('/current_stock').then(function success(res) {
-               console.log(res.data)
-
+            $http.get('/stock' + '?symbol=' + home.factory.symbol).then(function success(res) {
+                var info = JSON.parse(res.data)
+                console.log('stock?symbol success', info)
+                home.factory.info = info
+                //  home.factory.info = info
             },
                 function failed(res) {
                     console.log('stock?symbol failed', res.data)
                 }
             )
+
+            console.log('home.factory.symbol', home.factory.symbol)
+            $http.get('/chart?symbol=' + home.factory.symbol + '&days=' + home.factory.timePeriod.days).then(function success(res) {
+                // var chart = JSON.parse(res.data)
+                // console.log('Chart data successful', res.data)
+                // stock.chart = chart
+
+                var stockReturn = JSON.parse(res.data)
+                console.log('THIS IS STOCK RETURN', stockReturn)
+                console.log('stockReturnDates', stockReturn.Dates)
+                // Xaxis stock time periods / dates 
+                home.factory.Xaxis = stockReturn.Dates.map(function(date){
+                    //was in format 2016-01-03T00:00:00 only need the date not time. Looping through each array and keeping first index [0-10] and then replacing the month portion of the date and changing it from number 01 to Jan.
+                    return date.substring(0,10).replace('-01-',' Jan ').replace('-02-', 'Feb')
+                })
+                home.factory.Yaxis = stockReturn.Elements[0].DataSeries.close.values
+                console.log('home.factory.Yaxis', home.factory.Yaxis)
+              console.dir(stockReturn)
+
+            //    Highcharts.setOptions(Highcharts.theme);
+               window.location ='#/stock'
+          
+
+      
+             
+            
+            },
+                function failed(res){
+                    console.log('')
+                })
+
+                //how to access the x axisDates: res.data.Dates
+                //how to access the y axisPrices: res.data.Elements[0].DataSeries.close.values
+                $http.post('/active-stock', {activeStock :home.factory.symbol, days: home.factory.timePeriod.days}).then(function(symbol){
+                    console.log('success adding stock symbol, to db: ', home.factory.symbol);
+                    // redirect('/home.html')
+                })
+        }
+    }
+
 
 };

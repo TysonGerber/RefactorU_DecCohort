@@ -1,26 +1,20 @@
-<!DOCTYPE>
-<html ng-app='homeApp'>
+<link rel="stylesheet" type="text/css" href="/css/home.css">
 
-<head>
-    <title>This is where you put in your stock ticker symbol</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>-->
-    <link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans" rel="stylesheet">
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-    <script src="../js/home.js"></script>
-    <script src="../js/themes/homeTheme.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/stock.css">
-</head>
 
-<body ng-controller='homeController as home'>
+<form ng-submit='home.getSymbol.submit()'>
+    <h1 class='title welcome'>Welcome to Day Stocker</h1>
+    <h2 class='title stockTitle'>Choose Your Stock</h2>
+    <fieldset class='fieldCenter'>
+        <input placeholder="{{home.search}}" type="text" name="ticker symbol" ng-model="home.factory.symbol">
+        <!--<input type="text" name="time period for chart" ng-model="stock.days">-->
+    </fieldset>
+    <button class='stockButton' type="submit">Get Stock</button>
+    <h1>{{home.info.Name}}</h1>
+    <h2>{{home.info.Symbol}}</h2>
+    <h2>{{home.chart}}</h2>
+    <!--<p>{{stock.greeting}}</p>-->
+</form>
 
-        <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></di
-   <h1>WELCOME TO ALL YOUR STOCKS</h1>
 
-</body>
-
-</html>
+<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<p><a href="/logout" class="btn btn-lg btn-danger">Logout</a></p>

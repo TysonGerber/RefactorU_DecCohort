@@ -1,21 +1,21 @@
 // Market On Demand API (now IHSMarket)
-angular.module('stockApp', [])
-    .controller('stockController', stock)
+angular.module('stockApp')
+    .controller('averageController', average)
 
-stock.$inject = ['$http']
+average.$inject = ['$http','facFactory']
 
 
-function stock($http, $event) {
-    var stock = this;
+function average($http, facFactory, $event) {
+    var average = this;
 
-    stock.greeting = 'Welcome to your stock page'
+    average.greeting = 'Welcome to your average page'
 
 // Bottom Navbar
 var bnbLetters = function(){
-    stock.homeBNB ='Home'
-    stock.stocksBNB ='Stocks'
-    stock.averageBNB='Average'
-    stock.otherBNB='Other'
+    average.homeBNB ='Home'
+    average.stockBNB ='Stocks'
+    average.averageBNB='Average'
+    average.otherBNB='Other'
 }
 
 if(window.innerWidth <= 320){
@@ -24,18 +24,17 @@ if(window.innerWidth <= 320){
  bnbLetters();
 }
 // End of Bottom Navbar
-
-
+average.factory = facFactory
 
 
 // if(window.innerWidth <= 500){
-//     stock.oneDay
-//     stock.oneWeek
-//     stock.oneMonth
-//     stock.oneYear
-//     stock.fiveYears
+//     average.oneDay
+//     average.oneWeek
+//     average.oneMonth
+//     average.oneYear
+//     average.fiveYears
 //     document.getElementById("tenYear").style.display = "hidden";
-//     stock.max
+//     average.max
 // }else if(window.innerWidth >= 900) {
 //  bnbLetters();
 // }
@@ -51,75 +50,66 @@ if(window.innerWidth <= 320){
 // }
 //End of Time Period Buttons
     
-
-var timePeriod = {
-    
-    text: ' Today\'s Date',
-    number: "",
-    days: 1
-    
-}
-
-        stock.oneDay = function(){
-            timePeriod.text = " Today's date "
-            timePeriod.days= 1
+        average.oneDay = function(){
+            average.factory.timePeriod.text = " Today's date "
+            average.factory.timePeriod.days= 1
             console.log('One day being CLICKED')
         }
       
         //1 Week
-         stock.oneWeek = function(){
-               timePeriod.text = " Past Week "
-               timePeriod.days = 7;
+         average.oneWeek = function(){
+               average.factory.timePeriod.text = " Past Week "
+               average.factory.timePeriod.days = 7;
             console.log('1 week', 7);
         }
         
         //1 month
-         stock.oneMonth = function(){
-              timePeriod.text = " Current Month "
-               timePeriod.days = 30;
+         average.oneMonth = function(){
+              average.factory.timePeriod.text = " Current Month "
+               average.factory.timePeriod.days = 30;
             console.log('1 month', 30);
          
         }
         //6 Months
-         stock.sixMonths = function(){
-              timePeriod.text = " The Last 6 Months "
-               timePeriod.days = 180;
+         average.sixMonths = function(){
+              average.factory.timePeriod.text = " The Last 6 Months "
+               average.factory.timePeriod.days = 180;
             console.log('6 months', 180);
     
         }
         //1 Year
-          stock.oneYear = function(){
-               timePeriod.text = " Last Year "
-               timePeriod.days = 365;
+          average.oneYear = function(){
+               average.factory.timePeriod.text = " Last Year "
+               average.factory.timePeriod.days = 365;
             console.log('1 Year', 365);
           
         }
         //5 Years
-         stock.fiveYears = function(){
-              timePeriod.text = " The Last Five Years "
-               timePeriod.days = 1825;
+         average.fiveYears = function(){
+              average.factory.timePeriod.text = " The Last Five Years "
+               average.factory.timePeriod.days = 1825;
             console.log('5 years', 1825);
          
         }
         //10 Year
-        stock.tenYears = function(){
-             timePeriod.text = " Ten Years "
-               timePeriod.days= 3650
+        average.tenYears = function(){
+             average.factory.timePeriod.text = " Ten Years "
+               average.factory.timePeriod.days= 3650
             console.log('6 months', 3650);
            
         }
          //Max that I am able to get.
-        stock.tenYears = function(){
-             timePeriod.text = " Ten Years "
-               timePeriod.days= 9999
+        average.tenYears = function(){
+             average.factory.timePeriod.text = " Ten Years "
+               average.factory.timePeriod.days= 9999
             console.log('6 months', 9999);
            
         }
 
 
 
-    // AVERAGE PRICE STOCK CHART(FROM HIGHCHARTS)
-    stock.avgChart = function () {
+    // AVERAGE PRICE average CHART(FROM HIGHCHARTS)
+    average.avgChart = function () {
         var chart = new Highcharts.Chart({
             chart: {
                  //avgChart container on html page
@@ -133,7 +123,7 @@ var timePeriod = {
                 // text: 'Source dev.markitondemand.com'
             },
             xAxis: {
-                categories: [stock.company],
+                categories: [average.company],
                 crosshair: true
             },
             yAxis: {
@@ -156,18 +146,27 @@ var timePeriod = {
                     borderWidth: 0
                 }
             },
+            events: {
+                load: function(event) {
+                    // alert ('Chart loaded with series :'+ this.series[0].name);
+                    document.querySelectorAll('rect.highcharts-negative')[0].style.display = 'none'
+
+                    console.log(this);
+                }
+            },
             series: [{
-                name: "Average Stock Price " + "$" +stock.average + "",
-                data: [stock.average]
+                name: "Average Stock Price " + "$" +average.average + "",
+                data: [average.average]
 
             }, {
-                name: "" + timePeriod.text + "Stock Price " + "$" + stock.YaxisLP + "",
-                data: [stock.YaxisLP]
+                name: "" + average.factory.timePeriod.text + "Stock Price " + "$" + average.YaxisLP + "",
+                data: [average.YaxisLP]
 
             }]
         });
         
     }
+
 
 
     // AVERAGE PRICE STOCK CHART(FROM HIGHCHARTS)
@@ -176,8 +175,8 @@ var timePeriod = {
     var categories = [' ', ' '];
 
 
-    stock.buySellChart = function () {
-        console.log('chart stock.buy', stock.buy)
+    average.buySellChart = function () {
+        // console.log('chart average.buy', average.buy)
         var chart = new Highcharts.Chart({
             chart: {
                 //buySellChart container on html page
@@ -189,7 +188,7 @@ var timePeriod = {
                 text: 'Buying or Selling power'
             },
             subtitle: {
-                text: "based on average stock price and " + timePeriod.number + timePeriod.text +""
+                text: "based on average stock price and " + average.factory.timePeriod.number + average.factory.timePeriod.text +""
             },
             xAxis: [{
                 categories: categories,
@@ -232,15 +231,16 @@ var timePeriod = {
 
             series: [{
                 name: 'Buy',
-                data: stock.buy
+                data: average.buy
             }, {
                 name: 'Sell',
-                data: stock.sell
+                data: average.sell
             },
             ]
         });
     }
 
+       
 
     // FUNCTION FOR FINDING THE AVERAGE PRICE (grabbing the array of prices from the api (stockReturn.Elements[0].DataSeries.close.values) and FINDING THE AVERAGE PRICE)
     function addThemAll(numbers) {
@@ -249,15 +249,15 @@ var timePeriod = {
             sum += numbers[i]
 
         }
-        var average = sum / numbers.length;
-        return average
+       return sum / numbers.length;
+       
     }
     
 
     stockInfo = [];
-    stock.getSymbol = {
+   average.getSymbol = {
         submit: function () {
-            stock.days = timePeriod.days
+           average.days =average.factory.timePeriod.days
         //     console.log('outside',stock.days)
          
         //  if(stock.days === 1){
@@ -267,94 +267,82 @@ var timePeriod = {
         //  }
             
             //1st PROMISE
-            var stockPromise = $http.get('/stock' + '?symbol=' + stock.symbol);
+            var stockPromise = $http.get('/stock' + '?symbol=' + average.factory.symbol);
 
 
             // 2nd PROMISE
-            var chartPromise = $http.get('/chart?symbol=' + stock.symbol + '&days=' + stock.days);
+            var chartPromise = $http.get('/chart?symbol=' + average.factory.symbol + '&days=' + average.days);
             Promise.all([stockPromise, chartPromise]).then(function success(resArray) {
                 // var chart = JSON.parse(res.data)
                 // console.log('Chart data successful', res.data)
                 // stock.chart = chart
 
                 //stock Promise data
-                console.log(resArray[0].data)
+                // console.log('this is the resArray data',resArray[0].data)
                 var info = JSON.parse(resArray[0].data)
-                
+                // console.log('this is the info', info)
                 // console.log('stock?symbol success', info.LastPrice)
-                stock.info = info
-                // console.log('stock.info', stock.info)
-                stock.company = stock.info.Name
-                // console.log('stock.company', stock.company)
-                stock.YaxisLP = Number(Math.round(stock.info.LastPrice+'e1')+'e-1')  //rounding to the 2nd decimal example 1.05 = 1.1
-                console.log('stockYaxisLP', stock.YaxisLP)
+                average.info = info
+                // console.log('average.info', average.info)
+                average.company = average.info.Name
+                // console.log('average.company', average.company)
+                average.YaxisLP = Number(Math.round(average.info.LastPrice+'e1')+'e-1')  //rounding to the 2nd decimal example 1.05 = 1.1
+                console.log('averageYaxisLP', average.YaxisLP)
                 
-
-
-
                 //chart Promise data
                 // console.dir('this is the data we are looking for', resArray[1].data)
                 console.log(resArray[1])
                 var stockReturn = JSON.parse(resArray[1].data.replace("NaN", ""))
-                // console.dir(stockReturn)
-                // console.log('stockReturn', stockReturn)
-
-
+                // console.dir(averageReturn)
+                console.log('stockReturn', stockReturn)
 
                 // Getting the average for stock
                 var numArray = stockReturn.Elements[0].DataSeries.close.values
-                var average = addThemAll(numArray)
-                stock.average =  Number(Math.round(average +'e1')+'e-1')  //rounding to the 2nd decimal example 1.05 = 1.1
-                console.log('stock.average', stock.average);
-
-
-
-
-
-
+                console.log('THIS IS THE NUMARRY',numArray)
+                var avg = addThemAll(numArray)
+                average.average =  Number(Math.round(avg +'e1')+'e-1')  //rounding to the 2nd decimal example 1.05 = 1.1
+                console.log('stock.average', average.average);
+           
                 // Getting the percentage of stock based on the average price and today's stock price.
-                stock.buy = [];
-                stock.sell = [];
-                var diffInPrice = (+stock.average - +stock.YaxisLP);
-                stock.percentage = (+diffInPrice / +stock.YaxisLP * 100);
-                // console.log('figure it out stock.percentage', typeof stock.percentage)
-
-
-
-                if (+stock.percentage > 0.9 && +stock.percentage < -0.9) {
-                    //If it is a positive number then SELL // stock.sell.push.
-                    stock.sell.push(+stock.percentage)
-                    console.log('This is stock.sell, number should be POSITIVE pushing THIS ONE', stock.sell)
+                average.buy = [];
+                average.sell = [];
+                var diffInPrice = (+average.average - +average.YaxisLP);
+                average.percentage = (+diffInPrice / +average.YaxisLP * 100);
+                // console.log('figure it out average.percentage', typeof average.percentage)
+               
+                if (+average.percentage > 0.9 && +average.percentage < -0.9) {
+                    //If it is a positive number then SELL // average.sell.push.
+                    average.sell.push(+average.percentage)
+                    console.log('This is average.sell, number should be POSITIVE pushing THIS ONE', average.sell)
 
                     //Created this one because I need the opposite side of the graph to appear. I then am making this one transparent.
-                    stock.sell.push(-stock.percentage)
+                    average.sell.push(-average.percentage)
 
-                    console.log('PURPLE stock.buy OPPOSITE', stock.sell)
+                    console.log('PURPLE average.buy OPPOSITE', average.sell)
 
                 }
-                 //else if (Math.floor(Math.abs(stock.percentage)) == 0) {
-               //     console.log('stock.percentage is 0', stock.percentage)
+                 //else if (Math.floor(Math.abs(average.percentage)) == 0) {
+               //     console.log('average.percentage is 0', average.percentage)
                // } 
                 else {
-                    //If it is a negative number then BUY // stock.buy.push.
-                    stock.buy.push(+stock.percentage)
-                    console.log('This is stock.buy, number should be NEGATIVE pushing THIS ONE', stock.buy)
-                    stock.buy.push(-stock.percentage)
-                    console.log('stock.sell OPPOSITE', stock.buy)
-
+                    //If it is a negative number then BUY // average.buy.push.
+                    average.buy.push(+average.percentage)
+                    console.log('This is average.buy, number should be NEGATIVE pushing THIS ONE', average.buy)
+                    average.buy.push(-average.percentage)
+                    console.log('average.sell OPPOSITE', average.buy)
+                 
                 }
 
+                // console.log('average.buy', average.buy)
+                // console.log('average.sell', average.sell)
 
-                // console.log('stock.buy', stock.buy)
-                // console.log('stock.sell', stock.sell)
-
-                // console.log('stock average typeof', typeof stock.average);
-                // console.log('stock.YaxisLP', stock.YaxisLP);
+                // console.log('average average typeof', typeof average.average);
+                // console.log('average.YaxisLP', average.YaxisLP);
                 // console.log('diff in price', diffInPrice);
-                // console.log('percentage', stock.percentage);
+                // console.log('percentage', average.percentage);
+                average.avgChart();
+                average.buySellChart();
 
-                stock.avgChart();
-                stock.buySellChart();
             },
                 function failed(res) {
                     console.log('')
@@ -364,7 +352,7 @@ var timePeriod = {
             //how to access the y axisPrices: res.data.Elements[0].DataSeries.close.values
         }
     }
-
+   average.getSymbol.submit()
 };
 
 
