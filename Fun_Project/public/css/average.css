@@ -147,6 +147,10 @@ CLASSES 320px
     text-align: center;
 }
 
+.logo{
+    color: red; 
+}
+
 .menuBar{
     width: 100vw;
     list-style: none;

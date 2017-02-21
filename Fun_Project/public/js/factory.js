@@ -35,6 +35,7 @@ var symbol;
 var info = {};
 var Yaxis= [];
 var Xaxis= [];
+var company= {};
 
 console.log('loading factory')
 
@@ -51,6 +52,7 @@ var timePeriod = {
         info: info,
         Yaxis: Yaxis,
         Xaxis: Xaxis,
+        company: company,
 
     }
 }

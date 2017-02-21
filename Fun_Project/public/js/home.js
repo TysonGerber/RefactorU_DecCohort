@@ -20,12 +20,11 @@ if(window.innerWidth <= 530){
 }
     
       
-    // stock.greeting = 'Welcome to Day Stocker!'
+// stock.greeting = 'Welcome to Day Stocker!'
 
     //renaming the facFactory.
 // home.factory = facFactory
     
-
 
     homeInfo = [];
 
@@ -35,6 +34,7 @@ if(window.innerWidth <= 530){
             $http.get('/stock' + '?symbol=' + home.factory.symbol).then(function success(res) {
                 var info = JSON.parse(res.data)
                 console.log('stock?symbol success', info)
+                home.factory.company =info.Name
                 home.factory.info = info
                 //  home.factory.info = info
             },

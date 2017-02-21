@@ -12,9 +12,11 @@ function stock($http, facFactory) {
 
 // Bottom Navbar
 var bnbLetters = function(){
-    stock.homeBNB ='Home'
-    stock.stocksBNB ='Stocks'
-    stock.averageBNB='Average'
+    stock.homeBNB ='Home',
+    stock.stocksBNB ='Stocks',
+    stock.averageBNB='Average',
+    average.logoutBNB= 'Logout',
+     average.dayStocker= 'Day Stocker',
     stock.otherBNB='Other'
 }
 
@@ -41,85 +43,96 @@ if(window.innerWidth <= 320){
         stock.search = 'Ticker: "AAPL" or Company: "Apple"'
     }
 
-//     stock.stockChart = function () {
-//         var chart = new Highcharts.Chart('container', {
 
 
-//         rangeSelector: {
-//             selected: 1
-//         },
-
-//         title: {
-//             text: 'AAPL Stock Price'
-//         },
-
-//         series: [{
-//             name: 'AAPL Stock Price',
-//             data: stock.Yaxis,
-//             type: 'areaspline',
-//             threshold: null,
-//             tooltip: {
-//                 valueDecimals: 2
-//             },
-//             fillColor: {
-//                 linearGradient: {
-//                     x1: 0,
-//                     y1: 0,
-//                     x2: 0,
-//                     y2: 1
-//                 },
-//                 stops: [
-//                     [0, Highcharts.getOptions().colors[0]],
-//                     [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-//                 ]
-//             }
-//         }]
-//     });
-// };
+//STOCK theme
 
 
-        // STOCK PRICE CHART
-        stock.stockChart = function () {
-            var chart = new Highcharts.Chart({
-                chart: {
-                    renderTo: 'container',
-                    backgroundColor: {
-                        linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
-                        stops: [
-                            [0, 'rgb(300, 300, 300)'],
-                            [1, 'rgb(200, 200, 255)']
-                        ]
-                    },
-                    type: 'line'
+
+
+// STOCK CHART
+    stock.stockChart = function () {
+           
+        var chart = new Highcharts.Chart('container', {
+
+
+        rangeSelector: {
+            selected: 1
+        },
+
+        title: {
+            text: stock.factory.company
+        },
+
+        series: [{
+            name: stock.factory.company,
+            data: stock.factory.Yaxis,
+            type: 'areaspline',
+            threshold: null,
+            tooltip: {
+                valueDecimals: 2
+            },
+            fillColor: {
+                linearGradient: {
+                    x1: 0,
+                    y1: 0,
+                    x2: 0,
+                    y2: 1
                 },
-                xAxis: {
-                    categories: stock.factory.Xaxis
-                },
-                yAxis: {
-                },
-                legend: {
-                    layout: 'vertical',
-                    backgroundColor: '#000000',
-                    floating: true,
-                    align: 'left',
-                    x: 100,
-                    verticalAlign: 'top',
-                    y: 70
-                },
-                tooltip: {
-                    formatter: function () {
-                        return '<b>' + this.series.name + '</b><br/>' +
-                            this.x + ': ' + this.y;
-                    }
-                },
-                plotOptions: {
-                },
-                series: [{
-                    name: stock.factory.symbol,
-                    data: stock.factory.Yaxis,
-                }]
-            });
-        };
+                stops: [
+                    [0, Highcharts.getOptions().colors[0]],
+                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                ]
+            }
+        }]
+    });
+ Highcharts.setOptions(Highcharts.theme);
+};
+
+console.log('stock.factory.company', stock.factory.company)
+
+        // // STOCK PRICE CHART
+        // stock.stockChart = function () {
+        //     var chart = new Highcharts.Chart({
+        //         chart: {
+        //             renderTo: 'container',
+        //             backgroundColor: {
+        //                 linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+        //                 stops: [
+        //                     [0, 'rgb(300, 300, 300)'],
+        //                     [1, 'rgb(200, 200, 255)']
+        //                 ]
+        //             },
+        //             type: 'line'
+        //         },
+        //         xAxis: {
+        //             categories: stock.factory.Xaxis
+        //         },
+        //         yAxis: {
+        //         },
+        //         legend: {
+        //             layout: 'vertical',
+        //             backgroundColor: '#000000',
+        //             floating: true,
+        //             align: 'left',
+        //             x: 100,
+        //             verticalAlign: 'top',
+        //             y: 70
+        //         },
+        //         tooltip: {
+        //             formatter: function () {
+        //                 return '<b>' + this.series.name + '</b><br/>' +
+        //                     this.x + ': ' + this.y;
+        //             }
+        //         },
+        //         plotOptions: {
+        //         },
+        //         series: [{
+        //             name: stock.factory.symbol,
+        //             data: stock.factory.Yaxis,
+        //         }]
+        //     });
+        // };
     
         console.log('stock.factory.Xaxis',stock.factory.Xaxis)
         console.log('stock.factory.symbol', stock.factory.symbol)
@@ -169,7 +182,7 @@ if(window.innerWidth <= 320){
                     console.log('This is the YAXIS',stock.factory.Yaxis)
 
                     console.dir(stockReturn)
-                   
+               
                     stock.stockChart();
             
 

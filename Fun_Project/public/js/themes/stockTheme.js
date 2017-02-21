@@ -5,8 +5,8 @@ Highcharts.theme = {
       backgroundColor: {
          linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
          stops: [
-            [0, '#2a2a2b'],
-            [1, '#3e3e40']
+            [0, '#262626'],
+            [1, '#262626']
          ]
       },
       style: {
@@ -196,7 +196,6 @@ Highcharts.theme = {
    contrastTextColor: '#F0F0F3',
    maskColor: 'rgba(255,255,255,0.3)'
 };
-
 // Apply the theme
 Highcharts.setOptions(Highcharts.theme);
 

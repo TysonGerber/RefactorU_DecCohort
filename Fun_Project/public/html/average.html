@@ -1,15 +1,29 @@
-<script src="../js/themes/averageTheme.js"></script>
+
 <link rel="stylesheet" type="text/css" href="/css/average.css">
+<script src="../js/themes/averageTheme.js"></script>
+
+  <div class="bottom-nav">
+        <div class='bottom-nav-div'>
+            <ul>
+                <li class='logo'>LOGO {{average.dayStocker}}</li>
+                <li><a href="#/home"><i class="fa fa-home"  aria-hidden="true"></i>{{average.homeBNB}}</a></li>
+                <li><a href="#/stock"><i class="fa fa-area-chart"  aria-hidden="true"></i>{{average.stockBNB}}</a></li>
+                <li><a href="#/average"><i class="fa fa-bar-chart-o"  aria-hidden="true"></i>{{average.averageBNB}}</a></li>
+                <li><a  href="/logout"><i class="fa fa-sign-out" id='logout'></i>{{average.logoutBNB}}</a></li>
+                <!--<li><i class="fa fa-sign-out"  aria-hidden="true"></i><a href="#">{{average.otherBNB}}}</a></li>-->
+            </ul>
+        </div>
+    </div>
 
 
 <div class='container'>
-    <p><a class='navbar' href="/logout" class="btn btn-lg btn-danger">Logout</a></p>
+
     <form ng-submit='average.getSymbol.submit(1)'>
-        <fieldset>
+        <!--<fieldset>
             <input type="text" name="ticker symbol" ng-model="average.factory.symbol">
-            <!--<input type="text" name="time period for chart" ng-model="average.days">-->
+            <input type="text" name="time period for chart" ng-model="average.days">
         </fieldset>
-        <button type="submit">button</button>
+        <button type="submit">button</button>-->
         <!--<h1>{{average.info.Name}}</h1>
             <h2>{{average.info.Symbol}}</h2>
             <h2>{{average.chart}}</h2>
@@ -30,16 +44,7 @@
         </div>
     </form>
 
-    <div class="bottom-nav">
-        <div class='bottom-nav-div'>
-            <ul>
-                <li><a href="#/home"><i class="fa fa-home" id='faEnvelope' aria-hidden="true"></i>{{average.homeBNB}}</a></li>
-                <li><a href="#/stock"><i class="fa fa-area-chart" id='faEnvelope' aria-hidden="true"></i>{{average.stockBNB}}</a></li>
-                <li><a href="#/average"><i class="fa fa-bar-chart-o" id='faEnvelope' aria-hidden="true"></i>{{average.averageBNB}}</a></li>
-                <!--<li><i class="fa fa-sign-out" id='faEnvelope' aria-hidden="true"></i><a href="#">{{average.otherBNB}}}</a></li>-->
-            </ul>
-        </div>
-    </div>
+  
     <!-- End Nav -->
 
 </div>

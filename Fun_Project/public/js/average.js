@@ -12,9 +12,11 @@ function average($http, facFactory, $event) {
 
 // Bottom Navbar
 var bnbLetters = function(){
-    average.homeBNB ='Home'
-    average.stockBNB ='Stocks'
-    average.averageBNB='Average'
+    average.homeBNB ='Home',
+    average.stockBNB ='Stocks',
+    average.averageBNB='Average',
+    average.logoutBNB= 'Logout',
+    average.dayStocker= 'Day Stocker',
     average.otherBNB='Other'
 }
 
@@ -340,9 +342,10 @@ average.factory = facFactory
                 // console.log('average.YaxisLP', average.YaxisLP);
                 // console.log('diff in price', diffInPrice);
                 // console.log('percentage', average.percentage);
+                
                 average.avgChart();
                 average.buySellChart();
-
+Highcharts.setOptions(Highcharts.theme);
             },
                 function failed(res) {
                     console.log('')
@@ -352,7 +355,10 @@ average.factory = facFactory
             //how to access the y axisPrices: res.data.Elements[0].DataSeries.close.values
         }
     }
+     
    average.getSymbol.submit()
+
+
 };
 
 

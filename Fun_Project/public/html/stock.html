@@ -1,8 +1,26 @@
 
+ <link rel="stylesheet" type="text/css" href="/css/average.css">
  <script src="../js/themes/stockTheme.js"></script>
+
+ <div class="bottom-nav">
+        <div class='bottom-nav-div'>
+            <ul>
+                <li><a href="#/home"><i class="fa fa-home" id='faEnvelope' aria-hidden="true"></i>{{stock.homeBNB}}</a></li>
+                <li><a href="#/stock"><i class="fa fa-area-chart" id='faEnvelope' aria-hidden="true"></i>{{stock.stocksBNB}}</a></li>
+                <li><a href="#/average"><i class="fa fa-bar-chart-o" id='faEnvelope' aria-hidden="true"></i>{{stock.averageBNB}}</a></li>
+                <!--<li><i class="fa fa-sign-out" id='faEnvelope' aria-hidden="true"></i><a href="#">{{stock.otherBNB}}}</a></li>-->
+            </ul>
+        </div>
+    </div>
+
+
+
        <h1>{{stock.info.Name}}</h1>
         <h2>{{stock.info.Symbol}}</h2>
         <h2>{{stock.chart}}</h2>
+
+        <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+
     <div class='buttonOuterDiv'>
             <div class='buttonInnerDiv'>
                 <button ng-click='stock.oneDay()'>1D</button>
@@ -15,16 +33,7 @@
                 <button id="MAX" ng-click='stock.max()'>MAX</button>
             </div>
         </div>
-    <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+    
 
-     <div class="bottom-nav">
-        <div class='bottom-nav-div'>
-            <ul>
-                <li><a href="#/home"><i class="fa fa-home" id='faEnvelope' aria-hidden="true"></i>{{stock.homeBNB}}</a></li>
-                <li><a href="#/stock"><i class="fa fa-area-chart" id='faEnvelope' aria-hidden="true"></i>{{stock.stocksBNB}}</a></li>
-                <li><a href="#/average"><i class="fa fa-bar-chart-o" id='faEnvelope' aria-hidden="true"></i>{{stock.averageBNB}}</a></li>
-                <!--<li><i class="fa fa-sign-out" id='faEnvelope' aria-hidden="true"></i><a href="#">{{stock.otherBNB}}}</a></li>-->
-            </ul>
-        </div>
-    </div>
+    
     <p><a href="/logout" class="btn btn-lg btn-danger">Logout</a></p>
