@@ -2,7 +2,7 @@
 angular.module('stockApp')
     .controller('averageController', average)
 
-average.$inject = ['$http','facFactory']
+average.$inject = ['$http', 'facFactory']
 
 
 function average($http, facFactory, $event) {
@@ -10,103 +10,103 @@ function average($http, facFactory, $event) {
 
     average.greeting = 'Welcome to your average page'
 
-// Bottom Navbar
-var bnbLetters = function(){
-    average.homeBNB ='Home',
-    average.stockBNB ='Stocks',
-    average.averageBNB='Average',
-    average.logoutBNB= 'Logout',
-    average.dayStocker= 'Day Stocker',
-    average.otherBNB='Other'
-}
+    // Bottom Navbar
+    var bnbLetters = function () {
+        average.homeBNB = 'Home',
+            average.stockBNB = 'Stocks',
+            average.averageBNB = 'Average',
+            average.logoutBNB = 'Logout',
+            average.dayStocker = 'Day Stocker',
+            average.otherBNB = 'Other'
+    }
 
-if(window.innerWidth <= 320){
-    
-}else if(window.innerWidth >= 456) {
- bnbLetters();
-}
-// End of Bottom Navbar
-average.factory = facFactory
+    if (window.innerWidth <= 320) {
+
+    } else if (window.innerWidth >= 456) {
+        bnbLetters();
+    }
+    // End of Bottom Navbar
+    average.factory = facFactory
 
 
-// if(window.innerWidth <= 500){
-//     average.oneDay
-//     average.oneWeek
-//     average.oneMonth
-//     average.oneYear
-//     average.fiveYears
-//     document.getElementById("tenYear").style.display = "hidden";
-//     average.max
-// }else if(window.innerWidth >= 900) {
-//  bnbLetters();
-// }
+    // if(window.innerWidth <= 500){
+    //     average.oneDay
+    //     average.oneWeek
+    //     average.oneMonth
+    //     average.oneYear
+    //     average.fiveYears
+    //     document.getElementById("tenYear").style.display = "hidden";
+    //     average.max
+    // }else if(window.innerWidth >= 900) {
+    //  bnbLetters();
+    // }
 
-//Time Period Buttons
-//     if(window.innerWidth <= 320){
-        
-// document.getElementById('tenYear').style.visibility='hidden';
-// document.getElementById('MAX').style.display='none';
+    //Time Period Buttons
+    //     if(window.innerWidth <= 320){
 
-// }else if(window.innerWidth >= 456) {
-//  bnbLetters();
-// }
-//End of Time Period Buttons
-    
-        average.oneDay = function(){
-            average.factory.timePeriod.text = " Today's date "
-            average.factory.timePeriod.days= 1
-            console.log('One day being CLICKED')
-        }
-      
-        //1 Week
-         average.oneWeek = function(){
-               average.factory.timePeriod.text = " Past Week "
-               average.factory.timePeriod.days = 7;
-            console.log('1 week', 7);
-        }
-        
-        //1 month
-         average.oneMonth = function(){
-              average.factory.timePeriod.text = " Current Month "
-               average.factory.timePeriod.days = 30;
-            console.log('1 month', 30);
-         
-        }
-        //6 Months
-         average.sixMonths = function(){
-              average.factory.timePeriod.text = " The Last 6 Months "
-               average.factory.timePeriod.days = 180;
-            console.log('6 months', 180);
-    
-        }
-        //1 Year
-          average.oneYear = function(){
-               average.factory.timePeriod.text = " Last Year "
-               average.factory.timePeriod.days = 365;
-            console.log('1 Year', 365);
-          
-        }
-        //5 Years
-         average.fiveYears = function(){
-              average.factory.timePeriod.text = " The Last Five Years "
-               average.factory.timePeriod.days = 1825;
-            console.log('5 years', 1825);
-         
-        }
-        //10 Year
-        average.tenYears = function(){
-             average.factory.timePeriod.text = " Ten Years "
-               average.factory.timePeriod.days= 3650
-            console.log('6 months', 3650);
-           
-        }
-         //Max that I am able to get.
-        average.tenYears = function(){
-             average.factory.timePeriod.text = " Ten Years "
-               average.factory.timePeriod.days= 9999
-            console.log('6 months', 9999);
-           
-        }
+    // document.getElementById('tenYear').style.visibility='hidden';
+    // document.getElementById('MAX').style.display='none';
+
+    // }else if(window.innerWidth >= 456) {
+    //  bnbLetters();
+    // }
+    //End of Time Period Buttons
+
+    average.oneDay = function () {
+        average.factory.timePeriod.text = " Today's date "
+        average.factory.timePeriod.days = 1
+        console.log('One day being CLICKED')
+    }
+
+    //1 Week
+    average.oneWeek = function () {
+        average.factory.timePeriod.text = " Past Week "
+        average.factory.timePeriod.days = 7;
+        console.log('1 week', 7);
+    }
+
+    //1 month
+    average.oneMonth = function () {
+        average.factory.timePeriod.text = " Current Month "
+        average.factory.timePeriod.days = 30;
+        console.log('1 month', 30);
+
+    }
+    //6 Months
+    average.sixMonths = function () {
+        average.factory.timePeriod.text = " The Last 6 Months "
+        average.factory.timePeriod.days = 180;
+        console.log('6 months', 180);
+
+    }
+    //1 Year
+    average.oneYear = function () {
+        average.factory.timePeriod.text = " Last Year "
+        average.factory.timePeriod.days = 365;
+        console.log('1 Year', 365);
+
+    }
+    //5 Years
+    average.fiveYears = function () {
+        average.factory.timePeriod.text = " The Last Five Years "
+        average.factory.timePeriod.days = 1825;
+        console.log('5 years', 1825);
+
+    }
+    //10 Year
+    average.tenYears = function () {
+        average.factory.timePeriod.text = " Ten Years "
+        average.factory.timePeriod.days = 3650
+        console.log('6 months', 3650);
+
+    }
+    //Max that I am able to get.
+    average.tenYears = function () {
+        average.factory.timePeriod.text = " Ten Years "
+        average.factory.timePeriod.days = 9999
+        console.log('6 months', 9999);
+
+    }
 
 
 
@@ -114,7 +114,7 @@ average.factory = facFactory
     average.avgChart = function () {
         var chart = new Highcharts.Chart({
             chart: {
-                 //avgChart container on html page
+                //avgChart container on html page
                 renderTo: 'avgChart',
                 type: 'column'
             },
@@ -148,16 +148,8 @@ average.factory = facFactory
                     borderWidth: 0
                 }
             },
-            events: {
-                load: function(event) {
-                    // alert ('Chart loaded with series :'+ this.series[0].name);
-                    document.querySelectorAll('rect.highcharts-negative')[0].style.display = 'none'
-
-                    console.log(this);
-                }
-            },
             series: [{
-                name: "Average Stock Price " + "$" +average.average + "",
+                name: "Average Stock Price " + "$" + average.average + "",
                 data: [average.average]
 
             }, {
@@ -166,7 +158,7 @@ average.factory = facFactory
 
             }]
         });
-        
+
     }
 
 
@@ -183,14 +175,31 @@ average.factory = facFactory
             chart: {
                 //buySellChart container on html page
                 renderTo: 'buySellChart',
-                type: 'bar'
+                type: 'bar',
+                events: {
+                    load: function () {
+                        // alert ('Chart loaded with series :'+ this.series[0].name);
+                        console.log('average direction', average.direction)
+                        if(average.direction == 'sell'){
+                        //NEGATIVE
+                        var selector = document.querySelectorAll('#buySellChart rect.highcharts-point:not(.highcharts-negative)')[0];
+                        selector.style.display = 'none'
+                           console.log('this is SELL selector ', selector);
+                        }else{
+                        //POSITIVE
+                            var selector = document.querySelectorAll('#buySellChart rect.highcharts-point.highcharts-negative')[0];
+                        selector.style.display = 'none'
+                        console.log('this is BUY selector ', selector);
+                        }
+                    }
+                },
             },
             // colors: ['rgb(000, 000, 000)', 'rgb(200, 200, 255)'],
             title: {
                 text: 'Buying or Selling power'
             },
             subtitle: {
-                text: "based on average stock price and " + average.factory.timePeriod.number + average.factory.timePeriod.text +""
+                text: "based on average stock price and " + average.factory.timePeriod.number + average.factory.timePeriod.text + ""
             },
             xAxis: [{
                 categories: categories,
@@ -218,18 +227,19 @@ average.factory = facFactory
                 }
             },
 
-            plotOptions: {
-                series: {
-                    stacking: 'normal'
-                }
-            },
 
-            tooltip: {
-                formatter: function () {
-                    return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
-                        'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
-                }
-            },
+            // plotOptions: {
+            //     series: {
+            //         stacking: 'normal'
+            //     }
+            // },
+
+            // tooltip: {
+            //     formatter: function () {
+            //         return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+            //             'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
+            //     }
+            // },
 
             series: [{
                 name: 'Buy',
@@ -242,7 +252,7 @@ average.factory = facFactory
         });
     }
 
-       
+
 
     // FUNCTION FOR FINDING THE AVERAGE PRICE (grabbing the array of prices from the api (stockReturn.Elements[0].DataSeries.close.values) and FINDING THE AVERAGE PRICE)
     function addThemAll(numbers) {
@@ -251,23 +261,23 @@ average.factory = facFactory
             sum += numbers[i]
 
         }
-       return sum / numbers.length;
-       
+        return sum / numbers.length;
+
     }
-    
+
 
     stockInfo = [];
-   average.getSymbol = {
+    average.getSymbol = {
         submit: function () {
-           average.days =average.factory.timePeriod.days
-        //     console.log('outside',stock.days)
-         
-        //  if(stock.days === 1){
-        //      stock.average === stock.YaxisLP
-        //      console.log('inside',stock.average)
-        //      return stock.average
-        //  }
-            
+            average.days = average.factory.timePeriod.days
+            //     console.log('outside',stock.days)
+
+            //  if(stock.days === 1){
+            //      stock.average === stock.YaxisLP
+            //      console.log('inside',stock.average)
+            //      return stock.average
+            //  }
+
             //1st PROMISE
             var stockPromise = $http.get('/stock' + '?symbol=' + average.factory.symbol);
 
@@ -288,9 +298,9 @@ average.factory = facFactory
                 // console.log('average.info', average.info)
                 average.company = average.info.Name
                 // console.log('average.company', average.company)
-                average.YaxisLP = Number(Math.round(average.info.LastPrice+'e1')+'e-1')  //rounding to the 2nd decimal example 1.05 = 1.1
+                average.YaxisLP = Number(Math.round(average.info.LastPrice + 'e1') + 'e-1')  //rounding to the 2nd decimal example 1.05 = 1.1
                 console.log('averageYaxisLP', average.YaxisLP)
-                
+
                 //chart Promise data
                 // console.dir('this is the data we are looking for', resArray[1].data)
                 console.log(resArray[1])
@@ -300,39 +310,44 @@ average.factory = facFactory
 
                 // Getting the average for stock
                 var numArray = stockReturn.Elements[0].DataSeries.close.values
-                console.log('THIS IS THE NUMARRY',numArray)
+                console.log('THIS IS THE NUMARRY', numArray)
                 var avg = addThemAll(numArray)
-                average.average =  Number(Math.round(avg +'e1')+'e-1')  //rounding to the 2nd decimal example 1.05 = 1.1
+                average.average = Number(Math.round(avg + 'e1') + 'e-1')  //rounding to the 2nd decimal example 1.05 = 1.1
                 console.log('stock.average', average.average);
-           
+
                 // Getting the percentage of stock based on the average price and today's stock price.
                 average.buy = [];
                 average.sell = [];
                 var diffInPrice = (+average.average - +average.YaxisLP);
                 average.percentage = (+diffInPrice / +average.YaxisLP * 100);
+                console.log('average.percent', average.percent'')
+                console.log('average.average',average.average)
+                console.log('average.YaxisLP',average.YaxisLP)
                 // console.log('figure it out average.percentage', typeof average.percentage)
-               
-                if (+average.percentage > 0.9 && +average.percentage < -0.9) {
+
+                if (+average.percentage > 0) {
                     //If it is a positive number then SELL // average.sell.push.
                     average.sell.push(+average.percentage)
                     console.log('This is average.sell, number should be POSITIVE pushing THIS ONE', average.sell)
 
                     //Created this one because I need the opposite side of the graph to appear. I then am making this one transparent.
                     average.sell.push(-average.percentage)
-
+                    average.direction = 'sell'
                     console.log('PURPLE average.buy OPPOSITE', average.sell)
 
                 }
-                 //else if (Math.floor(Math.abs(average.percentage)) == 0) {
-               //     console.log('average.percentage is 0', average.percentage)
-               // } 
+                //else if (Math.floor(Math.abs(average.percentage)) == 0) {
+                //     console.log('average.percentage is 0', average.percentage)
+                // } 
                 else {
                     //If it is a negative number then BUY // average.buy.push.
                     average.buy.push(+average.percentage)
                     console.log('This is average.buy, number should be NEGATIVE pushing THIS ONE', average.buy)
                     average.buy.push(-average.percentage)
+                  
+                    average.direction = 'buy'
                     console.log('average.sell OPPOSITE', average.buy)
-                 
+
                 }
 
                 // console.log('average.buy', average.buy)
@@ -342,10 +357,10 @@ average.factory = facFactory
                 // console.log('average.YaxisLP', average.YaxisLP);
                 // console.log('diff in price', diffInPrice);
                 // console.log('percentage', average.percentage);
-                
+
                 average.avgChart();
                 average.buySellChart();
-Highcharts.setOptions(Highcharts.theme);
+                Highcharts.setOptions(Highcharts.theme);
             },
                 function failed(res) {
                     console.log('')
@@ -355,8 +370,8 @@ Highcharts.setOptions(Highcharts.theme);
             //how to access the y axisPrices: res.data.Elements[0].DataSeries.close.values
         }
     }
-     
-   average.getSymbol.submit()
+
+    average.getSymbol.submit()
 
 
 };
